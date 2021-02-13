@@ -1,0 +1,481 @@
+<mat-horizontal-stepper linear #stepper>
+  <mat-step [stepControl]="PersonaldetailsFormGroup"[optional]=false >
+    <form [formGroup]="PersonaldetailsFormGroup" >
+      <ng-template matStepLabel>Personal Details</ng-template>
+      <div class="col-md-4 col-sm-6 col-xs-12 text-center">
+      <mat-form-field>
+  <mat-label>Gender</mat-label>
+  <mat-select formControlName = "gender" required >
+    <mat-option *ngFor="let gender of Genders" [value]="gender.value">
+      {{gender.viewValue}}
+    </mat-option>
+  </mat-select>
+  <mat-error *ngIf="PersonaldetailsFormGroup.get('gender').errors != null && PersonaldetailsFormGroup.get('gender').errors.required">Gender Id is required </mat-error>
+      </mat-form-field>
+    </div>
+      <div class="col-md-4 col-sm-6 col-xs-12 text-center">
+       <mat-form-field>
+        <input matInput placeholder="Aadhar Card Number" formControlName="aadhaar_card" minlength="12" maxlength="12" (keypress)="keyPressNumber($event)" required>
+        <mat-error *ngIf="PersonaldetailsFormGroup.get('aadhaar_card').errors != null && PersonaldetailsFormGroup.get('aadhaar_card').errors.required">Aadhar Card Number Id is required </mat-error>
+        <mat-error *ngIf="PersonaldetailsFormGroup.get('aadhaar_card').errors != null && PersonaldetailsFormGroup.get('aadhaar_card').errors.pattern">Enter Valid Aadhar Card Number </mat-error>
+      </mat-form-field>
+      </div>
+      <div class="col-md-4 col-sm-6 col-xs-12 text-center">
+       <mat-form-field>
+        <input matInput placeholder="Pan Card Number" formControlName="applicant_pancard_number" minlength="10" maxlength="10" required>
+        <mat-error *ngIf="PersonaldetailsFormGroup.get('applicant_pancard_number').errors != null && PersonaldetailsFormGroup.get('applicant_pancard_number').errors.required">Pan Card Number is required </mat-error>
+        <mat-error *ngIf="PersonaldetailsFormGroup.get('applicant_pancard_number').errors != null && PersonaldetailsFormGroup.get('applicant_pancard_number').errors.pattern">Enter Valid Pan Card Number </mat-error>
+      </mat-form-field>
+     </div>
+      <div class="col-md-4 col-sm-6 col-xs-12 text-center">
+       <mat-form-field>
+        <input matInput placeholder="Email Id" formControlName="email_id" required>
+        <mat-error *ngIf="PersonaldetailsFormGroup.get('email_id').errors != null && PersonaldetailsFormGroup.get('email_id').errors.required">Email Id is required </mat-error>
+        <mat-error *ngIf="PersonaldetailsFormGroup.get('email_id').errors != null && PersonaldetailsFormGroup.get('email_id').errors.pattern">Enter Valid Email Id </mat-error>
+      </mat-form-field>
+     </div>
+      <div class="col-md-4 col-sm-6 col-xs-12 text-center">
+      <mat-form-field >
+       <!--  <input matInput placeholder="Pincode" formControlName="pincode" required (keyup) = "pincodeVerify($event)"> -->
+       <input matInput placeholder="Pincode" formControlName="pin_code" (keypress)="keyPressNumber($event)" maxlength="6" minlength="6"  required>
+       <mat-error *ngIf="PersonaldetailsFormGroup.get('pin_code').errors != null && PersonaldetailsFormGroup.get('pin_code').errors.required">Pincode is required </mat-error>
+       <mat-error *ngIf="PersonaldetailsFormGroup.get('pin_code').errors != null && PersonaldetailsFormGroup.get('pin_code').errors.pattern">Enter Valid Pincode </mat-error>
+      </mat-form-field>
+    </div>
+    <div class="col-md-4 col-sm-6 col-xs-12 text-center">
+       <mat-form-field>
+        <input matInput placeholder="State" formControlName="state" (keypress)="keyPressNames($event)"required >
+        <mat-error *ngIf="PersonaldetailsFormGroup.get('state').errors != null && PersonaldetailsFormGroup.get('state').errors.required">State  is required </mat-error>
+      </mat-form-field>
+    </div>
+    <div class="col-md-4 col-sm-6 col-xs-12 text-center">
+       <mat-form-field>
+        <input matInput placeholder="District" formControlName="district" (keypress)="keyPressNames($event)" required>
+        <mat-error *ngIf="PersonaldetailsFormGroup.get('district').errors != null && PersonaldetailsFormGroup.get('district').errors.required">District  is required </mat-error>
+      </mat-form-field>
+    </div>
+      <div class="col-md-4 col-sm-6 col-xs-12 text-center">
+      <!-- <mat-form-field>
+        <mat-label>Select City</mat-label>
+        <mat-select formControlName = "city">
+          <mat-option *ngFor = "let city of pinCities" [value] = "city">{{city}}</mat-option>
+        </mat-select>
+      </mat-form-field> -->
+      <mat-form-field>
+        <input matInput placeholder="city" formControlName="city" (keypress)="keyPressNames($event)"required>
+        <mat-error *ngIf="PersonaldetailsFormGroup.get('city').errors != null && PersonaldetailsFormGroup.get('city').errors.required">City  is required </mat-error>
+      </mat-form-field>
+    </div>
+      <div class="col-md-4 col-sm-6 col-xs-12 text-center">
+      <mat-form-field>
+        <mat-label>Marrital Status</mat-label>
+        <mat-select formControlName = "marital_status" (selectionChange)="MaritialStatusforeman($event.value)" required>
+        <mat-option *ngFor = "let marital_status of MeritialStatus"
+         [value] = marital_status.value> {{marital_status.viewValue}}
+       </mat-option>
+     </mat-select>
+     <mat-error *ngIf="PersonaldetailsFormGroup.get('marital_status').errors != null && PersonaldetailsFormGroup.get('marital_status').errors.required">marital status is required </mat-error>
+      </mat-form-field>
+      </div>
+      <div class="col-md-4 col-sm-6 col-xs-12 text-center">
+      <mat-form-field>
+       <mat-label>Residential Status</mat-label>
+       <mat-select formControlName = "present_address_type" required (selectionChange) = "ResidentialStatusForeman($event)">
+       <mat-option *ngFor="let present_address_type of ResidentialStatus"
+       [value] = "present_address_type.value"> {{present_address_type.viewValue}}
+     </mat-option>
+   </mat-select>
+   <mat-error *ngIf="PersonaldetailsFormGroup.get('present_address_type').errors != null && PersonaldetailsFormGroup.get('present_address_type').errors.required"> Your Present Address Type is required </mat-error>
+      </mat-form-field>
+    </div>
+      <div class="col-md-12 col-sm-12 col-xs-12 text-right">
+        <button mat-button matStepperNext>Next</button>
+      </div>
+    </form>
+  </mat-step>
+  <mat-step [stepControl]="BankdetailsFormGroup" [optional] =false>
+    <form [formGroup]="BankdetailsFormGroup" ngSubmit = bankDetails()>
+      <ng-template matStepLabel>Bank Details</ng-template>
+      <!-- <mat-form-field>
+        <input matInput placeholder="Select Bank" formControlName="bank1" required>
+      </mat-form-field>
+        <mat-form-field>
+        <input matInput placeholder="IFSC Code" formControlName="ifsc_code" required>
+      </mat-form-field> -->
+        <div class="col-md-4 col-sm-6 col-xs-12 text-center">
+        <mat-form-field>
+        <mat-label>Account Type</mat-label>
+        <mat-select formControlName = "account_type" required (selectionChange) = "accTypeForeman($event.value)">
+        <mat-option *ngFor="let account_type of AccType" [value] = account_type.value>
+          {{account_type.viewValue}}
+        </mat-option>
+        </mat-select>
+        <mat-error *ngIf="BankdetailsFormGroup.get('account_type').errors != null && BankdetailsFormGroup.get('account_type').errors.required">Account Type is required </mat-error>
+      </mat-form-field>
+    </div>
+        <div class="col-md-4 col-sm-6 col-xs-12 text-center">
+        <mat-form-field>
+        <mat-label>How did you hear about Us?</mat-label>
+        <mat-select formControlName = "aboutgchit" required>
+        <mat-option *ngFor="let ref of References" [value] = "ref.value">{{ref.viewValue}}</mat-option>
+        </mat-select>
+        <mat-error *ngIf="BankdetailsFormGroup.get('aboutgchit').errors != null && BankdetailsFormGroup.get('aboutgchit').errors.required">How did you hear about Us? </mat-error>
+      </mat-form-field>
+    </div>
+    <div class="col-md-4 col-sm-6 col-xs-12 text-center">
+        <mat-form-field>
+        <mat-label>Registered Company?</mat-label>
+  <mat-select formControlName = "agree" required>
+    <mat-option *ngFor="let register of RegisterCompany" [value] = register.value>
+      {{register.viewValue}}
+    </mat-option>
+  </mat-select>
+  <mat-error *ngIf="BankdetailsFormGroup.get('agree').errors != null && BankdetailsFormGroup.get('agree').errors.required"> Registered Company? </mat-error>
+      </mat-form-field>
+    </div>
+    <div class="col-md-4 col-sm-6 col-xs-12 text-center">
+      <mat-form-field>
+        <input matInput placeholder="ChitCompanyName" formControlName="chit_company" required>
+        <mat-error *ngIf="BankdetailsFormGroup.get('chit_company').errors != null && BankdetailsFormGroup.get('chit_company').errors.required">ChitCompanyName is required </mat-error>
+      </mat-form-field>
+    </div>
+    <div class="col-md-4 col-sm-6 col-xs-12 text-center">
+      <mat-form-field>
+        <input matInput placeholder="ChitCompanyAddress" formControlName="chit_company_address" required>
+        <mat-error *ngIf="BankdetailsFormGroup.get('chit_company_address').errors != null && BankdetailsFormGroup.get('chit_company_address').errors.required">ChitCompanyAddress is required </mat-error>
+      </mat-form-field>
+    </div>
+    <div class="col-md-4 col-sm-6 col-xs-12 text-center">
+      <mat-form-field>
+        <input matInput placeholder="ChitCompanyLandmark" formControlName="chit_company_landmark" required>
+        <mat-error *ngIf="BankdetailsFormGroup.get('chit_company_landmark').errors != null && BankdetailsFormGroup.get('chit_company_landmark').errors.required">ChitCompanyLandmark is required </mat-error>
+      </mat-form-field>
+    </div>
+      
+      <div class="col-md-12 col-xs-12 col-sm-12 text-right">
+        <button mat-button matStepperPrevious>Back</button>
+        <button mat-button matStepperNext>Next</button>
+      </div>
+    </form>
+  </mat-step>
+  <mat-step [stepControl]="ProfiledetailsFormGroup" [optional] =false>
+    <form [formGroup]="ProfiledetailsFormGroup" (ngSubmit) = "personalDetails()">
+      <div class="col-md-4 col-sm-6 col-xs-12 text-center">
+      <ng-template matStepLabel>Upload Profile Photo</ng-template>
+    <input type="file"
+           id="file"
+           (change)="foremanProfile($event.target.files[0])">
+           <mat-divider class="text-center"></mat-divider>
+    </div>
+      <div class="col-xs-12 col-sm-12 col-md-12 finalbtn">
+        <button mat-button matStepperPrevious>Back</button>
+        <button type="submit" mat-button matStepperNext>Done</button>
+      </div>
+    </form>
+  </mat-step>
+ </mat-horizontal-stepper>
+
+
+
+
+ <div id="marriedForeman" class="modal fade" role="dialog" #marriedForeman>
+  <div class="modal-dialog">
+
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" (click) = "cancelAllData()">&times;</button>
+        <h4 class="modal-title Marriedcss">Spouse Name</h4>
+      </div>
+      <form [formGroup] = "MarriedFormGroup" (ngSubmit) = marriedDataSave()>
+      <div class="modal-body ">
+        <div class="text-center">
+        <mat-form-field>
+          <input matInput placeholder="Enetr Spouse Name" formControlName="spouse_name" (keypress)="keyPressNames($event)"required>
+          <mat-error *ngIf="MarriedFormGroup.get('spouse_name').errors != null && MarriedFormGroup.get('spouse_name').errors.required">Spouse Name is Required </mat-error>  
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput placeholder="Enetr Spouse Number" formControlName="spouse_number" (keypress)="keyPressNumber($event)"minlength="10" maxlength="10" required>
+          <mat-error *ngIf="MarriedFormGroup.get('spouse_number').errors != null && MarriedFormGroup.get('spouse_number').errors.required">Spouse Number is Required </mat-error>
+          <mat-error *ngIf="MarriedFormGroup.get('spouse_number').errors != null && MarriedFormGroup.get('spouse_number').errors.pattern">Enter Valid Mobile Number </mat-error>  
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput [matDatepicker]="dat_of_marriage" placeholder="Choose a date" formControlName = "dat_of_marriage">
+            <mat-datepicker-toggle matSuffix [for]="dat_of_marriage">
+            </mat-datepicker-toggle>
+            <mat-datepicker #dat_of_marriage></mat-datepicker>
+            <mat-error *ngIf="MarriedFormGroup.get('dat_of_marriage').errors != null && MarriedFormGroup.get('dat_of_marriage').errors.required">Dat Of Marriage is Required </mat-error>
+        </mat-form-field>
+      </div>
+      <label class="radiolabel">Spouse Work:</label>
+      <div class="radiobtn">     
+        <mat-radio-group aria-label="Select an option" formControlName = "spouse_work">
+        <mat-radio-button value="house_maker"><p>House Maker</p></mat-radio-button>
+        <mat-radio-button value="self_employeed"><p>Self Employeed</p></mat-radio-button>
+        <mat-radio-button value="salaried"><p>Salaried</p></mat-radio-button>
+        </mat-radio-group>       
+      </div>
+      </div>
+      <div class="modal-footer">
+        <button type="submit" class="btn btn-primary" [disabled] = "!MarriedFormGroup.valid">Save</button>
+        <button type="button" class="btn btn-default" (click) = "cancelAllData()">Close</button>
+      </div>
+      </form>
+    </div>
+
+  </div>
+</div>
+
+ <div id="unmarriedForeman" class="modal fade" role="dialog" #unmarriedForeman>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <form [formGroup] = "UnmarriedFormGroup" (ngSubmit) = "marriedDataSave()">
+      <div class="modal-header">
+        <button type="button" class="close" (click) = "cancelAllData()">&times;</button>
+        <h4 class="modal-title UnMariedcss">Father Name</h4>
+      </div>
+      <div class="modal-body text-center">
+        <mat-form-field>
+        <input matInput placeholder="Enetr Father Name" formControlName="father_name" (keypress)="keyPressNames($event)" required>
+        <mat-error *ngIf="UnmarriedFormGroup.get('father_name').errors != null && UnmarriedFormGroup.get('father_name').errors.required">Enetr Father Name is required </mat-error>
+      </mat-form-field>
+      </div>
+      <div class="modal-footer">
+        <button type="submit" class="btn btn-primary" [disabled] = "!UnmarriedFormGroup.valid">Save</button>
+        <button type="button" class="btn btn-default" (click) = "cancelAllData()">Close</button>
+      </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+
+ <div id="ownedResidenceForeman" class="modal fade" role="dialog" #ResidenceForeman>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      
+      <div class="modal-header" *ngIf = "residentialStatus == 'Owned'">
+        <button type="button" class="close" (click) = "clearResidenceData()">&times;</button>
+        <h4 class="modal-title UnMariedcss"> Owned Residential Details</h4>
+      </div>
+      <div class="modal-header" *ngIf = "residentialStatus == 'Rented'">
+        <button type="button" class="close" (click) = clearResidenceData()>&times;</button>
+        <h4 class="modal-title UnMariedcss"> Rented Residential Details</h4>
+      </div>
+      <div *ngIf = "residentialStatus == 'Owned'">
+        <form [formGroup] = "OwnedResidenceFormGroup" (ngSubmit) = "residenceDataSave()">
+      <div class="modal-body  address text-center" >
+        <mat-form-field>
+        <input matInput placeholder="Enetr House Number" formControlName="permanent_houseno" required>
+       <mat-error *ngIf="OwnedResidenceFormGroup.get('permanent_houseno').errors != null && OwnedResidenceFormGroup.get('permanent_houseno').errors.required"> House Number Is Required</mat-error>
+      </mat-form-field>
+       <mat-form-field>
+        <input matInput placeholder="Enetr Building Name" formControlName="permanent_housename" required>
+       <mat-error *ngIf="OwnedResidenceFormGroup.get('permanent_housename').errors != null && OwnedResidenceFormGroup.get('permanent_housename').errors.required"> Building Name Is Required</mat-error>
+      </mat-form-field>
+       <mat-form-field>
+        <input matInput placeholder="Enetr Street Name" formControlName="permanent_street" required>
+       <mat-error *ngIf="OwnedResidenceFormGroup.get('permanent_street').errors != null && OwnedResidenceFormGroup.get('permanent_street').errors.required"> Street Name Is Required</mat-error>
+      </mat-form-field>
+       <mat-form-field>
+        <input matInput placeholder="Enetr Your Landmark" formControlName="permanent_landmark" required>
+       <mat-error *ngIf="OwnedResidenceFormGroup.get('permanent_landmark').errors != null && OwnedResidenceFormGroup.get('permanent_landmark').errors.required"> Landmark Is Required</mat-error>
+      </mat-form-field>
+       <mat-form-field>
+        <input matInput placeholder="Enetr Your Pincode" formControlName="permanent_pincode"maxlength="6" minlength="6" (keypress)="keyPressNumber($event)" required>
+       <mat-error *ngIf="OwnedResidenceFormGroup.get('permanent_pincode').errors != null && OwnedResidenceFormGroup.get('permanent_pincode').errors.pattern">Enter Valid Pincode </mat-error>
+       <mat-error *ngIf="OwnedResidenceFormGroup.get('permanent_pincode').errors != null && OwnedResidenceFormGroup.get('permanent_pincode').errors.required"> Pincode Is Required</mat-error>
+       
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="Enetr Your City" formControlName="permanent_city" (keypress)="keyPressNames($event)" required>
+       <mat-error *ngIf="OwnedResidenceFormGroup.get('permanent_city').errors != null && OwnedResidenceFormGroup.get('permanent_city').errors.required"> City Is Required</mat-error>
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="Select Your State" formControlName="permanent_state" (keypress)="keyPressNames($event)"required>
+       <mat-error *ngIf="OwnedResidenceFormGroup.get('permanent_state').errors != null && OwnedResidenceFormGroup.get('permanent_state').errors.required"> State Is Required</mat-error>
+      </mat-form-field>
+       <mat-form-field>
+        <input matInput placeholder="Select Your District" formControlName="permanent_district" (keypress)="keyPressNames($event)"required>
+       <mat-error *ngIf="OwnedResidenceFormGroup.get('permanent_district').errors != null && OwnedResidenceFormGroup.get('permanent_district').errors.required"> District Is Required</mat-error>
+      </mat-form-field>
+      </div>
+      <div class="modal-footer">
+        <button type="submit" class="btn btn-primary" [disabled] = "!OwnedResidenceFormGroup.valid">Save</button>
+        <button type="button" class="btn btn-default" (click) = "clearResidenceData()">Close</button>
+      </div>
+    </form>
+      </div>
+      <div *ngIf = "residentialStatus == 'Rented'">
+      <form [formGroup] = "RentedResidenceFormGroup" (ngSubmit) = "residenceDataSave()">
+      <div class="modal-body address text-center">
+        <mat-form-field>
+        <input matInput placeholder="Enetr House Number" formControlName="rented_houseno" required>
+        <mat-error *ngIf="RentedResidenceFormGroup.get('rented_houseno').errors != null && RentedResidenceFormGroup.get('rented_houseno').errors.required"> Number Is Required </mat-error>
+      </mat-form-field>
+       <mat-form-field>
+        <input matInput placeholder="Enetr Building Name" formControlName="rented_buildingname" required>
+        <mat-error *ngIf="RentedResidenceFormGroup.get('rented_buildingname').errors != null && RentedResidenceFormGroup.get('rented_buildingname').errors.required"> Building Name Is Required </mat-error>
+      </mat-form-field>
+       <mat-form-field>
+        <input matInput placeholder="Enetr Street Name" formControlName="rented_street" required>
+        <mat-error *ngIf="RentedResidenceFormGroup.get('rented_street').errors != null && RentedResidenceFormGroup.get('rented_street').errors.required"> Street Name Is Required </mat-error>
+      </mat-form-field>
+       <mat-form-field>
+        <input matInput placeholder="Enetr Your Landmark" formControlName="rented_landmark" required>
+        <mat-error *ngIf="RentedResidenceFormGroup.get('rented_landmark').errors != null && RentedResidenceFormGroup.get('rented_landmark').errors.required"> Landmark Is Required </mat-error>
+      </mat-form-field>
+       <mat-form-field>
+        <input matInput placeholder="Enetr Your Pincode" formControlName="rented_pincode" maxlength="6" minlength="6" (keypress)="keyPressNumber($event)" required>
+       <mat-error *ngIf="RentedResidenceFormGroup.get('rented_pincode').errors != null && RentedResidenceFormGroup.get('rented_pincode').errors.pattern">Enter Valid Pincode </mat-error>
+       <mat-error *ngIf="RentedResidenceFormGroup.get('rented_pincode').errors != null && RentedResidenceFormGroup.get('rented_pincode').errors.required"> Pincode Is Required </mat-error>
+       
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="Enetr Your City" formControlName="rented_city" (keypress)="keyPressNames($event)" required>
+        <mat-error *ngIf="RentedResidenceFormGroup.get('rented_city').errors != null && RentedResidenceFormGroup.get('rented_city').errors.required"> City Is Required </mat-error>
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="Select Your State" formControlName="rented_state"(keypress)="keyPressNames($event)" required>
+        <mat-error *ngIf="RentedResidenceFormGroup.get('rented_state').errors != null && RentedResidenceFormGroup.get('rented_state').errors.required"> State Is Required </mat-error>
+      </mat-form-field>
+       <mat-form-field>
+        <input matInput placeholder="Select Your District" formControlName="rented_district"(keypress)="keyPressNames($event)" required>
+        <mat-error *ngIf="RentedResidenceFormGroup.get('rented_district').errors != null && RentedResidenceFormGroup.get('rented_district').errors.required"> District Is Required </mat-error>
+      </mat-form-field>
+      </div>
+      <div class="modal-footer">
+        <button type="submit" class="btn btn-primary" [disabled] = "!RentedResidenceFormGroup.valid">Save</button>
+        <button type="button" class="btn btn-default" (click) = "clearResidenceData()">Close</button>
+      </div>
+    </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="accountTpeForeman" class="modal fade" role="dialog" #accountTpeForeman>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      
+      <div class="modal-header" *ngIf = "accType == 'OD'">
+        <button type="button" class="close" (click) = "clearAccountData()">&times;</button>
+        <h4 class="modal-title UnMariedcss"> OD Account Details</h4>
+      </div>
+      <div class="modal-header" *ngIf = "accType == 'CURRENT'">
+        <button type="button" class="close" (click) = clearAccountData()>&times;</button>
+        <h4 class="modal-title UnMariedcss"> Current Account Details</h4>
+      </div>
+      <div *ngIf = "accType == 'OD'">
+        <form [formGroup] = "OdForemanFormGroup" (ngSubmit) = "accTypeDataSave()">
+      <div class="modal-body text-center" >
+        <mat-form-field>
+        <input matInput placeholder="Enetr Your Bank Name" formControlName="od_bank_name" required>
+        <mat-error *ngIf="OdForemanFormGroup.get('od_bank_name').errors != null && OdForemanFormGroup.get('od_bank_name').errors.required"> Bank Name Is Required </mat-error>
+      </mat-form-field>
+       <mat-form-field>
+        <input matInput placeholder="Enetr Account Holder Name" formControlName="od_account_name" required>
+        <mat-error *ngIf="OdForemanFormGroup.get('od_account_name').errors != null && OdForemanFormGroup.get('od_account_name').errors.required"> Account Holder Name Is Required </mat-error>
+      </mat-form-field>
+       <mat-form-field>
+        <input matInput placeholder="Enetr Your Account Number" formControlName="od_account_number" (keypress)="keyPressNumber($event)" minlength="5" maxlength="18"required>
+        <mat-error *ngIf="OdForemanFormGroup.get('od_account_number').errors != null && OdForemanFormGroup.get('od_account_number').errors.pattern">Enter Valid Account Number </mat-error>
+        <mat-error *ngIf="OdForemanFormGroup.get('od_account_number').errors != null && OdForemanFormGroup.get('od_account_number').errors.required"> Account Number Is Required </mat-error>
+      </mat-form-field>
+       <mat-form-field>
+        <input matInput placeholder="Enetr Your IFSC Code" formControlName="od_ifsc_code" minlength="11" maxlength="11" style="text-transform: uppercase;" required>
+        <mat-error *ngIf="OdForemanFormGroup.get('od_ifsc_code').errors != null && OdForemanFormGroup.get('od_ifsc_code').errors.pattern">Enter Valid IFSC Code </mat-error>
+        <mat-error *ngIf="OdForemanFormGroup.get('od_ifsc_code').errors != null && OdForemanFormGroup.get('od_ifsc_code').errors.required"> IFSC Code Is Required </mat-error>
+      </mat-form-field>
+       <mat-form-field>
+        <input matInput placeholder="Enetr Your Branch Name" formControlName="od_branch_name" required>
+        <mat-error *ngIf="OdForemanFormGroup.get('od_branch_name').errors != null && OdForemanFormGroup.get('od_branch_name').errors.required"> Branch Name Is Required </mat-error>
+      </mat-form-field>
+      </div>
+      <div class="modal-footer">
+        <button type="submit" class="btn btn-primary" [disabled] = "!OdForemanFormGroup.valid">Save</button>
+        <button type="button" class="btn btn-default" (click) = "clearAccountData()">Close</button>
+      </div>
+    </form>
+      </div>
+      <div *ngIf = "accType == 'CURRENT'">
+      <form [formGroup] = "CurrentForemanFormGroup" (ngSubmit) = "accTypeDataSave()">
+      <div class="modal-body text-center">
+        <mat-form-field>
+        <input matInput placeholder="Enetr Youe Bank Name" formControlName="current_bank_name" required>
+        <mat-error *ngIf="CurrentForemanFormGroup.get('current_bank_name').errors != null && CurrentForemanFormGroup.get('current_bank_name').errors.required">Youe Bank Name Is Required </mat-error>
+      </mat-form-field>
+       <mat-form-field>
+        <input matInput placeholder="Enetr  Account Holder Name" formControlName="current_account_name" required>
+        <mat-error *ngIf="CurrentForemanFormGroup.get('current_account_name').errors != null && CurrentForemanFormGroup.get('current_account_name').errors.required"> Account Holder Name Is Required </mat-error>
+      </mat-form-field>
+       <mat-form-field>
+        <input matInput placeholder="Enetr Your Account Number" formControlName="current_account_number" (keypress)="keyPressNumber($event)" minlength="5" maxlength="18"required>
+        <mat-error *ngIf="CurrentForemanFormGroup.get('current_account_number').errors != null && CurrentForemanFormGroup.get('current_account_number').errors.pattern">Enter Valid Account Number </mat-error>
+        <mat-error *ngIf="CurrentForemanFormGroup.get('current_account_number').errors != null && CurrentForemanFormGroup.get('current_account_number').errors.required"> Account Number Is Required </mat-error>
+      </mat-form-field>
+       <mat-form-field>
+        <input matInput placeholder="Enetr Your IFSC Code" formControlName="current_ifsc_code" minlength="11" maxlength="11" style="text-transform: uppercase;" required>
+        <mat-error *ngIf="CurrentForemanFormGroup.get('current_ifsc_code').errors != null && CurrentForemanFormGroup.get('current_ifsc_code').errors.pattern">Enter Valid IFSC Code </mat-error>
+        <mat-error *ngIf="CurrentForemanFormGroup.get('current_ifsc_code').errors != null && CurrentForemanFormGroup.get('current_ifsc_code').errors.required"> IFSC Code Is Required </mat-error>
+      </mat-form-field>
+       <mat-form-field>
+        <input matInput placeholder="Enetr Your Branch Name" formControlName="current_branch_name" required>
+        <mat-error *ngIf="CurrentForemanFormGroup.get('current_branch_name').errors != null && CurrentForemanFormGroup.get('current_branch_name').errors.required"> Branch Name Is Required </mat-error>
+      </mat-form-field>
+      </div>
+      <div class="modal-footer">
+        <button type="submit" class="btn btn-primary" [disabled] = "!CurrentForemanFormGroup.valid">Save</button>
+        <button type="button" class="btn btn-default" (click) = "clearAccountData()">Close</button>
+      </div>
+    </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="container">
+ 
+
+  <!-- Modal -->
+  <div class="modal fade" id="sussRegForeman" #sussRegForeman role="dialog">
+    <div class="modal-dialog">
+    
+      Modal content
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title" style="text-align: center;">Registration Completed?</h4>
+        </div>
+        <div class="modal-body text-center">
+          <p>{{succReturn}}</p>
+        </div>
+        <div class="modal-footer">
+          <!-- <button type="button" class="btn btn-primary" (click) = "logoutForeman()">Ok</button> -->
+          <button type="button" class="btn btn-primary" (click) = "navigate()">Ok</button> 
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- <style type="text/css">
+  .Marriedcss{
+    text-align: center;
+    color: white;
+    background: #337ab7;
+    padding: 23px 0px 12px 0px;
+    margin: -15px -15px -15px -15px;
+  }
+  .UnMariedcss{
+    text-align: center;
+    color: white;
+    background: #337ab7;
+    padding: 23px 0px 12px 0px;
+    margin: -15px -15px -15px -15px;
+  }
+
+  ::ng-deep .cdk-overlay-container {
+  z-index:1050;
+}
+</style> -->

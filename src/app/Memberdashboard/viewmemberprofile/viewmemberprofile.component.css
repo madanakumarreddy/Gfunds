@@ -1,0 +1,178 @@
+table > thead:first-child > tr:first-child > td
+{
+    background: #0a58a4;
+    color: white;
+    text-align: center;
+    /* width: 60%; */
+}
+.frm
+{
+	margin-left:187px;
+	margin-top:160px;
+}
+th
+{
+    text-align: left;
+    font-size: medium;
+}
+
+.editbutton
+{
+    margin-top: 11px;
+    margin-left: 446px;
+}
+.tabl{
+  margin-top: 10px;
+}
+
+.editbutton1
+{
+    margin-top: 11px;
+    margin-left: 30px;
+}
+
+.editsave{
+    margin-right: 154px;
+    float: right;
+    margin-top: 10px;
+}
+
+.tableborder
+{
+    border-width: 5px;
+    border-style: solid;
+    border-radius: 3px;
+    border-color: #0a58a4;
+    width: 70%;
+    margin-top: 28px;
+
+	/* margin-left: 101px; */
+    /* margin-right: 462px; */
+}
+
+
+/* .nav {
+    margin-bottom: 1px;
+    margin-left: 102px;
+    /* list-style: none; */
+/* } */
+.nav > li > a {
+    font-size: 30px;
+    position: relative;
+    display: block;
+    padding-bottom: 2px;
+}
+
+.noeditable {
+  border: none;
+  background: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+}
+
+
+
+.editing {
+  border: steelblue;
+  background: rgba(0, 0, 0, 0.22);
+  border-style: solid;
+  border-width: thin;
+  box-shadow: 0px 0px 2px 1px rgba(51, 122, 183, 0.75);
+
+  padding: 4px 1px 5px 5px;
+  color: #333;
+  font-size: 15px;
+  width: 60%;
+}
+/* .memberpro{
+    margin-left: 284px;
+    margin-right: -145px;
+} */
+
+#abc{
+    cursor: pointer;
+
+}
+@media only screen and (min-width: 360px) and (max-width: 640px) {
+    .tableborder{
+        width:100%
+    }
+    ::ng-deep.cdk-overlay-pane{
+        max-width: 92vw !important;
+      }
+
+
+
+}
+@media only screen and (min-width: 360px) and (max-width: 850px) {
+    ::ng-deep.cdk-overlay-pane{
+        max-width: 92vw !important;
+      }
+
+}
+@media only screen and (max-width:1024px) and (min-width: 320px) {
+    /* .tableborder {
+        border-width: 5px;
+        border-style: solid;
+        border-radius: 3px;
+        border-color: #0a58a4;
+        margin-left: 1px;
+        margin-right: 1px;
+    } */
+.memberpro{
+    margin-left: 0px;
+    margin-right: 0px;
+}
+
+/* .nav {
+    margin-bottom: 2px;
+    margin-left: 2px;
+    margin-top: 2px;
+} */
+.editbutton{
+    margin-top: 8px;
+    margin-left: 186px;
+}
+.editbutton1{
+    margin-top: 8px;
+    margin-left: 81px;
+}
+.editsave{
+   margin-right: -27px;
+    float: right;
+    margin-top: -51px;
+    margin-left: 76px;
+}
+
+.editbutton2{
+margin-left: 163px;
+    margin-top: -56px;
+}
+
+
+.editing {
+  
+    width: 100%;
+  }
+  .bualign
+  {
+
+    margin-left: -47px;
+  }
+}
+
+.rrr{
+    margin-top: 120px;
+    margin-left: 73px;
+}
+
+
+.modal-header{
+    background:#0a58a4;
+
+}
+
+.modal-title{
+    color:white;
+    text-align: center;
+}

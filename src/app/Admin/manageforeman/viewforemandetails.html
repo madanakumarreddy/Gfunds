@@ -1,0 +1,1040 @@
+ <div style="srl">
+   <div class="modal-header  bg-col">
+    <div style="background: #337ab7;margin-left: -14px;
+    margin-right: -14px;
+    text-align: center;
+    height: 67px;color:#fff">
+      <button type="button" class="pull-right" (click)="close()" style="color:black">&times;</button>
+      <h3 class="modal-title">Member Details</h3>
+      <!-- <div style="margin-left: -293px;">
+        <button class="btn btn-primary" type="button" *ngIf="!edit" [mat-dialog-close] = "ForemanManage">Save</button>&nbsp;
+        <button class="btn btn-danger" type="button" *ngIf="!edit" (click)="close()">Cancel</button>
+      </div> -->
+    </div>
+    
+    </div>
+    <div >
+      <button class="btn btn-primary" type="button" *ngIf="!edit" [mat-dialog-close] = "ForemanManage">Save</button>&nbsp;
+      <button class="btn btn-danger" type="button" *ngIf="!edit" (click)="close()">Cancel</button>
+    </div>
+    <button class="btn btn-success" type="button" *ngIf="edit" (click)="editdata(data)">Edit</button>
+  
+  <div class="tablescroll" >
+    <div class="table-responsive">
+      <table class="table table-bordered center" style="text-align:center;">
+        <thead class="profile text-center" style="background: #337ab7;color:#fff">
+          <tr>
+            <td class="bg-col" colspan="2">FORMAN DETAILS</td>
+          </tr>
+        </thead>
+        <tr >
+          <th style="width:50%;">Applicant Full name</th>
+          <th>
+  
+  
+  
+            <input type="text" [ngClass]="{'noeditable': !edit, 'editing': edit}"  [(ngModel)]="ForemanManage.full_name" [disabled]="edit" only-alphabets ng-required="true">
+          </th>
+        </tr>
+        <tr>
+          <th>DOB</th>
+          <th>
+            <input id="marydate" type="text" [ngClass]="{'noeditable': !edit, 'editing': edit}" name="dob" ng-click="OpenExpireDate()" [(ngModel)]="ForemanManage.date_of_birth" [disabled]="edit" required />
+          </th>
+        </tr>
+        <tr>
+          <th>Mobile Number</th>
+          <th>
+            <input id="marydate" type="text" [ngClass]="{'noeditable': !edit, 'editing': edit}" [(ngModel)]="ForemanManage.mobile_number" dont-begin-with-zero="0-9" [disabled]="edit" required />
+          </th>
+        </tr>
+        <tr>
+          <th>Marital Status</th>
+          <th>
+            <select  [(ngModel)]="ForemanManage.marital_status" [ngClass]="{'noeditable': !edit, 'editing': edit}" [disabled] = "edit">
+                <option value="" [disabled]="true">---Select Marital Status ---</option>
+                <option value="Unmarried">Unmarried</option>
+                <option value="Married">Married</option>
+            </select>
+        </th>
+        </tr>
+        <tr>
+            <th>Spouse name</th>
+            <th>
+                <input type="text" [(ngModel)]="ForemanManage.spouse_name" [ngClass]="{'noeditable': !edit, 'editing': edit}" [disabled] = "edit">
+            </th>
+        </tr>
+        <tr>
+          <th>State</th>
+          <th>
+  
+            <!-- <select [(ngModel)]="ForemanManage.state"   [ngClass]="{'noeditable': !edit, 'editing': edit}"  [disabled]="edit">
+                <option value="" [disabled]="true">--Select States Name--</option>
+                <option  *ngFor="let state of countryList" value='' >  {{state.name}}</option>
+            </select> -->
+
+            <select [ngClass]="{'noeditable':!edit, 'editing': edit}" [(ngModel)]="ForemanManage.state" [disabled]="edit">
+                <option value="" [disabled]="true">--Select Bank Name--</option>
+                                <option  *ngFor="let present_state of countryList">  {{present_state.name}}</option>
+            </select>
+          </th>
+        </tr>
+        <tr>
+    <th>District</th>
+     
+    <th>
+      <div *ngIf="edit">{{ForemanManage.district}}</div>
+      <select style="text-align-last: center;" [ngClass]="{'noeditable': !edit, 'editing': edit}" [(ngModel)]="ForemanManage.district" [disabled]="edit" >
+        <option value=''>---------Dist---------</option>
+      
+      </select>
+    </th>
+  </tr>
+  
+        <tr>
+          <th>City</th>
+          <th>
+            <input type="text" [ngClass]="{'noeditable': !edit, 'editing': edit}" [(ngModel)]="ForemanManage.city" [disabled]="edit" only-alphabets ng-required="true">
+          </th>
+        </tr>
+        <tr>
+          <th>Farternity Score</th>
+          <th>
+            <input type="text" [ngClass]="{'noeditable': !edit, 'editing': edit}" [(ngModel)]="ForemanManage.gchits_score" [disabled]="edit" >
+          </th>
+        </tr>
+        <tr>
+          <th>Transaction Id</th>
+          <th>
+            <input type="text" [ngClass]="{'noeditable': !edit, 'editing': edit}" [(ngModel)]="ForemanManage.transaction_id" [disabled]="edit">
+          </th>
+        </tr>
+        <tr>
+          <th>Foreman Deposit Amount</th>
+          <th>
+            <input type="text" [ngClass]="{'noeditable': !edit, 'editing': edit}" [(ngModel)]="ForemanManage.foreman_deposit_amount" [disabled]="edit" >
+          </th>
+        </tr>
+
+      </table>
+    </div>
+  
+  
+  
+  
+    <div class="table-responsive">
+      <table class="table table-bordered tableText">
+        <thead class="profile text-center" style="background: #337ab7;color:#fff">
+          <tr>
+            <td class="bg-col" colspan="2">FORMAN MANAGE DETAILS</td>
+          </tr>
+        </thead>
+        <tr>
+          <th style="width:50%;">Adhar Number</th>
+          <th>
+            <input type="text" [ngClass]="{'noeditable': !edit, 'editing': edit}" [(ngModel)]="ForemanManage.aadhaar_card" [disabled]="edit" >
+          
+           
+          </th>
+        </tr>
+        <tr>
+          <th>PAN number</th>
+          <th>
+            <input type="text" [ngClass]="{'noeditable': !edit, 'editing': edit}" [(ngModel)]="ForemanManage.applicant_pancard_number" [disabled]="edit">
+          </th>
+        </tr>
+         
+         
+      </table>
+    </div>
+    <div class="table-responsive">
+      <table class="table table-bordered tableText">
+        <thead class="profile text-center" style="background: #337ab7;color:#fff">
+          <tr>
+            <td class="bg-col" colspan="2">BANK DETAILS</td>
+          </tr>
+        </thead>
+        <tr>
+          <th style="width:50%;">BankName</th>
+          <th>
+            <select style="margin-left:0px;" [ngClass]="{'noeditable': !edit, 'editing': edit}" [(ngModel)]="ForemanManage.bank_name" [disabled]="edit">
+                <option value="" [disabled]="true">--Select Bank Name--</option>
+                <option [value]="bank" *ngFor="let bank of bankname">  {{bank}}</option>
+             
+            </select>
+                
+          </th>
+        </tr>
+        <tr>
+          <th>Account Name</th>
+          <th>
+            <input type="text" [ngClass]="{'noeditable': !edit, 'editing': edit}" [(ngModel)]="ForemanManage.account_name" [disabled]="edit" only-alphabets ng-required="true">
+          </th>
+        </tr>
+        <tr>
+          <th> Account Number</th>
+          <th>
+            <input type="text" [ngClass]="{'noeditable': !edit, 'editing': edit}" [(ngModel)]="ForemanManage.account_number" [disabled]="edit" ng-trim="false">
+          </th>
+        </tr>
+        <tr>
+          <th>Branch Name</th>
+          <th>
+            <input type="text" [ngClass]="{'noeditable': !edit, 'editing': edit}" name="dob" ng-click="OpenExpireDate1()" [(ngModel)]="ForemanManage.branch_name" [disabled]="edit" required />
+          </th>
+        </tr>
+        <tr>
+          <th>IFSC CODE</th>
+          <th>
+            <input type="text" [ngClass]="{'noeditable': !edit, 'editing': edit}" name="dob" ng-click="OpenExpireDate1()" [(ngModel)]="ForemanManage.ifsc_code" [disabled]="edit" required />
+          
+          </th>
+        </tr>
+        <tr>
+          <th>Account Type </th>
+          <th>
+            <select [ngClass]="{'noeditable': !edit, 'editing': edit}" [(ngModel)]="ForemanManage.account_type" [disabled]="edit">
+                <option value="" [disabled]="true">--Select account type--</option>
+                <option [value]="account" *ngFor="let account of accounttype">  {{account}}</option>
+            </select>
+          </th>
+        </tr>
+      </table>
+    </div>
+    <div class="table-responsive">
+      <table class="table table-bordered tableText">
+        <thead class="profile text-center" style="background: #337ab7;color:#fff">
+          <tr>
+            <td class="bg-col" colspan="2">PRESENT ADDRESS DETAILS</td>
+          </tr>
+        </thead>
+        <tr>
+          <th style="width:50%;">House Name</th>
+          <th>
+            <input type="text"  [ngClass]="{'noeditable': !edit, 'editing': edit}"  name="dob" ng-click="OpenExpireDate1()" [disabled]="edit" [(ngModel)]="ForemanManage.house_number" required />
+          
+          </th>
+        </tr>
+        <tr>
+  
+        </tr>
+        <tr>
+          <th>Building Name</th>
+          <th>
+            <input type="text" [ngClass]="{'noeditable': !edit, 'editing': edit}" [(ngModel)]="ForemanManage.building_name" [disabled]="edit">
+          </th>
+        </tr>
+        <tr>
+          <th>Street Name</th>
+          <th>
+            <input type="text" [ngClass]="{'noeditable': !edit, 'editing': edit}" [(ngModel)]="ForemanManage.street" [disabled]="edit" only-alphabets ng-required="true">
+          </th>
+        </tr>
+        <tr>
+          <th>Hosue LandMark Name</th>
+          <th>
+            <input type="text" [ngClass]="{'noeditable': !edit, 'editing': edit}" [(ngModel)]="ForemanManage.home_land_mark" [disabled]="edit" only-alphabets ng-required="true">
+          </th>
+        </tr>
+        <tr>
+          <th>State</th>
+          <th>
+            <select [ngClass]="{'noeditable':!edit, 'editing': edit}" [(ngModel)]="ForemanManage.present_state" [disabled]="edit">
+                <option value="" [disabled]="true">--Select Bank Name--</option>
+                                <option  *ngFor="let present_state of countryList">  {{present_state.name}}</option>
+            </select>
+            
+        </th>
+        </tr>
+        <tr>
+          <th>District</th>
+          <th>
+           
+            <input type="text" name="present_city" [ngClass]="{'noeditable': !edit, 'editing': edit}" [(ngModel)]="ForemanManage.present_city" [disabled]="edit" only-alphabets ng-required="true">
+        
+          </th>
+        </tr>
+        <tr>
+            <th>Pincode</th>
+            <th>
+             
+              <input type="text" name="pincode" [ngClass]="{'noeditable': !edit, 'editing': edit}" [(ngModel)]="ForemanManage.pin_code" [disabled]="edit" only-alphabets ng-required="true">
+          
+            </th>
+          </tr>
+      </table>
+    </div>
+    <div class="table-responsive">
+        <table class="table table-bordered tableText">
+          <thead class="profile text-center" style="background: #337ab7;color:#fff">
+            <tr>
+              <td class="bg-col" colspan="2">COMPANY DETAILS</td>
+            </tr>
+          </thead>
+          <tr>
+            <th style="width:50%;"> Fraternity Company</th>
+            <th>
+              <input type="text"  [ngClass]="{'noeditable': !edit, 'editing': edit}" name="dob" ng-click="OpenExpireDate1()" [(ngModel)]="ForemanManage.chit_company" required />
+            
+            </th>
+          </tr>
+          <tr>
+    
+          </tr>
+          <tr>
+            <th>Fraternity Company Address</th>
+            <th>
+              <input type="text" [ngClass]="{'noeditable': !edit, 'editing': edit}" [(ngModel)]="ForemanManage.chit_company_address" [disabled]="edit">
+            </th>
+          </tr>
+          <tr>
+            <th>Fraternity Company Landmark</th>
+            <th>
+              <input type="text" [ngClass]="{'noeditable': !edit, 'editing': edit}" [(ngModel)]="ForemanManage.chit_company_landmark" [disabled]="edit" only-alphabets ng-required="true">
+            </th>
+          </tr>
+            
+        </table>
+      </div>
+
+      <div class="table-responsive">
+        <table class="table table-bordered tableText">
+          <thead class="profile text-center" style="background: #337ab7;color:#fff">
+            <tr>
+              <td class="bg-col" colspan="2">PROFESSIONAL DETAILS</td>
+            </tr>
+          </thead>
+          <tr>
+            <th style="width:50%;">Designation</th>
+            <th>
+              <input type="text"  [ngClass]="{'noeditable': !edit, 'editing': edit}" name="dob" ng-click="OpenExpireDate1()" [disabled]="edit" [(ngModel)]="ForemanManage.designation" required />
+            
+            </th>
+          </tr>
+          <tr>
+    
+          </tr>
+          <tr>
+            <th>Annualsalary</th>
+            <th>
+              <input type="text" [ngClass]="{'noeditable': !edit, 'editing': edit}" [(ngModel)]="ForemanManage.annual_salary" [disabled]="edit">
+            </th>
+          </tr>
+          <tr>
+            <th>Company Name</th>
+            <th>
+              <input type="text" [ngClass]="{'noeditable': !edit, 'editing': edit}" [(ngModel)]="ForemanManage.company_name" [disabled]="edit" only-alphabets ng-required="true">
+            </th>
+          </tr>
+          <tr>
+            <th>Company Address</th>
+            <th>
+              <input type="text" [ngClass]="{'noeditable': !edit, 'editing': edit}" [(ngModel)]="ForemanManage.company_address" [disabled]="edit" only-alphabets ng-required="true">
+            </th>
+          </tr>
+           
+            
+        </table>
+      </div>
+
+      <div class="table-responsive">
+        <table class="table table-bordered tableText">
+          <thead class="profile text-center" style="background: #337ab7;color:#fff">
+            <tr>
+              <td class="bg-col" colspan="2">PROFESSIONAL DETAILS</td>
+            </tr>
+          </thead>
+          <tr>
+            <th style="width:50%;">Business Name</th>
+            <th>
+              <input type="text" name="dob" ng-click="OpenExpireDate1()" [disabled]="edit" [ngClass]="{'noeditable': !edit, 'editing': edit}" [(ngModel)]="ForemanManage.business_name" required />
+            
+            </th>
+          </tr>
+          <tr>
+    
+          </tr>
+          
+          <tr>
+            <th>Office-PhoneNumber</th>
+            <th>
+              <input type="text" [ngClass]="{'noeditable': !edit, 'editing': edit}" [(ngModel)]="ForemanManage.office_contact_number" [disabled]="edit" only-alphabets ng-required="true">
+            </th>
+          </tr>
+          
+           
+            
+        </table>
+      </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="ascrol">
+      <table class="table-responsive">
+        <table class="table table-bordered" id="membermargin">
+            <thead class="profile" style="background: #337ab7;color:#fff">
+                <tr class="text-center">
+                    <td class="bg-col" colspan="4">UPLOAD DOCS</td>
+                </tr>
+            </thead>
+            <tbody >
+            <tr>
+                <th>Bank Statement</th>
+                <td class="foremanFiles">
+                 <a class="btn btn-danger btn-sm" id="pdfstylebutton"><span class="glyphicon glyphicon-file"></span>
+                <b>No File</b></a>
+                </td>
+                <td class="foremanFiles">
+                    <a  class="btn btn-default btn-sm" id="pdfstylebutton"><span class="glyphicon glyphicon-file"></span>
+                <b>File</b></a>
+                </td>
+                <td ng-hide="ForemanManage.edit">
+                <form>
+                <input type="file" name="bank_statement" class="form-control">
+               <p>*Please upload PDF or jpeg files only</p>
+                                <div>
+                                    <div class="col-xs-12 col-md-12 text-left" style="margin-bottom: 4%;">
+                                        <button type="submit" class="btn btn-primary" value="upload">upload</button>
+                                        <span style="color:limegreen;top: 10px;"  class="glyphicon glyphicon-ok"> </span>
+                                    </div>
+                                </div>
+                            </form>
+                            </td>
+            </tr>
+            <tr>
+                <th>Certification of Registration</th>
+                <td class="foremanFiles">
+                <a class="btn btn-danger btn-sm" id="pdfstylebutton"><span class="glyphicon glyphicon-file"></span>
+                <b>No File</b></a>
+                </td>
+                <td class="foremanFiles">
+                    <a class="btn btn-default btn-sm" id="pdfstylebutton"><span class="glyphicon glyphicon-file"></span>
+                <b>File</b></a>
+                </td>
+                <td ng-hide="ForemanManage.edit">
+                <form >
+                 <input type="file"  class="form-control">
+                 <p>*Please upload PDF or jpeg files only</p>
+                                <div>
+                                    <div class="col-xs-12 col-md-12 text-left" style="margin-bottom: 4%;">
+                                        <button type="submit" class="btn btn-primary" value="upload">upload</button>
+                                        <span style="color:limegreen;top: 10px;" ng-hide="company_Registration_Certi_Tick" class="glyphicon glyphicon-ok"> </span>
+                                    </div>
+                                </div>
+                            </form>
+                            </td>
+            </tr>
+            <tr>
+                <th>Chit Company Logo</th>
+                <td class="foremanFiles" >
+                    <a class="btn btn-danger btn-sm" id="pdfstylebutton"><span class="glyphicon glyphicon-file"></span>
+                <b>No File</b></a>
+                </td>
+                <td class="foremanFiles" >
+                    <a  class="btn btn-default btn-sm" id="pdfstylebutton"><span class="glyphicon glyphicon-file"></span>
+                <b>File</b></a>
+                </td>
+                <td ng-hide="ForemanManage.edit">
+                <form>
+                                <input type="file" name="chit_company_logo" class="form-control" >
+                                <p>*Please upload PDF or jpeg files only</p>
+                                <div>
+                                    <div class="col-xs-12 col-md-12 text-left" style="margin-bottom: 4%;">
+                                        <button type="submit" class="btn btn-primary" value="upload">upload</button>
+                                        <span style="color:limegreen;top: 10px;" ng-hide="company_Logo_Tick" class="glyphicon glyphicon-ok"> </span>
+                                    </div>
+                                </div>
+                            </form>
+                            </td>
+            </tr>
+            <tr>
+                <th>Address Proof</th>
+                <td class="foremanFiles">
+                    <a class="btn btn-danger btn-sm" id="pdfstylebutton"><span class="glyphicon glyphicon-file"></span>
+                <b>No File</b></a>
+                </td>
+                <td class="foremanFiles">
+                    <a  class="btn btn-default btn-sm" id="pdfstylebutton"><span class="glyphicon glyphicon-file"></span>
+                <b>File</b></a>
+                </td>
+                <td ng-hide="ForemanManage.edit">
+                <form name="companyform" ng-submit="addressProf
+(address_proof,ForemanManage.id)">
+                                <input type="file" name="address_proof" class="form-control">
+                                <p>*Please upload PDF or jpeg files only</p>
+                                <div>
+                                    <div class="col-xs-12 col-md-12 text-left" style="margin-bottom: 4%;">
+                                        <button type="submit" class="btn btn-primary" value="upload">upload</button>
+                                        <span style="color:limegreen;top: 10px;" ng-hide="address_Proof_Tick" class="glyphicon glyphicon-ok"> </span>
+                                    </div>
+                                </div>
+                            </form>
+                            </td>
+            </tr>
+            </tbody>
+            </table>
+            </table>
+            </div>
+
+      </div>
+    
+
+      
+  
+  
+
+  <!-- <div class="modal-header" style="background: #337ab7">
+        <button type="button" class="pull-right" (click)="close()" style="color:black">&times;</button>
+        <h3 class="modal-title">Foreman Details</h3>
+            <div>
+                <button class="btn btn-primary" type="button"  [disabled]="!ForemanManage.edit" *ngIf = "ForemanManage.edit"  [mat-dialog-close] = "ForemanManage">saves</button>
+                <button class="btn btn-danger"  type="button" [disabled]="!ForemanManage.edit" *ngIf = "ForemanManage.edit" (click) = close()>cancel</button>
+            </div>
+
+    </div>
+    <button class="btn btn-success" type="button" [disabled]="ForemanManage.edit" (click)="ForemanManage.edit = !ForemanManage.edit"
+        *ngIf = "!ForemanManage.edit">Edit</button>
+
+<div class="ForemanManage">
+        <div class="table-responsive">
+            <table class="table table-bordered">
+                <thead class="line" style="background: #337ab7">
+                    <tr class="text-center">
+                        <td colspan="2">ForemanManage Details </td>
+                    </tr>
+                </thead>
+                <tbody class="tableText">
+                    <tr style="background-color: transparent;">
+                        <th>Applicant Full name</th>
+                        <th>
+
+                            <input type="text" [(ngModel)]="ForemanManage.full_name" class="{{ForemanManage.editable}}" [disabled] = "!ForemanManage.edit">
+                        </th>
+                    </tr>
+                    <tr>
+                        <th>DOB</th>
+                        <th>
+                            <input type="text" class="{{ForemanManage.editable}}" name="dob"  [(ngModel)]="ForemanManage.date_of_birth" ng-required="true" [disabled] = "!ForemanManage.edit">
+                        </th>
+                    </tr>
+                    <tr style="background-color: transparent;">
+                        <th>Mobile Number</th>
+                        <th>
+                            <input type="text" class="{{ForemanManage.editable}}" [(ngModel)]="!ForemanManage.mobile_number" dont-begin-with-zero="0-9" [disabled] = "!ForemanManage.edit">
+                        </th>
+                    </tr>
+                    <tr>
+                        <th>Marital Status</th>
+                        <th>
+                            <select class="{{ForemanManage.editable}}" [(ngModel)]="ForemanManage.marital_status" [disabled] = "!ForemanManage.edit">
+                                <option value="" [disabled]="true">---Select Marital Status ---</option>
+                                <option value="Unmarried">Unmarried</option>
+                                <option value="Married">Married</option>
+                            </select>
+                        </th>
+                    </tr>
+                    <tr style="background-color: transparent;">
+                            <th>Spouse name</th>
+                            <th>
+                                <input type="text" class="{{ForemanManage.editable}}" [(ngModel)]="  ForemanManage.spouse_name" [disabled] = "!ForemanManage.edit">
+                            </th>
+                    </tr>
+                    <tr>
+                        <th>State</th>
+                        <th>
+                            <select class="{{ForemanManage.editable}}" [(ngModel)]="ForemanManage.state" [disabled] = "!ForemanManage.edit">
+                                <option value="" [disabled]="true">--Select Bank Name--</option>
+                                <option  *ngFor="let state of countryList">  {{state.name}}</option>
+                            </select>
+                        </th>
+                    </tr>
+                    <tr>
+                        <th>District</th>
+                        <th>
+                            <select class="{{ForemanManage.editable}}" [(ngModel)]="ForemanManage.district" [disabled] = "!ForemanManage.edit">
+                                <option></option>
+                                <option ></option>
+                            </select>
+                        </th>
+                    </tr>
+                    <tr>
+                        <th>City</th>
+                        <th>
+                            <input type="text" name="city" class="{{ForemanManage.editable}}" [(ngModel)]="ForemanManage.city" [disabled] = "!ForemanManage.edit">
+                        </th>
+                    </tr>
+                    <tr>
+                        <th>Fraternity Score</th>
+                        <th>
+                            <input type="text" name="gchits_score" class="{{ForemanManage.editable}}" [(ngModel)]="ForemanManage.gchits_score"  [disabled] = "!ForemanManage.edit">
+                        </th>
+                    </tr>
+                    <tr>
+                        <th>Transaction Id</th>
+                        <th>
+                            <input type="text" name="transaction_id" class="{{ForemanManage.editable}}" [(ngModel)]="ForemanManage.transaction_id" [disabled] = "!ForemanManage.edit">
+                        </th>
+                    </tr>
+                    <tr>
+                        <th>Foreman Deposit Amount</th>
+                        <th>
+                            <input type="text" name="foreman_deposit_amount" class="{{ForemanManage.editable}}" [(ngModel)]="ForemanManage.foreman_deposit_amount"  [disabled] = "!ForemanManage.edit">
+                        </th>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+
+
+        <div class="table-responsive">
+            <table class="table table-bordered">
+                <thead class="line" style="background: #337ab7">
+                    <tr class="text-center">
+                        <td colspan="2">ForemanManage Details</td>
+                    </tr>
+                </thead>
+                <tbody class="tableText">
+                    <tr>
+                        <th>Adhar Number</th>
+                        <th>
+                            <input type="text" class="{{ForemanManage.editable}}" [(ngModel)]="ForemanManage.aadhaar_card" [disabled] = "!ForemanManage.edit">
+
+                          
+                        </th>
+                    </tr>
+                    <tr>
+                        <th>PAN number</th>
+                        <th>
+                            <input type="text"  class="{{ForemanManage.editable}}" [(ngModel)]="ForemanManage.applicant_pancard_number"  [disabled] = "!ForemanManage.edit">
+                        </th>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+
+        <div class="table-responsive">
+            <table class="table table-bordered">
+                <thead class="line" style="background: #337ab7">
+                    <tr class="text-center">
+                        <td colspan="2">BANK DETAILS</td>
+                    </tr>
+                </thead>
+                <tbody class="tableText">
+                    <tr>
+                        <th>BankName</th>
+                        <th>
+
+                            <select class="{{ForemanManage.editable}}" [(ngModel)]="ForemanManage.bank_name" ng-options="bank for bank in bankname" [disabled] = "!ForemanManage.edit">
+                                <option value="" [disabled]="true">--Select Bank Name--</option>
+                                <option [value]="bank" *ngFor="let bank of bankname">  {{bank}}</option>
+                            </select>
+                        </th>
+                    </tr>
+                    <tr>
+                        <th>Account Name</th>
+                        <th>
+                            <input type="text" class="{{ForemanManage.editable}}" [(ngModel)]="ForemanManage.account_name" only-alphabets ng-required="true" [disabled] = "!ForemanManage.edit">
+                        </th>
+                    </tr>
+                    <tr>
+                        <th>Account Number</th>
+                        <th>
+                            <input type="text" class="{{ForemanManage.editable}}" [(ngModel)]="ForemanManage.account_number" [disabled] = "!ForemanManage.edit">
+                        </th>
+                    </tr>
+                      <tr>
+                        <th>Branch Name</th>
+                        <th>
+                            <input type="text" class="{{ForemanManage.editable}}" [(ngModel)]="ForemanManage.branch_name"  [disabled] = "!ForemanManage.edit">
+                        </th>
+                    </tr>
+                    <tr>
+                        <th>IFSC CODE</th>
+                        <th>
+                            <input type="text" class="{{ForemanManage.editable}}" [(ngModel)]="ForemanManage.ifsc_code" [disabled] = "!ForemanManage.edit">
+                        </th>
+                    </tr>
+                    <tr>
+                        <th>Account Type </th>
+                        <th>
+                           
+                            <select class="{{ForemanManage.editable}}" [(ngModel)]="ForemanManage.account_type" ng-options="ban for ban in accounttype" [disabled] = "!ForemanManage.edit">
+                                <option value="" [disabled]="true">--Select account type--</option>
+                                <option [value]="account" *ngFor="let account of accounttype">  {{account}}</option>
+                            </select>
+
+                        </th>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+
+        <div class="table-responsive">
+            <table class="table table-bordered">
+                <thead class="line" style="background: #337ab7">
+                    <tr class="text-center">
+                        <td colspan="2">PRESENT ADDRESS DETAILS</td>
+                    </tr>
+                </thead>
+                <tbody class="tableText">
+                    <tr>
+                        <th>House Name</th>
+                        <th>
+                            <input type="text" name="housename" class="{{ForemanManage.editable}}" [(ngModel)]="ForemanManage.house_number" [disabled] = "!ForemanManage.edit">
+                        </th>
+                    </tr>
+                    <tr>
+                        <th>Building Name</th>
+                        <th>
+                            <input type="text" name="Buildingname" class="{{ForemanManage.editable}}" [(ngModel)]="ForemanManage.building_name" [disabled] = "!ForemanManage.edit">
+                        </th>
+                    </tr>
+                    <tr>
+                        <th>Street Name</th>
+                        <th>
+                            <input type="text" name="streetname" class="{{ForemanManage.editable}}" [(ngModel)]="!ForemanManage.street" [disabled] = "!ForemanManage.edit">
+                        </th>
+                    </tr>
+                    <tr>
+                        <th>Hosue LandMark Name</th>
+                        <th>
+                            <input type="text" name="house LandMark name" class="{{ForemanManage.editable}}" [(ngModel)]="ForemanManage.home_land_mark" [disabled] = "!ForemanManage.edit">
+                        </th>
+                    </tr>
+                    <tr>
+                        <th>State</th>
+                        <th>
+                            <select class="{{ForemanManage.editable}}" [(ngModel)]="ForemanManage.present_state"  (change)="changeCountry($event.target.value)" [disabled] = "!ForemanManage.edit">
+                                <option value="" [disabled]="true">--Select Bank Name--</option>
+                                <option  *ngFor="let present_state of countryList">  {{present_state.name}}</option>
+                            </select>
+                        </th>
+                    </tr>
+                    <tr>
+                        <th>District</th>
+                        <th>
+                            <select class="{{ForemanManage.editable}}" [(ngModel)]="ForemanManage.district" [disabled] = "!ForemanManage.edit">
+                                <option value="" [disabled]="true">--Select district Name--</option>
+                                 <option *ngFor ="let district of cities">
+                                    {{district}}
+                                  </option>
+                            </select>
+                        </th>
+                    </tr>
+                    <tr>
+                        <th>City</th>
+                        <th>
+                            <input type="text" name="present_city" class="{{ForemanManage.editable}}" [(ngModel)]="ForemanManage.present_city" [disabled] = "!ForemanManage.edit">
+                        </th>
+                    </tr>
+                    <tr>
+                        <th>Pincode</th>
+                        <th class="viewobject">
+                            <input type="text" name="pincode" class="{{ForemanManage.editable}}" [(ngModel)]="ForemanManage.pin_code" [disabled] = "!ForemanManage.edit">
+                        </th>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+
+        <div class="table-responsive">
+            <table class="table table-bordered">
+                <thead class="line" style="background: #337ab7">
+                    <tr class="text-center">
+                        <td colspan="2">COMPANY DETAILS</td>
+                    </tr>
+                </thead>
+                <tbody class="tableText">
+                    <tr>
+                        <th> Fraternity Company</th>
+                        <th>
+                            <input type="text" name="chitcompany" class="{{ForemanManage.editable}}" [(ngModel)]="ForemanManage.chit_company"  [disabled] = "!ForemanManage.edit">
+                        </th>
+                    </tr>
+                    <tr>
+                        <th>Fraternity Company Address</th>
+                        <th>
+                            <input type="text" name="chitcompanyaddress" class="{{ForemanManage.editable}}" [(ngModel)]="ForemanManage.chit_company_address" [disabled] = "!ForemanManage.edit">
+                        </th>
+                    </tr>
+                    <tr>
+                        <th>Fraternity Company Landmark</th>
+                        <th>
+                            <input type="text" name="chitcompanylandmark" class="{{ForemanManage.editable}}" [(ngModel)]="ForemanManage.chit_company_landmark"  [disabled] = "!ForemanManage.edit">
+                        </th>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="table-responsive">
+            <div ng-show="ForemanManage.employment_type=='Salaried'">
+                <table class="table table-bordered">
+                    <thead class="line" style="background: #337ab7">
+                        <tr class="text-center">
+                            <td colspan="2">PROFESSIONAL DETAILS</td>
+                        </tr>
+                    </thead>
+                    <tbody class="tableText">
+                        <tr>
+                            <th> Designation</th>
+                            <th>
+                       
+                                <input type="text" class="{{ForemanManage.editable}}" [(ngModel)]="ForemanManage.designation" [disabled] = "!ForemanManage.edit">
+
+                            </th>
+                        </tr>
+                        <tr>
+                            <th>Annualsalary</th>
+                            <th>
+                           
+                                <input type="text" class="{{ForemanManage.editable}}" [(ngModel)]="ForemanManage.annual_salary" [disabled] = "!ForemanManage.edit">
+
+                            </th>
+                        </tr>
+                        <tr>
+                            <th> Company Name</th>
+                            <th>
+                          
+                                <input type="text" class="{{ForemanManage.editable}}" [(ngModel)]="ForemanManage.company_name" [disabled] = "!ForemanManage.edit">
+
+                            </th>
+                        </tr>
+                        <tr>
+                            <th> Company Address</th>
+                            <th>
+                                <input type="text" class="{{ForemanManage.editable}}" [(ngModel)]="ForemanManage.company_address" [disabled] = "!ForemanManage.edit">
+                            </th>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="table-responsive">
+            <div ng-show="ForemanManage.employment_type=='Self Employed'">
+                <table class="table table-bordered">
+
+                    <thead class="line" style="background: #337ab7">
+                        <tr class="text-center">
+                            <td colspan="2">PROFESSIONAL DETAILS</td>
+                        </tr>
+                    </thead>
+                    <tbody class="tableText">
+                        <tr>
+                            <th>Business Name</th>
+                            <th>
+                                <input type="text" class="{{ForemanManage.editable}}" [(ngModel)]="ForemanManage.business_name" [disabled] = "!ForemanManage.edit">
+                            </th>
+                        </tr>
+        
+                        <tr>
+                            <th>Office-PhoneNumber</th>
+                            <th>
+                                <input type="text" class="{{ForemanManage.editable}}" [(ngModel)]="ForemanManage.office_contact_number" [disabled] = "!ForemanManage.edit">
+                            </th>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <table class="table-responsive">
+            <table class="table table-bordered" id="membermargin">
+                <thead class="profile" style="background: #337ab7">
+                    <tr class="text-center">
+                        <td colspan="2">UPLOAD DOCS</td>
+                    </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <th>Bank Statement</th>
+                    <td class="foremanFiles">
+                        <a class="btn btn-danger btn-sm" id="pdfstylebutton"><span class="glyphicon glyphicon-file"></span>
+                    <b>No File</b></a>
+                    </td>
+                    <td class="foremanFiles">
+                        <a  class="btn btn-default btn-sm" id="pdfstylebutton"><span class="glyphicon glyphicon-file"></span>
+                    <b>File</b></a>
+                    </td>
+                    <td ng-hide="ForemanManage.edit">
+                    <form>
+                                    <input type="file" name="bank_statement" class="form-control">
+                                    <p>*Please upload PDF or jpeg files only</p>
+                                    <div>
+                                        <div class="col-xs-12 col-md-12 text-left" style="margin-bottom: 4%;">
+                                            <button type="submit" class="btn btn-primary" value="upload">upload</button>
+                                            <span style="color:limegreen;font-size: 25px;top: 10px;"  class="glyphicon glyphicon-ok"> </span>
+                                        </div>
+                                    </div>
+                                </form>
+                                </td>
+                </tr>
+                <tr>
+                    <th>Certification of Registration</th>
+                    <td class="foremanFiles">
+                        <a class="btn btn-danger btn-sm" id="pdfstylebutton"><span class="glyphicon glyphicon-file"></span>
+                    <b>No File</b></a>
+                    </td>
+                    <td class="foremanFiles">
+                        <a class="btn btn-default btn-sm" id="pdfstylebutton"><span class="glyphicon glyphicon-file"></span>
+                    <b>File</b></a>
+                    </td>
+                    <td ng-hide="ForemanManage.edit">
+                    <form >
+                                    <input type="file"  class="form-control">
+                                    <p>*Please upload PDF or jpeg files only</p>
+                                    <div>
+                                        <div class="col-xs-12 col-md-12 text-left" style="margin-bottom: 4%;">
+                                            <button type="submit" class="btn btn-primary" value="upload">upload</button>
+                                            <span style="color:limegreen;font-size: 25px;top: 10px;" ng-hide="company_Registration_Certi_Tick" class="glyphicon glyphicon-ok"> </span>
+                                        </div>
+                                    </div>
+                                </form>
+                                </td>
+                </tr>
+                <tr>
+                    <th>Chit Company Logo</th>
+                    <td class="foremanFiles" >
+                        <a class="btn btn-danger btn-sm" id="pdfstylebutton"><span class="glyphicon glyphicon-file"></span>
+                    <b>No File</b></a>
+                    </td>
+                    <td class="foremanFiles" >
+                        <a  class="btn btn-default btn-sm" id="pdfstylebutton"><span class="glyphicon glyphicon-file"></span>
+                    <b>File</b></a>
+                    </td>
+                    <td ng-hide="ForemanManage.edit">
+                    <form>
+                                    <input type="file" name="chit_company_logo" class="form-control" >
+                                    <p>*Please upload PDF or jpeg files only</p>
+                                    <div>
+                                        <div class="col-xs-12 col-md-12 text-left" style="margin-bottom: 4%;">
+                                            <button type="submit" class="btn btn-primary" value="upload">upload</button>
+                                            <span style="color:limegreen;font-size: 25px;top: 10px;" ng-hide="company_Logo_Tick" class="glyphicon glyphicon-ok"> </span>
+                                        </div>
+                                    </div>
+                                </form>
+                                </td>
+                </tr>
+                <tr>
+                    <th>Address Proof</th>
+                    <td class="foremanFiles">
+                        <a class="btn btn-danger btn-sm" id="pdfstylebutton"><span class="glyphicon glyphicon-file"></span>
+                    <b>No File</b></a>
+                    </td>
+                    <td class="foremanFiles">
+                        <a  class="btn btn-default btn-sm" id="pdfstylebutton"><span class="glyphicon glyphicon-file"></span>
+                    <b>File</b></a>
+                    </td>
+                    <td ng-hide="ForemanManage.edit">
+                    <form name="companyform" ng-submit="addressProf
+(address_proof,ForemanManage.id)">
+                                    <input type="file" name="address_proof" class="form-control">
+                                    <p>*Please upload PDF or jpeg files only</p>
+                                    <div>
+                                        <div class="col-xs-12 col-md-12 text-left" style="margin-bottom: 4%;">
+                                            <button type="submit" class="btn btn-primary" value="upload">upload</button>
+                                            <span style="color:limegreen;font-size: 25px;top: 10px;" ng-hide="address_Proof_Tick" class="glyphicon glyphicon-ok"> </span>
+                                        </div>
+                                    </div>
+                                </form>
+                                </td>
+                </tr>
+                </tbody>
+
+            </table>
+        </table>
+   
+
+       
+            <button class="btn-primary" type="button" ng-hide="ForemanManage.edit" ng-click="updateForemanManage(ForemanManage)">save</button>
+            <button class="btn btn-danger" type="button" ng-hide="ForemanManage.edit" ng-click="cancelupdate(ForemanManage)">cancel</button>
+             <button type="button" ng-click="close()" ng-show="ForemanManage.edit">Close</button>
+      -->
+
+
+
+
+      <style class="text/css">
+      .noeditable {
+  /* border: steelblue; */
+  /* background: rgba(0, 0, 0, 0.22);
+  border-style: solid;
+  border-width: thin;
+  box-shadow: 0px 0px 2px 1px rgba(51, 122, 183, 0.75);
+
+  padding: 4px 1px 5px 5px;
+  color: #333;
+  font-size: 15px;
+  width: 60%; */
+
+  background: rgba(0, 0, 0, 0.22);
+  border-style: solid;
+  border-width: thin;
+  box-shadow: 0px 0px 2px 1px rgba(51, 122, 183, 0.75);
+
+  padding: 4px 1px 5px 5px;
+  color: #333;
+ 
+  width: 60%;
+
+  
+}
+
+.editing {
+    border: none;
+  background: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  box-shadow: none;
+
+  /* border: none;
+  background: none;
+  -moz-appearance: none;
+  -webkit-appearance: none; */
+}
+::ng-deep .cdk-overlay-pane{
+overflow: auto;
+}
+@media only screen and (min-width: 320px) and (max-width: 767px) {
+.ascrol{
+  overflow: scroll;
+  width:240px;
+}
+
+}
+        </style>

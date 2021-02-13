@@ -1,0 +1,198 @@
+.text-center h1 {
+    font-size: 150%;
+    color: #0a58a4;
+    margin-top: 78px;
+    margin-bottom: 28px;
+    margin-right: 241px;
+}
+
+.toppest1 {
+    text-align: center;
+    font-weight: bolder;
+    color: #0a58a4;
+    margin-top: 50px;
+    /*margin-left: -243px; */
+}
+
+.head {
+    color: #ffff;
+    background-color: #337ab7;
+    text-align: center;
+    ;
+}
+
+.loader {
+    background: #256fb7;
+}
+
+.text-center {
+    color: black;
+    font-size: 20px;
+    margin-left: -45px;
+}
+
+.uploadnew {
+    left: 85px;
+}
+
+.uploadd {
+    text-align: center;
+}
+
+.foremanregistrationUploaddocs {
+    /*text-align: center;*/
+    color: #0a58a4;
+    font-weight: bold;
+    font-variant: small-caps;
+}
+
+th::first-letter {
+    font-size: 150%;
+}
+
+.text-center h1::first-letter {
+    font-size: 150%;
+}
+
+.form-control {
+    background: rgb(255, 255, 255);
+    border-style: solid;
+    border: aqua;
+    border-width: thin;
+    box-shadow: 0px 0px 5px;
+}
+
+.mainview .editbutton {
+    font-weight: bolder;
+    font-size: 17px;
+    background: rgb(10, 88, 164);
+    color: white;
+}
+
+.uploadtable {
+    margin-left: 200px;
+    color: #242d2a !important;
+    box-shadow: 1px 1px 12px 0px #0A58A4;
+    border: 9px solid #ddd;
+}
+
+.star2 {
+    background-color: rgb(63, 81, 181);
+    color: white;
+    width: 130px;
+    height: 37px;
+    border-radius: 17px;
+    
+}
+
+h1 {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-size: 30px;
+    font-family: inherit;
+    font-weight: 500;
+    line-height: 1.1;
+    color: inherit;
+}
+
+/* h2{
+    margin-left: -150px;
+} */
+
+@media only screen and (min-width:320px) and (max-width: 767px) {
+    .loader {
+        margin-left: 28px;
+    }
+    .modal-content {
+        width: 282px;
+    }
+    .uploadnew {
+        left: 0px;
+    }
+    .uploadtable {
+        margin-left: 17px;
+    }
+    h2 {
+        margin-left: -178px;
+    }
+    .star2 {
+        width: 100px;
+        margin-right: -40px;
+    }
+    .text-center {
+        color: white;
+        font-size: 10px;
+        /* margin-left: -45px; */
+    }
+    .txtty {
+        font-size: 10px;
+    }
+    .toppest1 {
+        font-size: 23px;
+        margin-left: 15px;
+    }
+    /*upload docs---------------*/
+    .certi {
+        left: 26px;
+        top: 74px;
+    }
+    .head {
+        /*text-align: center;*/
+        font-size: 17px;
+        margin-left: 0px;
+    }
+}
+
+@media only screen and (min-width:360px) and (max-width: 676px) {
+    .uploadnew {
+        left: 0px;
+    }
+    .uploadtable {
+        margin-left: 33px;
+    }
+    .uploadtop {
+        left: 20vh;
+    }
+    
+    .mainview {
+        left: 23vh;
+        margin-left: -282px;
+    }
+    .uploadtable {
+        margin-left: 0px;
+    }
+    .toppest1 {
+        font-size: 23px;
+        margin-left: -33px;
+    }
+}
+
+@media (min-width: 992px){
+.col-md-12 {
+    width: 81%;
+}
+}
+
+@media only screen and (max-width: 1366px) and (min-width: 1024px) {
+    .uploadtop {
+        left: 20vh;
+    }
+    .mainview {
+        left: 23vh;
+    }
+    .uploadtable {
+        margin-left: 0px;
+    }
+    .toppest1 {
+        font-size: 23px;
+        margin-left: -120px;
+    }
+    .head {
+        text-align: center;
+        font-size: 21px;
+        margin-left: -14px;
+    }
+    .star2 {
+        margin-left: 45%; 
+    }
+}

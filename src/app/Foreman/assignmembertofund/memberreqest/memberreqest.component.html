@@ -1,0 +1,155 @@
+
+ <div>
+  <h2 class="text-center  toppest1 col-md-offset-1 col-md-10">
+    Requested Members</h2></div>
+    <div class="col-md-offset-1 col-md-10 requesleft">
+<div class="col-xs-12 col-sm-12 col-md-12 reqmem">
+  <button class="btn btn-success pull-right addright" (click)="addedmembers1(chit_id)">Added Members</button>
+  <button class="btn btn-primary pull-left bacleft" (click)="memmanagement()">Back</button>
+</div>
+<div class="col-xs-12 col-sm-12 col-md-12 table-responsive">
+  <table class="table  table-bordered ">
+    <thead>
+      <tr>
+        <th style="text-align: center;">Serial No</th>
+        <th style="text-align: center;">Member Name</th>
+        <th style="text-align: center;">Mobile Number</th>
+        <th style="text-align: center;">Fraternity Name</th>
+        <th style="text-align: center;">chit number</th>
+        <th style="text-align: center;">Cibil Score</th>
+        <th style="text-align: center;">Rating</th>
+        <th style="text-align: center;">Actions</th>
+      </tr>
+    </thead>
+    <tbody class="tableText">
+      <tr *ngFor=" let req of memreqobject;let i=index">
+        <td>{{i+1}}</td>
+        <td>{{req.member_name}}</td>
+        <td>{{req.member_number}}</td>
+        <td>{{req.chit_name}}</td>
+        <td>{{req.member_chit_count}}</td>
+        <td>
+          <button class="btn btn-primary " (click)="cibilscores(req.cibil_score_file);"  data-toggle="modal" data-target="#myPopup">{{req.cibilForemanHome_score}}</button>
+        </td>
+        <td>
+          <span style="color:gold; margin-left: 5px " *ngFor=" let num of getRating(req.rating)" class="glyphicon glyphicon-star "></span>
+        </td>
+        <td>
+          <div class="col-md-6">
+          <button class="btn btn-primary  " style="width: 100%" (click)="addreq(req) ">Add</button>
+          </div>
+          <div class="col-md-6">
+          <button class="btn btn-danger "  style="width: 100%" (click)="rejectreq(req) ">Reject</button>
+          </div>
+        </td>
+        <!-- <td>
+                            <button class="btn btn-primary " ng-click="inactive(req) ">Inactive</button>
+                        </td> -->
+      </tr>
+      <tr *ngIf="!memreqobject" class="text-center ">
+        <td colspan="8 ">No Requested Members</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+</div>
+
+
+<div id="myModal" #AddedMem class="modal fade" role="dialog" >
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header addedmem">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h3 class="modal-title">Members Added</h3>
+      </div>
+      <div class="modal-body addmem1">
+         <p *ngIf="credit">{{credit}}</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Ok</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+<div id="myModal" #AddedMem1 class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header addedmem">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h3 class="modal-title"> Members Added</h3>
+      </div>
+      <div class="modal-body addmem1">
+        <p *ngIf="credit1">{{credit1}}</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Ok</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+<div id="myModal" #AddedMem2 class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header addedmem">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h3 class="modal-title">Members Added</h3>
+      </div>
+      <div class="modal-body addmem1">
+        <p >{{credit2}}</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Ok</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ <div class="modal fade" id="myPopup" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header text-center bsck">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h3 class="modal-title">Cibil Score File</h3>
+        </div>
+        <div class="modal-body">
+         <img [src]="modelImg" class="imgr">
+          
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" data-dismiss="modal">ok</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  

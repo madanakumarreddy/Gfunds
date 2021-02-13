@@ -1,0 +1,72 @@
+.lenderrespp{
+	margin-top: 100px;
+	margin-left: 71px;
+}
+.tabledashboard{
+	    margin-left: 157px;
+    margin-top: 77px;
+}
+
+.funsumm{
+	
+	width: 5%;
+}
+.formenchoice {
+  width: 100%;
+  margin-left: 29px;
+  padding: 5px;
+  margin-top: 1em;
+  margin-bottom: -1em;
+  text-align: center;
+  font-weight: bolder;
+  color: #0a58a4;
+  box-shadow: 3px -1px 12px 0px;
+}
+.containtop{
+	margin-top: 80px;
+}
+.trheight{
+	height: 59px;
+}
+
+table>thead:first-child>tr:first-child>td {
+    background: #0a58a4;
+    color: white;
+    text-align: center;
+    width: 100px;
+}
+
+th {
+    text-align: left;
+    font-size: medium;
+}
+.fundback{
+    
+    margin-bottom: 10px;
+}
+
+@media only screen and (min-width: 360px) and (max-width: 640px){
+	.tabledashboard{
+	margin-left: 0px;
+}
+.aligntop{
+  width: 89%;
+}
+.tabfor{
+  margin-left: 5px; margin-top: 15px;
+}
+.tabfor2{
+  margin-left: -190px;
+  width: 98%;
+  position: fixed;
+}
+::ng-deep.cdk-overlay-pane{
+  max-width: 92vw !important;
+}
+
+}
+
+
+.tabfor{
+  margin-left: 188px; margin-top: 15px;
+}

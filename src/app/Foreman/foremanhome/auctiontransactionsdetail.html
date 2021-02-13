@@ -1,0 +1,135 @@
+  <div>
+  <h2 class="text-center  toppest1 col-md-offset-1 col-md-10">
+    Member Transaction</h2></div>
+    <div class="col-md-offset-1 col-md-10 col-xs-12 col-sm-12 membertrandetails">
+      <div class="col-md-12">
+  <button class="btn btn-success " (click)="backToAuction()" style="background-color: #337ab7;margin-left:10px;">Back</button>
+  <!-- <button class="btn btn-success " (click)="updateAuctiondate
+()" style="background-color: #337ab7;float: right;">Update Auction Date & Time</button> -->
+</div>
+<div class="col-md-12">
+  <div class="table-responsive">
+    <table class="table  table-bordered">
+      <thead>
+        <tr>
+          <th>Seri No</th>
+          <th>Member Mobile Number</th>
+          <th>Member Name</th>
+          <th>Member Count</th>
+          <th>Transaction Id</th>
+          <th>Get Loan</th>
+          <th>RTM Status</th>
+        </tr>
+      </thead>
+      <tbody class="tableText">
+        <tr *ngFor="let data of showmembertrans; let i=index">
+          <td>{{i+1}}</td>
+          <td>{{data.member[0].mobile_number}}</td>
+          <td>{{data.member[0].full_name}}</td>
+          <td>{{data.member_count}}</td>
+          <td>
+            <button class="btn btn-danger" *ngIf="data.id1&&(data.check==null)" (click)="veryfy1transaction(data)" [disabled]="data.transaction_id == 'xxxxxxxxxx'" >{{data.transaction_id}}</button>
+            <button class="btn btn-success" *ngIf="(data.check==true)" (click)="veryfy1transaction(data)">{{data.transaction_id}}a</button>
+            <!-- <button class="btn btn-primary" *ngIf="(!data.id1)&&(!(data.rtm_status==false))" (click)="enter1transaction(data)">{{data.transaction_id}}NoTransactionId</button> -->
+            <!-- <button class="btn btn-primary" *ngIf="data.rtm_status==true
+            " (click)="enter1transaction(data)">{{data.transaction_id}}</button> -->
+          </td>
+          <td>
+            <button class="btn btn-success" click='this.disabled = true' [disabled]="data.transaction_id != 'xxxxxxxxxx'" (click)="rtmloan(data)">RTM</button>
+          </td>
+          <td>
+            <h5 *ngIf="((data.transaction_id)&&(data.rtm_status==true))">RTM Loan Approved</h5>
+            <h5 *ngIf="data.rtm_status==false">RTM Loan Pending</h5>
+          </td>
+        </tr>
+      </tbody>
+
+    </table>
+  </div>
+</div>
+</div>
+
+
+
+<div class="modal fade" #updateauction id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="!submitted">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header" style="background-color: #337ab7">
+        <h3 class="modal-title" id="exampleModalLabel" style="text-align: center;color: white">Update Auction Date
+        <button type="button" class="close" style="color: white" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        </h3>
+      </div>
+      <div class="modal-body text-center">
+      <label>Set Date</label><input type="Date" name="Date" [(ngModel)]="date">&nbsp;&nbsp;
+      <label>Set Time</label><input type="Time" name="Time"[(ngModel)]="time">&nbsp;&nbsp;
+      <button type="button" (click)="auctionset(date,time)" data-dismiss="modal">Set</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+<div class="modal fade" #verif1ytrans id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="!submitted">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header" style="background-color: #337ab7">
+        <h3 class="modal-title" id="exampleModalLabel" style="text-align: center;color: white">Transaction Status
+        <button type="button" class="close" style="color: white" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        </h3>
+      </div>
+      <div class="modal-body text-center">
+        <button class="btn btn-success" data-dismiss="modal" (click)="approvetrans('VERIFIED')">Approve</button>
+        <button class="btn btn-danger" style="margin-left: 12px" (click)="approvetrans('UNVERFIED')" data-dismiss="modal">DisApprove</button>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade" #verif1ytrans1 id="exampleModal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="!submitted">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header" style="background-color: #337ab7">
+        <h3 class="modal-title" id="exampleModalLabel" style="text-align: center;color: white">Enter Transaction Id
+        <button type="button" class="close" style="color: white" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        </h3>
+      </div>
+      <div class="form-inline" style="text-align: center;margin-top: 15px;">
+        <div class="form-group">
+          <label for="email">Transaction ID:</label>
+          <input type="text" class="form-control" placeholder="Enter Transaction ID" [(ngModel)]="transdata">
+        </div>
+      </div>
+      <div class="modal-body text-center">
+        <button class="btn btn-success" data-dismiss="modal" (click)="s1avetran1s(transdata)">Submit</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" #rtm id="exampleModal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="!submitted">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header" style="background-color: #337ab7">
+        <h3 class="modal-title" id="exampleModalLabel" style="text-align: center;color: white">RTM Loan Status
+        <button type="button" class="close" style="color: white" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        </h3>
+      </div>
+      <div class="form-inline" style="text-align: center;margin-top: 15px;font-size: 20px;">
+        <p>RTM Loan Requested Successfully</p>
+      </div>
+      <div class="modal-body text-right">
+        <button class="btn btn-primary" data-dismiss="modal">ok</button>
+      </div>
+    </div>
+  </div>
+</div>

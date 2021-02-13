@@ -1,0 +1,1012 @@
+<div class="memberpro col-md-10 col-xs-12 col-md-offset-1">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="board">
+        <div class="board-inner">
+          <ul class="nav nav-pills col-md-10 col-md-offset-2" id="myTab">
+            <div class="liner"></div>
+            <li class="active">
+              <a href="#pd" data-toggle="pill" title="Personal Details">
+                <span class="round-tabs one">
+                  <i class="glyphicon glyphicon-user"></i>
+                </span>
+              </a>
+            </li>
+            <li>
+              <a href="#bank" data-toggle="pill" title="Bank Details">
+                <span class="round-tabs two">
+                  <i class="glyphicon glyphicon-piggy-bank"></i>
+                </span>
+              </a>
+            </li>
+            <li>
+              <a href="#rds" data-toggle="pill" title="Residential Details">
+                <span class="round-tabs three">
+                  <i class="glyphicon glyphicon-home"></i>
+                </span>
+              </a>
+            </li>
+            <li>
+              <a href="#pds" data-toggle="pill" title="Proffessional Details">
+                <span class="round-tabs four">
+                  <i class="glyphicon glyphicon-briefcase"></i>
+                </span>
+              </a>
+            </li>
+            <li>
+              <a href="#loans" data-toggle="pill" title="Loan Deatails">
+                <span class="round-tabs five">
+                  <i class="glyphicon glyphicon-credit-card"></i>
+                </span>
+              </a>
+            </li>
+            <li>
+              <a href="#agrmnt" data-toggle="pill" title="Agrement Copy">
+                <span class="round-tabs six">
+                  <i class="glyphicon glyphicon-download-alt"></i>
+                </span>
+              </a>
+            </li>
+            <li class="editdiv">
+              <button class="btn btn-primary editbutton" *ngIf="!memberdetails.edit" [disabled]="memberdetails.edit" (click)="memberdetails.edit = !memberdetails.edit">Edit</button>
+              <div ng-show="viewmemberprofileloading">
+                <div class="loader"></div>
+              </div>
+            </li>
+            <div class="editsave">
+            <button class="btn btn-primary editbutton1 cancelbutton" *ngIf="memberdetails.edit" [disabled]="!memberdetails.edit" (click)="cancel()">Cancel</button>
+            <button class="btn btn-primary editbutton1 editbutton2" *ngIf="memberdetails.edit" [disabled]="!memberdetails.edit" (click)="savememberdetails(memberdetails)">Save</button>
+          </div>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="tableborder col-md-10 col-xs-12 col-md-offset-2">
+    <div class="table-responsive">
+      <div class="tab-content">
+        <div class="tab-pane fade in active tabl" id="pd">
+          <table class="table  table-striped">
+            <thead>
+              <tr>
+                <td colspan="2"><b>PROFILE DETAILS</b></td>
+              </tr>
+            </thead>
+            <tbody class="tableText text-center">
+              <tr>
+                <th style="width: 50%;">Name</th>
+                <th>
+                  <input type="text" [ngClass]="{'noeditable': !memberdetails.edit, 'editing': memberdetails.edit}" [(ngModel)]="memberdetails[0].full_name" [disabled]="!memberdetails.edit">
+                </th>
+              </tr>
+              <tr>
+                <th>DOB</th>
+                <th>
+                  <input type="text" [ngClass]="{'noeditable': !memberdetails.edit, 'editing': memberdetails.edit}" [disabled]="!memberdetails.edit" [(ngModel)]="memberdetails[0].date_of_birth">
+                </th>
+              </tr>
+              <tr>
+                <th>Gender</th>
+                <th>
+                  <select [ngClass]="{'noeditable': !memberdetails.edit, 'editing': memberdetails.edit}" [(ngModel)]="memberdetails[0].gender" [disabled]="!memberdetails.edit">
+                    <option value="" [disabled]="true">--- Select Gender --- </option>
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                  </select>
+                </th>
+              </tr>
+              <tr>
+                <th>Qualification</th>
+                <th>
+                  <select [ngClass]="{'noeditable': !memberdetails.edit, 'editing': memberdetails.edit}" [(ngModel)]="memberdetails[0].qualification" [disabled]="!memberdetails.edit">
+                    <option value="" [disabled]="true">--- Select qualification --- </option>
+                    <option *ngFor="let c of qualification"> {{c}} </option>
+                  </select>
+                </th>
+              </tr>
+              <tr>
+                <th>Mobile No</th>
+                <th>
+                  <input type="text" [ngClass]="{'noeditable': !memberdetails.edit, 'editing': memberdetails.edit}" [(ngModel)]="memberdetails[0].mobile_number" [disabled]="!memberdetails.edit">
+                </th>
+              </tr>
+              <tr>
+                <th>State</th>
+                <th>
+                  <select [ngClass]="{'noeditable': !memberdetails.edit, 'editing': memberdetails.edit}" [disabled]="!memberdetails.edit" (change)="changeCountry()" [(ngModel)]="memberdetails[0].state">
+                    <option>----select state----</option>
+                    <option *ngFor="let count of countryList">{{count.name}}</option>
+                  </select>
+                </th>
+              </tr>
+              <tr>
+                <th>District</th>
+                <th>
+                  <select [ngClass]="{'noeditable': !memberdetails.edit, 'editing': memberdetails.edit}" [disabled]="!memberdetails.edit" [(ngModel)]="memberdetails[0].district">
+                    <option></option>
+                    <option>----select district----</option>
+                    <option *ngFor="let city of cities">{{city}}</option>
+                  </select>
+                </th>
+              </tr>
+              <tr>
+                <th>City</th>
+                <th>
+                  <input type="text" [ngClass]="{'noeditable': !memberdetails.edit, 'editing': memberdetails.edit}" [(ngModel)]="memberdetails[0].city" [disabled]="!memberdetails.edit">
+                </th>
+              </tr>
+              <tr>
+                <th>Fraternity Score </th>
+                <th>
+                  <!-- {{memberdetails[0].gchits_score}} -->
+                </th>
+              </tr>
+              <tr>
+                <th>Credit Limit</th>
+                <th>
+                  {{memberdetails[0].credit_limit}}
+                </th>
+              </tr>
+              <tr>
+                <th>Cibil Score</th>
+                <th>
+                  {{memberdetails[0].cibil_score}}
+                </th>
+              </tr>
+              <tr>
+                <th class="viewspan">Upload Profile Photo</th>
+                <td>
+                  <input type="file" name="front_photo" file-model="front_photo" [(ngModel)]="front_photo" class="form-control" (change)="selectphoto($event)"><br>
+                  <button class="btn btn-primary bualign" (click)="memberprofileimage()" id="member">Upload</button>&nbsp;
+                  <button class="btn btn-danger" ng-click="memberprofileimage1(front_photo)" ng-show="uploading" id="member">Cancel</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <table class="table  table-striped">
+            <thead class="profile">
+              <tr>
+                <td colspan="2"><b>MARITAL DETAILS</b></td>
+              </tr>
+            </thead>
+            <tbody class="tableText">
+              <tr>
+                <th style="width: 50%;">Marital Status</th>
+                <th>
+                  <select [ngClass]="{'noeditable': !memberdetails.edit, 'editing': memberdetails.edit}" [(ngModel)]="memberdetails[0].marital_status" [disabled]="!memberdetails.edit">
+                    <option value="" [disabled]="true">--- Select Marital Status ---</option>
+                    <option value="Married">Married</option>
+                    <option value="Unmarried">Unmarried</option>
+                    <option value="Divorcee">Divorcee</option>
+                    <option value="Spouse Deceased">Spouse Deceased</option>
+                  </select>
+                </th>
+              </tr>
+              <tr *ngIf="memberdetails[0].marital_status=='Married'">
+                <th>Spouse Name</th>
+                <th>
+                  <input type="text" [ngClass]="{'noeditable': !memberdetails.edit, 'editing': memberdetails.edit}" [(ngModel)]="memberdetails[0].spouse_name" [disabled]="!memberdetails.edit">
+                </th>
+              </tr>
+              <tr *ngIf="memberdetails[0].marital_status=='Married'">
+                <th>Spouse Number</th>
+                <th>
+                  <input type="text" maxlength="10" minlength="10" [ngClass]="{'noeditable': !memberdetails.edit, 'editing': memberdetails.edit}" [(ngModel)]="memberdetails[0].spouse_number" [disabled]="!memberdetails.edit">
+                </th>
+              </tr>
+              <tr *ngIf="memberdetails[0].marital_status=='Married'">
+                <th>Date Of Marriage</th>
+                <th>
+                  <input id="maryydate" type="text" [ngClass]="{'noeditable': !memberdetails.edit, 'editing': memberdetails.edit}" [(ngModel)]="memberdetails[0].dat_of_marriage" [disabled]="!memberdetails.edit">
+                </th>
+              </tr>
+              <tr *ngIf="memberdetails[0].marital_status=='Married'">
+                <th>Spouse Work</th>
+                <th>
+                  <select [ngClass]="{'noeditable': !memberdetails.edit, 'editing': memberdetails.edit}" [(ngModel)]="memberdetails[0].spouse_work" [disabled]="!memberdetails.edit">
+                    <option value="" [disabled]="true">--- Select ---</option>
+                    <option value="House Maker">House Maker</option>
+                    <option value="Self Employed">Self Employed</option>
+                    <option value="Salaried">Salaried</option>
+                  </select>
+                </th>
+              </tr>
+              <tr *ngIf="memberdetails[0].marital_status=='Divorcee'">
+                <th>Separated Since</th>
+                <th>
+                  <select [ngClass]="{'noeditable': !memberdetails.edit, 'editing': memberdetails.edit}" [(ngModel)]="memberdetails[0].seperated_since" [disabled]="!memberdetails.edit">
+                    <option value="">--- Select ---</option>
+                    <option value="1">1 Year</option>
+                    <option value="2">2 Years</option>
+                    <option value="3">3 Years</option>
+                    <option value="4">4+ Years</option>
+                  </select>
+                </th>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="tab-pane fade tabl" id="bank">
+          <table class="table  table-striped">
+            <thead class="profile">
+              <tr>
+                <td colspan="2"><b>BANK DETAILS</b></td>
+              </tr>
+            </thead>
+            <tbody class="tableText">
+              <tr>
+                <th style="width: 50%;">Bank</th>
+                <th>
+                  <select [ngClass]="{'noeditable': !memberdetails.edit, 'editing': memberdetails.edit}" [(ngModel)]="memberdetails[0].selected_bank" [disabled]="!memberdetails.edit">
+                    <option value="" [disabled]="true">--- Select Bank --</option>
+                    <option *ngFor="let c of bankname"> {{c}} </option>
+                  </select>
+                </th>
+              </tr>
+              <tr *ngIf="memberdetails[0].selected_bank=='Others'">
+                <th>Other Bank</th>
+                <th>
+                  <div ng-show="memberdetails[0].selected_bank=='Others'">
+                    <input type="text" [ngClass]="{'noeditable': !memberdetails.edit, 'editing': memberdetails.edit}" [(ngModel)]="bankname" [disabled]="edit" ng-change="selotherbank(otherbanks)" placeholder="Enter the bank name" ng-trim="false" no-repeat dont-begin-with-zero="a-z A-Z">
+                  </div>
+                </th>
+              </tr>
+              <tr>
+                <th>IFSC Number</th>
+                <th>
+                  <input type="text" [ngClass]="{'noeditable': !memberdetails.edit, 'editing': memberdetails.edit}" [(ngModel)]="memberdetails[0].ifsc_code" [disabled]="!memberdetails.edit">
+                </th>
+              </tr>
+              <tr>
+                <th>Branch Name</th>
+                <th>
+                  <input type="text" [ngClass]="{'noeditable': !memberdetails.edit, 'editing': memberdetails.edit}" [(ngModel)]="memberdetails[0].branch_name" [disabled]="!memberdetails.edit">
+                </th>
+              </tr>
+              <tr>
+                <th>Account Name</th>
+                <th>
+                  <input type="text" [ngClass]="{'noeditable': !memberdetails.edit, 'editing': memberdetails.edit}" [(ngModel)]="memberdetails[0].holder_name" [disabled]="!memberdetails.edit">
+                </th>
+              </tr>
+              <tr>
+                <th>Account Number</th>
+                <th>
+                  <input type="text" [ngClass]="{'noeditable': !memberdetails.edit, 'editing': memberdetails.edit}" [(ngModel)]="memberdetails[0].account_number" [disabled]="!memberdetails.edit">
+                </th>
+              </tr>
+              <tr>
+                <th>Account Type</th>
+                <th>
+                  <select [ngClass]="{'noeditable': !memberdetails.edit, 'editing': memberdetails.edit}" [(ngModel)]="memberdetails[0].account_type" [disabled]="!memberdetails.edit">
+                    <option value="" [disabled]="true">--Select Option--</option>
+                    <option *ngFor="let account of banktype"> {{account}} </option>
+                  </select>
+                </th>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="tab-pane fade tabl" id="rds">
+          <table class="table  table-striped">
+            <thead class="profile">
+              <tr>
+                <td colspan="2"><b>RESIDENTIAL DETAILS</b></td>
+              </tr>
+            </thead>
+            <tbody class="tableText">
+              <tr>
+                <th style="width: 50%;">Present Address Status</th>
+                <th>
+                  <select [ngClass]="{'noeditable': !memberdetails.edit, 'editing': memberdetails.edit}" [(ngModel)]="memberdetails[0].present_address_type" [disabled]="!memberdetails.edit">
+                    <option value="" [disabled]="true">--- Select Present Address Status --- </option>
+                    <option *ngFor="let addrs of addresstype"> {{addrs}} </option>
+                  </select>
+                </th>
+              </tr>
+              <tr>
+                <th>Staying From</th>
+                <th>
+                  <select [ngClass]="{'noeditable': !memberdetails.edit, 'editing': memberdetails.edit}" ng-options="stay for stay in stayduration" [(ngModel)]="memberdetails[0].staying_from" [disabled]="!memberdetails.edit">
+                    <option value="" [disabled]="true">--For how long you had been at this address--
+                    </option>
+                    <option *ngFor="let dura of stayduration">{{dura}}</option>
+                  </select>
+                </th>
+              </tr>
+              <tr>
+                <th>House No</th>
+                <th>
+                  <input type="text" [ngClass]="{'noeditable': !memberdetails.edit, 'editing': memberdetails.edit}" [(ngModel)]="memberdetails[0].house_no" [disabled]="!memberdetails.edit">
+                </th>
+              </tr>
+              <tr>
+                <th>Building Name</th>
+                <th>
+                  <input type="text" [ngClass]="{'noeditable': !memberdetails.edit, 'editing': memberdetails.edit}" [(ngModel)]="memberdetails[0].building_name" [disabled]="!memberdetails.edit">
+                </th>
+              </tr>
+              <tr>
+                <th>Street</th>
+                <th>
+                  <input type="text" [ngClass]="{'noeditable': !memberdetails.edit, 'editing': memberdetails.edit}" [(ngModel)]="memberdetails[0].street" [disabled]="!memberdetails.edit">
+                </th>
+              </tr>
+              <tr>
+                <th>Landmark</th>
+                <th>
+                  <input type="text" [ngClass]="{'noeditable': !memberdetails.edit, 'editing': memberdetails.edit}" [(ngModel)]="memberdetails[0].landmark" [disabled]="!memberdetails.edit" ng-required="true">
+                </th>
+              </tr>
+              <tr>
+                <th>State</th>
+                <th>
+                  <select [ngClass]="{'noeditable': !memberdetails.edit, 'editing': memberdetails.edit}" [disabled]="!memberdetails.edit" (change)="changeCountry()" [(ngModel)]="memberdetails[0].state">
+                    <option></option>
+                    <option>----select state----</option>
+                    <option *ngFor="let count of countryList">{{count.name}}</option>
+                  </select>
+                </th>
+              </tr>
+              <tr>
+                <th>District</th>
+                <th>
+                  <select [ngClass]="{'noeditable': !memberdetails.edit, 'editing': memberdetails.edit}" [disabled]="!memberdetails.edit" [(ngModel)]="memberdetails[0].district">
+                    <option></option>
+                    <option>----select district----</option>
+                    <option *ngFor="let city of cities">{{city}}</option>
+                  </select>
+                </th>
+              </tr>
+              <tr>
+                <th>City</th>
+                <th>
+                  <input type="text" [ngClass]="{'noeditable': !memberdetails.edit, 'editing': memberdetails.edit}" [(ngModel)]="memberdetails[0].city" [disabled]="!memberdetails.edit">
+                </th>
+              </tr>
+              <tr>
+                <th>PIN Code</th>
+                <th>
+                  <input type="text" [ngClass]="{'noeditable': !memberdetails.edit, 'editing': memberdetails.edit}" [(ngModel)]="memberdetails[0].pincode" [disabled]="!memberdetails.edit">
+                </th>
+              </tr>
+              <tr *ngIf="memberdetails[0].present_address_type=='Rented'">
+                <th>Permanent House No</th>
+                <th>
+                  <input type="text" [ngClass]="{'noeditable': !memberdetails.edit, 'editing': memberdetails.edit}" [(ngModel)]="memberdetails[0].permanent_houseno" [disabled]="!memberdetails.edit">
+                </th>
+              </tr>
+              <tr *ngIf="memberdetails[0].present_address_type=='Rented'">
+                <th>Permanent Landmark</th>
+                <th>
+                  <input type="text" [ngClass]="{'noeditable': !memberdetails.edit, 'editing': memberdetails.edit}" [(ngModel)]="memberdetails[0].permanent_landmark" [disabled]="!memberdetails.edit">
+                </th>
+              </tr>
+              <tr *ngIf="memberdetails[0].present_address_type=='Rented'">
+                <th>Permanent Street</th>
+                <th>
+                  <input type="text" [ngClass]="{'noeditable': !memberdetails.edit, 'editing': memberdetails.edit}" [(ngModel)]="memberdetails[0].permanent_street" [disabled]="!memberdetails.edit">
+                </th>
+              </tr>
+              <tr *ngIf="memberdetails[0].present_address_type=='Rented'">
+                <th>Permanent State</th>
+                <th>
+                  <select [ngClass]="{'noeditable': !memberdetails.edit, 'editing': memberdetails.edit}" [(ngModel)]="memberdetails[0].permanent_state" (change)="changepermanentstate(memberdetails[0].permanent_state)" [disabled]="!memberdetails.edit">
+                    <option>----select state----</option>
+                    <option *ngFor="let count of permanentstates">{{count.name}}</option>
+                  </select>
+                </th>
+              </tr>
+              <tr *ngIf="memberdetails[0].present_address_type=='Rented'">
+                <th>Permanent District</th>
+                <th>
+                  <select [ngClass]="{'noeditable': !memberdetails.edit, 'editing': memberdetails.edit}" [disabled]="!memberdetails.edit" [(ngModel)]="memberdetails[0].permanent_district">
+                    <option></option>
+                    <option>----select district----</option>
+                    <option *ngFor="let city of permanentdistricts">{{city}}</option>
+                  </select>
+                </th>
+              </tr>
+              <tr *ngIf="memberdetails[0].present_address_type=='Rented'">
+                <th>Permanent City</th>
+                <th>
+                  <input type="text" [ngClass]="{'noeditable': !memberdetails.edit, 'editing': memberdetails.edit}" [(ngModel)]="memberdetails[0].permanent_city" [disabled]="!memberdetails.edit">
+                </th>
+              </tr>
+              <tr *ngIf="memberdetails[0].present_address_type=='Rented'">
+                <th>Permanent PIN Code</th>
+                <th>
+                  <input type="text" [ngClass]="{'noeditable': !memberdetails.edit, 'editing': memberdetails.edit}" [(ngModel)]="memberdetails[0].permanent_pincode" [disabled]="!memberdetails.edit">
+                </th>
+              </tr>
+              <tr *ngIf="memberdetails[0].present_address_type=='Owned'">
+                <th>Permanent Address</th>
+                <th>Same as the Present Address</th>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="tab-pane fade tabl" id="pds">
+          <div ng-show="memberdetails[0].profession=='Farmer'">
+            <table class="table  table-striped">
+              <thead class="profile">
+                <tr>
+                  <td colspan="2"><b>PROFESSIONAL DETAILS</b></td>
+                </tr>
+              </thead>
+              <tbody class="tableText">
+                <tr>
+                  <th style="width: 50%;">Profession Type</th>
+                  <th>
+                    <select [ngClass]="{'noeditable': !memberdetails.edit, 'editing': memberdetails.edit}" [(ngModel)]="memberdetails[0].profession" [disabled]="!memberdetails.edit">
+                      <option value="" [disabled]="true">--- Profession Type --- </option>
+                      <option value="Salaried">Salaried</option>
+                      <option value="Self Employed">Self Employed</option>
+                      <option value="Farmer">Farmer</option>
+                    </select>
+                  </th>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="table-responsive" *ngIf="memberdetails[0].profession=='Salaried'">
+            <table class="table  table-striped">
+              <thead class="profile">
+                <tr>
+                  <td colspan="2"><b>PROFESSIONAL DETAILS</b></td>
+                </tr>
+              </thead>
+              <tbody class="tableText">
+                <tr>
+                  <th style="width: 50%;">Profession Type</th>
+                  <th>
+                    <select [ngClass]="{'noeditable': !memberdetails.edit, 'editing': memberdetails.edit}" [(ngModel)]="memberdetails[0].profession" [disabled]="!memberdetails.edit">
+                      <option value="" [disabled]="true">--- Profession Type --- </option>
+                      <option value="Salaried">Salaried</option>
+                      <option value="Self Employed">Self Employed</option>
+                      <option value="Farmer">Farmer</option>
+                    </select>
+                  </th>
+                </tr>
+                <tr>
+                  <th>Sector</th>
+                  <th>
+                    <select [ngClass]="{'noeditable': !memberdetails.edit, 'editing': memberdetails.edit}" [(ngModel)]="memberdetails[0].are_you_in" [disabled]="!memberdetails.edit">
+                      <option value="" [disabled]="true">--- Sector --- </option>
+                      <option value="Government Job">Government Job</option>
+                      <option value="Private Job">Private Job</option>
+                    </select>
+                  </th>
+                </tr>
+                <tr>
+                  <th>Organization Name</th>
+                  <th>
+                    <input type="text" [ngClass]="{'noeditable': !memberdetails.edit, 'editing': memberdetails.edit}" [(ngModel)]="memberdetails[0].organization_name" [disabled]="!memberdetails.edit" only-alphabets ng-required="true">
+                  </th>
+                </tr>
+                <tr>
+                  <th>Designation</th>
+                  <th>
+                    <input type="text" [ngClass]="{'noeditable': !memberdetails.edit, 'editing': memberdetails.edit}" [(ngModel)]="memberdetails[0].designation" [disabled]="!memberdetails.edit" only-alphabets ng-required="true">
+                  </th>
+                </tr>
+                <tr>
+                  <th>Id Card Number</th>
+                  <th>
+                    <input type="text" [ngClass]="{'noeditable': !memberdetails.edit, 'editing': memberdetails.edit}" [(ngModel)]="memberdetails[0].id_card_number" maxlength="10" dont-begin-with-zero="0-9a-zA-Z" [disabled]="!memberdetails.edit">
+                  </th>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div *ngIf="memberdetails[0].profession=='Self Employed'">
+            <div class="table-responsive" ng-hide="memberdetails[0].are_you_in=='Shop Owner' || memberdetails[0].are_you_in=='Small Business'">
+              <table class="table  table-striped">
+                <thead>
+                  <tr>
+                    <td colspan="2"><b>BUSINESS DETAILS</b></td>
+                  </tr>
+                </thead>
+                <tbody class="tableText">
+                  <tr>
+                    <th style="width: 50%;">Business Type</th>
+                    <th>
+                      <select [ngClass]="{'noeditable': !memberdetails.edit, 'editing': memberdetails.edit}" [(ngModel)]="memberdetails[0].are_you_in" [disabled]="!memberdetails.edit">
+                        <option value="" [disabled]="true">--- Sector --- </option>
+                        <option value="Shop Owner">Shop Owner</option>
+                        <option value="Small Business">Small Business</option>
+                      </select>
+                    </th>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div *ngIf="memberdetails[0].are_you_in=='Shop Owner'">
+            <table class="table-responsive">
+              <table class="table  table-bordered">
+                <thead>
+                  <tr>
+                    <td colspan="2"><b>BUSINESS DETAILS</b></td>
+                  </tr>
+                </thead>
+                <tbody class="tableText">
+                  <tr>
+                    <th>Profession Type</th>
+                    <th>
+                      <select [ngClass]="{'noeditable': !memberdetails.edit, 'editing': memberdetails.edit}" [(ngModel)]="memberdetails[0].profession" [disabled]="!memberdetails.edit">
+                        <option value="" [disabled]="true">--- Profession Type --- </option>
+                        <option value="Salaried">Salaried</option>
+                        <option value="Self Employed">Self Employed</option>
+                        <option value="Farmer">Farmer</option>
+                      </select>
+                    </th>
+                  </tr>
+                  <tr>
+                    <th>Business Type</th>
+                    <th>
+                      <select [ngClass]="{'noeditable': !memberdetails.edit, 'editing': memberdetails.edit}" [(ngModel)]="memberdetails[0].are_you_in" [disabled]="!memberdetails.edi">
+                        <option value="" [disabled]="true">--- Sector --- </option>
+                        <option value="Shop Owner">Shop Owner</option>
+                        <option value="Small Business">Small Business</option>
+                      </select>
+                    </th>
+                  </tr>
+                  <tr>
+                    <th>Shop Name</th>
+                    <th>
+                      <input type="text" [ngClass]="{'noeditable': !memberdetails.edit, 'editing': memberdetails.edit}" [(ngModel)]="memberdetails[0].shop_name" [disabled]="!memberdetails.edit" only-alphabets ng-required="true">
+                    </th>
+                  </tr>
+                  <tr>
+                    <th>Shop Address</th>
+                    <th>
+                      <input type="text" [ngClass]="{'noeditable': !memberdetails.edit, 'editing': memberdetails.edit}" [(ngModel)]="memberdetails[0].shop_address" ng-required="true" dont-begin-with-zero="a-zA-Z 0-9-&/,#()-" no-repeat ng-trim="false" [disabled]="!memberdetails.edit">
+                    </th>
+                  </tr>
+                  <tr>
+                    <th>Shop Contact Number</th>
+                    <th>
+                      <input type="text" [ngClass]="{'noeditable': !memberdetails.edit, 'editing': memberdetails.edit}" [(ngModel)]="memberdetails[0].contact_phone_number" [disabled]="!memberdetails.edit" dont-begin-with-zero="mobilenumber" maxlength="10" minlength="10">
+                    </th>
+                  </tr>
+                </tbody>
+              </table>
+            </table>
+          </div>
+          <div class="table-responsive" *ngIf="memberdetails[0].are_you_in=='Small Business'">
+            <table class="table  table-striped">
+              <thead>
+                <tr>
+                  <td colspan="2"><b>BUSINESS DETAILS</b></td>
+                </tr>
+              </thead>
+              <tbody class="tableText">
+                <tr>
+                  <th style="width: 50%;">Profession Type</th>
+                  <th>
+                    <select [ngClass]="{'noeditable': !memberdetails.edit, 'editing': memberdetails.edit}" [(ngModel)]="memberdetails[0].profession" [disabled]="!memberdetails.edit">
+                      <option value="" [disabled]="true">--- Profession Type --- </option>
+                      <option value="Salaried">Salaried</option>
+                      <option value="Self Employed">Self Employed</option>
+                      <option value="Farmer">Farmer</option>
+                    </select>
+                  </th>
+                </tr>
+                <tr>
+                  <th>Business Type</th>
+                  <th>
+                    <select [ngClass]="{'noeditable': !memberdetails.edit, 'editing': memberdetails.edit}" [(ngModel)]="memberdetails[0].are_you_in" [disabled]="!memberdetails.edit">
+                      <option value="" [disabled]="true">--- Sector --- </option>
+                      <option value="Shop Owner">Shop Owner</option>
+                      <option value="Small Business">Small Business</option>
+                    </select>
+                  </th>
+                </tr>
+                <tr>
+                  <th>Business Name</th>
+                  <th>
+                    <input type="text" [ngClass]="{'noeditable': !memberdetails.edit, 'editing': memberdetails.edit}" [(ngModel)]="memberdetails[0].busines_name" [disabled]="!memberdetails.edit">
+                  </th>
+                </tr>
+                <tr>
+                  <th>Partner Name</th>
+                  <th>
+                    <input type="text" [ngClass]="{'noeditable': !memberdetails.edit, 'editing': memberdetails.edit}" [(ngModel)]="memberdetails[0].partner_name" [disabled]="!memberdetails.edit">
+                  </th>
+                </tr>
+                <tr>
+                  <th>Year Of Established</th>
+                  <th>
+                    <input type="text" [disabled]="!memberdetails.edit" [ngClass]="{'noeditable': !memberdetails.edit, 'editing': memberdetails.edit}">
+                  </th>
+                </tr>
+                <tr>
+                  <th>DIN</th>
+                  <th>
+                    <input type="text" [ngClass]="{'noeditable': !memberdetails.edit, 'editing': memberdetails.edit}" [(ngModel)]="memberdetails[0].din" [disabled]="!memberdetails.edit" minlength="8" maxlength="12" dont-begin-with-zero="0-9" only digits>
+                  </th>
+                </tr>
+                <tr>
+                  <th>Industry Type</th>
+                  <th>
+                    <input type="text" [ngClass]="{'noeditable': !memberdetails.edit, 'editing': memberdetails.edit}" [(ngModel)]="memberdetails[0].industry_type" [disabled]="!memberdetails.edit">
+                  </th>
+                </tr>
+                <tr>
+                  <th>Landmark</th>
+                  <th>
+                    <input type="text" [ngClass]="{'noeditable': !memberdetails.edit, 'editing': memberdetails.edit}" [(ngModel)]="memberdetails[0].busines_landmark" [disabled]="!memberdetails.edit" only-alphabets ng-required="true">
+                  </th>
+                </tr>
+                <tr>
+                  <th>State</th>
+                  <th>
+                    <select [ngClass]="{'noeditable': !memberdetails.edit, 'editing': memberdetails.edit}" [(ngModel)]="state" ng-change="statename2(state)" [disabled]="!memberdetails.edit">
+                      <option></option>
+                      <option>----select state----</option>
+                      <option></option>
+                    </select>
+                  </th>
+                </tr>
+                <tr>
+                  <th>District</th>
+                  <th>
+                    <select [ngClass]="{'noeditable': !memberdetails.edit, 'editing': memberdetails.edit}" [(ngModel)]="district" [disabled]="!memberdetails.edit">
+                      <option value="{{district}}">{{district}}</option>
+                      <option value="{{item}}" ng-repeat="item in dist">{{item}}</option>
+                    </select>
+                  </th>
+                </tr>
+                <tr>
+                  <th>City</th>
+                  <th>
+                    <input type="text" [ngClass]="{'noeditable': !memberdetails.edit, 'editing': memberdetails.edit}" [(ngModel)]="memberdetails[0].city" [disabled]="!memberdetails.edit" only-alphabets ng-required="true">
+                  </th>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="tab-pane fade tabl" id="agrmnt">
+          <div class="table-responsive">
+            <table class="table  table-striped">
+              <thead class="profile">
+                <tr>
+                  <td colspan="2"><b>VIEW AGREMENT COPY</b></td>
+                </tr>
+              </thead>
+              <tbody class="tableText">
+                <tr>
+                  <th>View Gfund Copy</th>
+                  <th>
+                    <a (click)="openModal(pic1.pic1)" id="abc">click here to View </a>
+                  </th>
+                </tr>
+                <tr>
+                  <th>View RTM Copy</th>
+                  <th>
+                    <a (click)="openModal1(pic1.pic2)" id="abc">click here to View </a>
+                  </th>
+                </tr>
+                <tr>
+                  <th>View Additional Copy</th>
+                  <th>
+                    <a (click)="openModal2(pic1.pic3)" id="abc">click here to View </a>
+                  </th>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="tab-pane fade tabl" id="loans">
+          <div class="table-responsive">
+            <table class="table  table-striped">
+              <thead class="profile">
+                <tr>
+                  <td colspan="2"><b>FINANCIAL DETAILS - TWO WHEELER LOAN DETAILS</b></td>
+                </tr>
+              </thead>
+              <tbody class="tableText">
+                <tr>
+                  <th style="width: 50%;">Two Wheeler Loan</th>
+                  <th>
+                    <select [ngClass]="{'noeditable': !memberdetails.edit, 'editing': memberdetails.edit}" [(ngModel)]="memberdetails[0].running_two_wheeler_loan" [disabled]="!memberdetails.edit">
+                      <option value="" [disabled]="true">N/A</option>
+                      <option value="Yes">Yes</option>
+                      <option value="No">No</option>
+                    </select>
+                  </th>
+                </tr>
+                <tr *ngIf="memberdetails[0].running_two_wheeler_loan=='Yes'">
+                  <th style="width: 50%;">Bank Name</th>
+                  <th>
+                    <select [ngClass]="{'noeditable': !memberdetails.edit, 'editing': memberdetails.edit}" ng-options="bank for bank in bankname" [(ngModel)]="memberdetails[0].two_wheeler_bank" [disabled]="!memberdetails.edit">
+                      <option value="" [disabled]="true">--- Select Bank --</option>
+                      <option *ngFor="let c of bankname"> {{c}} </option>
+                    </select>
+                  </th>
+                </tr>
+                <tr *ngIf="memberdetails[0].two_wheeler_bank=='Others'">
+                  <th>Other Bank</th>
+                  <th>
+                    <div ng-show="memberdetails[0].two_wheeler_bank=='Others'">
+                      <input type="text" [ngClass]="{'noeditable': !memberdetails.edit, 'editing': memberdetails.edit}" [(ngModel)]="bankother" [disabled]="edit" ng-change="selotherbank(otherbanks)" placeholder="Enter the bank name" ng-trim="false" no-repeat dont-begin-with-zero="a-z A-Z">
+                    </div>
+                  </th>
+                </tr>
+                <tr *ngIf="memberdetails[0].running_two_wheeler_loan=='Yes'">
+                  <th>Monthly EMI</th>
+                  <th>
+                    <input type="text" [ngClass]="{'noeditable': !memberdetails.edit, 'editing': memberdetails.edit}" [(ngModel)]="memberdetails[0].two_wheeler_emi" [disabled]="!memberdetails.edit" ng-required="true" ng-trim="false" dont-begin-with-zero="0-9" no-repeat maxlength="7">
+                  </th>
+                </tr>
+                <tr *ngIf="memberdetails[0].running_two_wheeler_loan=='Yes'">
+                  <th>EMI Left</th>
+                  <th>
+                    <input type="text" [ngClass]="{'noeditable': !memberdetails.edit, 'editing': memberdetails.edit}" [(ngModel)]="memberdetails[0].two_wheeler_emi_left" [disabled]="!memberdetails.edit" ng-required="true" ng-trim="false" dont-begin-with-zero="0-9" no-repeat maxlength="3">
+                  </th>
+                </tr>
+                <tr *ngIf="memberdetails[0].running_two_wheeler_loan=='Yes'">
+                  <th>Loan Tenure</th>
+                  <th>
+                    <input type="text" [ngClass]="{'noeditable': !memberdetails.edit, 'editing': memberdetails.edit}" [(ngModel)]="memberdetails[0].two_wheeler_tenure" [disabled]="!memberdetails.edit" ng-required="true" ng-trim="false" dont-begin-with-zero="0-9" no-repeat maxlength="3">
+                  </th>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="table-responsive">
+            <table class="table  table-striped">
+              <thead class="profile">
+                <tr>
+                  <td colspan="2"><b>FINANCIAL DETAILS - FOUR WHEELER LOAN DETAILS</b></td>
+                </tr>
+              </thead>
+              <tbody class="tableText">
+                <tr>
+                  <th style="width: 50%;">Four Wheeler Loan</th>
+                  <th>
+                    <select [ngClass]="{'noeditable': !memberdetails.edit, 'editing': memberdetails.edit}" [(ngModel)]="memberdetails[0].running_four_wheeler_loan" [disabled]="!memberdetails.edit">
+                      <option value="" [disabled]="true">N/A</option>
+                      <option value="Yes">Yes</option>
+                      <option value="No">No</option>
+                    </select>
+                  </th>
+                </tr>
+                <tr *ngIf="memberdetails[0].running_four_wheeler_loan=='Yes'">
+                  <th>Bank Name</th>
+                  <th>
+                    <select [ngClass]="{'noeditable': !memberdetails.edit, 'editing': memberdetails.edit}" ng-options="bank for bank in bankname" [(ngModel)]="memberdetails[0].four_wheeler_bank" [disabled]="!memberdetails.edit">
+                      <option value="" [disabled]="true">--- Select Bank --</option>
+                      <option *ngFor="let c of bankname"> {{c}} </option>
+                    </select>
+                  </th>
+                </tr>
+                <tr *ngIf="memberdetails[0].four_wheeler_bank=='Others'">
+                  <th>Other Bank</th>
+                  <th>
+                    <div ng-show="memberdetails[0].four_wheeler_bank=='Others'">
+                      <input type="text" [ngClass]="{'noeditable': !memberdetails.edit, 'editing': memberdetails.edit}" [(ngModel)]="bankother" [disabled]="!memberdetails.edit" ng-change="selectbankother(bankother)" placeholder="Enter the bank name" ng-trim="false" no-repeat dont-begin-with-zero="a-z A-Z">
+                    </div>
+                  </th>
+                </tr>
+                <tr *ngIf="memberdetails[0].running_four_wheeler_loan=='Yes'">
+                  <th>Monthly EMI</th>
+                  <th>
+                    <input type="text" [ngClass]="{'noeditable': !memberdetails.edit, 'editing': memberdetails.edit}" [(ngModel)]="memberdetails[0].four_wheeler_emi" [disabled]="!memberdetails.edit" ng-required="true" ng-trim="false" dont-begin-with-zero="0-9" no-repeat maxlength="7">
+                  </th>
+                </tr>
+                <tr *ngIf="memberdetails[0].running_four_wheeler_loan=='Yes'">
+                  <th>EMI Left</th>
+                  <th>
+                    <input type="text" [ngClass]="{'noeditable': !memberdetails.edit, 'editing': memberdetails.edit}" [(ngModel)]="memberdetails[0].four_wheeler_emi_left" [disabled]="!memberdetails.edit" ng-required="true" ng-trim="false" dont-begin-with-zero="0-9" no-repeat maxlength="3">
+                  </th>
+                </tr>
+                <tr *ngIf="memberdetails[0].running_four_wheeler_loan=='Yes'">
+                  <th>Loan Tenure</th>
+                  <th>
+                    <input type="text" [ngClass]="{'noeditable': !memberdetails.edit, 'editing': memberdetails.edit}" [(ngModel)]="memberdetails[0].four_wheeler_tenure" [disabled]="!memberdetails.edit" ng-required="true" ng-trim="false" dont-begin-with-zero="0-9" no-repeat maxlength="3">
+                  </th>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="table-responsive">
+            <table class="table  table-striped">
+              <thead class="profile">
+                <tr>
+                  <td colspan="2"><b>FINANCIAL DETAILS - PERSONNAL LOAN DETAILS</b></td>
+                </tr>
+              </thead>
+              <tbody class="tableText">
+                <tr>
+                  <th style="width: 50%;">Personal Loan</th>
+                  <th>
+                    <select [ngClass]="{'noeditable': !memberdetails.edit, 'editing': memberdetails.edit}" [(ngModel)]="memberdetails[0].running_personal_loan" [disabled]="edit">
+                      <option value="" [disabled]="true">N/A</option>
+                      <option value="Yes">Yes</option>
+                      <option value="No">No</option>
+                    </select>
+                  </th>
+                </tr>
+                <tr *ngIf="memberdetails[0].running_personal_loan=='Yes'">
+                  <th>Bank Name</th>
+                  <th>
+                    <select [ngClass]="{'noeditable': !memberdetails.edit, 'editing': memberdetails.edit}" ng-options="bank for bank in bankname" [(ngModel)]="memberdetails[0].personal_bank" [disabled]="edit">
+                      <option value="" [disabled]="true">--- Select Bank --</option>
+                      <option *ngFor="let c of bankname"> {{c}} </option>
+                    </select>
+                  </th>
+                </tr>
+                <tr *ngIf="memberdetails[0].personal_bank=='Others'">
+                  <th>Other Bank</th>
+                  <th>
+                    <div ng-show="memberdetails[0].personal_bank=='Others'">
+                      <input type="text" [ngClass]="{'noeditable': !memberdetails.edit, 'editing': memberdetails.edit}" [(ngModel)]="bankother" [disabled]="!memberdetails.edit" ng-change="selectbankother(bankother)" placeholder="Enter the bank name" ng-trim="false" no-repeat dont-begin-with-zero="a-z A-Z">
+                    </div>
+                  </th>
+                </tr>
+                <tr *ngIf="memberdetails[0].running_personal_loan=='Yes'">
+                  <th>Monthly EMI</th>
+                  <th>
+                    <input type="text" [ngClass]="{'noeditable': !memberdetails.edit, 'editing': memberdetails.edit}" [(ngModel)]="memberdetails[0].personal_emi" [disabled]="!memberdetails.edit" ng-required="true" ng-trim="false" dont-begin-with-zero="0-9" no-repeat maxlength="7">
+                  </th>
+                </tr>
+                <tr *ngIf="memberdetails[0].running_personal_loan=='Yes'">
+                  <th>EMI Left</th>
+                  <th>
+                    <input type="text" [ngClass]="{'noeditable': !memberdetails.edit, 'editing': memberdetails.edit}" [(ngModel)]="memberdetails[0].personal_emi_left" [disabled]="!memberdetails.edit" ng-required="true" ng-trim="false" dont-begin-with-zero="0-9" no-repeat maxlength="3">
+                  </th>
+                </tr>
+                <tr *ngIf="memberdetails[0].running_personal_loan=='Yes'">
+                  <th>Loan Tenure</th>
+                  <th>
+                    <input type="text" [ngClass]="{'noeditable': !memberdetails.edit, 'editing': memberdetails.edit}" [(ngModel)]="memberdetails[0].personal_tenure" [disabled]="!memberdetails.edit" ng-required="true" ng-trim="false" dont-begin-with-zero="0-9" no-repeat maxlength="3">
+                  </th>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="table-responsive">
+            <table class="table  table-striped">
+              <thead class="profile">
+                <tr>
+                  <td colspan="2"><b>FINANCIAL DETAILS - HOME LOAN DETAILS</b></td>
+                </tr>
+              </thead>
+              <tbody class="tableText">
+                <tr>
+                  <th style="width: 50%;">Home Loan</th>
+                  <th>
+                    <select [ngClass]="{'noeditable': !memberdetails.edit, 'editing': memberdetails.edit}" [(ngModel)]="memberdetails[0].running_home_loan" [disabled]="!memberdetails.edit">
+                      <option value="" [disabled]="true">N/A</option>
+                      <option value="Yes">Yes</option>
+                      <option value="No">No</option>
+                    </select>
+                  </th>
+                </tr>
+                <tr *ngIf="memberdetails[0].running_home_loan=='Yes'">
+                  <th>Bank Name</th>
+                  <th>
+                    <select [ngClass]="{'noeditable': !memberdetails.edit, 'editing': memberdetails.edit}" ng-options="bank for bank in bankname" [(ngModel)]="memberdetails[0].home_bank" [disabled]="!memberdetails.edit">
+                      <option value="" [disabled]="true">--- Select Bank ---</option>
+                      <option *ngFor="let c of bankname"> {{c}} </option>
+                    </select>
+                  </th>
+                </tr>
+                <tr *ngIf="memberdetails[0].home_bank=='Others'">
+                  <th>Other Bank</th>
+                  <th>
+                    <div ng-show="memberdetails[0].home_bank=='Others'">
+                      <input type="text" [ngClass]="{'noeditable': !memberdetails.edit, 'editing': memberdetails.edit}" [(ngModel)]="homeOther" [disabled]="!memberdetails.edit" ng-change="selotherbank(homeOther)" placeholder="Enter the bank name" ng-trim="false" no-repeat dont-begin-with-zero="a-z A-Z">
+                    </div>
+                  </th>
+                </tr>
+                <tr *ngIf="memberdetails[0].running_home_loan=='Yes'">
+                  <th>Monthly EMI</th>
+                  <th>
+                    <input type="text" [ngClass]="{'noeditable': !memberdetails.edit, 'editing': memberdetails.edit}" [(ngModel)]="memberdetails[0].home_emi" [disabled]="!memberdetails.edit" ng-required="true" ng-trim="false" dont-begin-with-zero="0-9" no-repeat maxlength="7">
+                  </th>
+                </tr>
+                <tr *ngIf="memberdetails[0].running_home_loan=='Yes'">
+                  <th>EMI Left</th>
+                  <th>
+                    <input type="text" [ngClass]="{'noeditable': !memberdetails.edit, 'editing': memberdetails.edit}" [(ngModel)]="memberdetails[0].home_emi_left" [disabled]="!memberdetails.edit" ng-required="true" ng-trim="false" dont-begin-with-zero="0-9" no-repeat maxlength="3">
+                  </th>
+                </tr>
+                <tr *ngIf="memberdetails[0].running_home_loan=='Yes'">
+                  <th>Loan Tenure</th>
+                  <th>
+                    <input type="text" [ngClass]="{'noeditable': !memberdetails.edit, 'editing': memberdetails.edit}" [(ngModel)]="memberdetails[0].home_tenure" [disabled]="!memberdetails.edit" ng-required="true" ng-trim="false" dont-begin-with-zero="0-9" no-repeat maxlength="3">
+                  </th>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="table-responsive">
+            <table class="table  table-striped">
+              <thead class="profile">
+                <tr>
+                  <td colspan="2"><b>FINANCIAL DETAILS - ANY OTHER LOAN DETAILS</b></td>
+                </tr>
+              </thead>
+              <tbody class="tableText">
+                <tr>
+                  <th style="width: 50%;">Any Other Loans</th>
+                  <th>
+                    <select [ngClass]="{'noeditable': !memberdetails.edit, 'editing': memberdetails.edit}" [(ngModel)]="memberdetails[0].any_other_loan" [disabled]="!memberdetails.edit">
+                      <option value="" [disabled]="true">N/A</option>
+                      <option value="Yes">Yes</option>
+                      <option value="No">No</option>
+                    </select>
+                  </th>
+                </tr>
+                <tr *ngIf="memberdetails[0].any_other_loan=='Yes'">
+                  <th>Loan Name</th>
+                  <th>
+                    <input type="text" [ngClass]="{'noeditable': !memberdetails.edit, 'editing': memberdetails.edit}" [(ngModel)]="memberdetails[0].loan_name" [disabled]="!memberdetails.edit">
+                  </th>
+                </tr>
+                <tr *ngIf="memberdetails[0].any_other_loan=='Yes'">
+                  <th>Bank Name</th>
+                  <th>
+                    <select [ngClass]="{'noeditable': !memberdetails.edit, 'editing': memberdetails.edit}" ng-options="bank for bank in bankname" [(ngModel)]="memberdetails[0].other_bank" [disabled]="!memberdetails.edit">
+                      <option value="" [disabled]="true">--- Select Bank --</option>
+                      <option *ngFor="let c of bankname"> {{c}} </option>
+                    </select>
+                  </th>
+                </tr>
+                <tr *ngIf="memberdetails[0].other_bank=='Others'">
+                  <th>Other Bank</th>
+                  <th>
+                    <div ng-show="memberdetails[0].other_bank=='Others'">
+                      <input type="text" [ngClass]="{'noeditable': !memberdetails.edit, 'editing': memberdetails.edit}" [(ngModel)]="bankother" [disabled]="!memberdetails.edit" ng-change="selectbankother(bankother)" placeholder="Enter the bank name" ng-trim="false" no-repeat dont-begin-with-zero="a-z A-Z">
+                    </div>
+                  </th>
+                </tr>
+                <tr *ngIf="memberdetails[0].any_other_loan=='Yes'">
+                  <th>Monthly EMI</th>
+                  <th>
+                    <input type="text" [ngClass]="{'noeditable': !memberdetails.edit, 'editing': memberdetails.edit}" [(ngModel)]="memberdetails[0].other_emi" [disabled]="!memberdetails.edit" ng-required="true" ng-trim="false" dont-begin-with-zero="0-9" no-repeat maxlength="7">
+                  </th>
+                </tr>
+                <tr *ngIf="memberdetails[0].any_other_loan=='Yes'">
+                  <th>EMI Left</th>
+                  <th>
+                    <input type="text" [ngClass]="{'noeditable': !memberdetails.edit, 'editing': memberdetails.edit}" [(ngModel)]="memberdetails[0].other_emi_left" [disabled]="!memberdetails.edit" ng-required="true" ng-trim="false" dont-begin-with-zero="0-9" no-repeat maxlength="3">
+                  </th>
+                </tr>
+                <tr *ngIf="memberdetails[0].any_other_loan=='Yes'">
+                  <th>Loan Tenure</th>
+                  <th>
+                    <input type="text" [ngClass]="{'noeditable': !memberdetails.edit, 'editing': memberdetails.edit}" [(ngModel)]="memberdetails[0].other_tenure" [disabled]="!memberdetails.edit" ng-required="true" ng-trim="false" dont-begin-with-zero="0-9" no-repeat maxlength="3">
+                  </th>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- /////////////////////////////////MODAL///////////////////////////////////////////////////////// -->
+<div class="backdrop" [ngStyle]="{'display':display}"></div>
+<div class="modal rrr" tabindex="-1" role="dialog" [ngStyle]="{'display':display}">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" aria-label="Close" (click)="onCloseHandled()"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">{{gfundfile}}</h4>
+      </div>
+      <div class="modal-body">
+        <img [src]="transform()" style="height:250px;width:564px">
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" (click)="onCloseHandled()">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- ////////////////////////////////////////////////////////////////////////////////////////////////// -->

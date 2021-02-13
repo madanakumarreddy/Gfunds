@@ -1,0 +1,60 @@
+<div class="modal-header popup1 ">
+	<span>
+        <h4>
+		Members Are Added To {{finaltrans.chitname}} Chit, Please Deposit Money To Foreman Account Within A Week.</h4>
+	</span>
+</div>
+
+<div class="modal-body account">
+	<div>
+	<p><b>Account Name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:</b>&nbsp;{{finaltrans.foremanaccountname}}</p>
+        <p><b>Account Number&nbsp;&nbsp;:</b>&nbsp;{{finaltrans.foremanaccountnumber}}</p>
+        <p><b>Bank Name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:</b>&nbsp;{{finaltrans.foremanbankname}}</p>
+        <p><b>Bank Branch&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:</b>&nbsp;{{finaltrans.foremanbankbranch}}</p>
+        <p><b>Bank IFSC&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:</b>&nbsp;{{finaltrans.foremanbankifsc}}</p>
+        </div>
+        <br>
+        <br>
+        <div class="text-left amount">
+        	<span><b><p>If amount Deposited please enter the Transaction Id:</p></b>
+        	<input type="text" name="trans" [(ngModel)]="membertrans.trans">
+        </span>
+        
+	</div>
+</div>
+
+<div class="modal-footer">
+	<button type="button" class="btn btn-primary" [mat-dialog-close] ="membertrans">Ok</button>
+        <button type="button" class="btn btn-danger" (click)="logoutpop()">Logout</button>
+</div>
+
+<style type="text/css">
+    .popup1{
+    background: #337ab7;
+    color: white;
+    padding: 11px -1px 0px 0px;
+    margin: -24px -24px 10px -24px;
+    padding: 30px 39px;
+    font-size: 17px;
+}
+.account{
+    font-size: 17px;
+}
+.amount{
+    margin-top: -35px;
+}
+
+@media only screen and (max-width:768px) {
+    .account{
+        margin-left: 4px;
+        font-size: 14px;
+    }
+    .popup1{
+        font-size: 17px;
+
+    }
+    .amount{
+        font-size: 14px;
+    }
+    }
+</style>

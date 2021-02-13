@@ -1,0 +1,93 @@
+<div class="runninggraph">
+  <!-- <div class=" col-sm-12 col-md-12 col-xs-12 col-lg-12 clss"> -->
+      <div class=" col-sm-4 col-md-2 col-xs-6 col-lg-2 text-center bttn">
+          <div class="row">
+            <button class="btn btn-primary  backleft" id="padback"
+              (click)="backToFunds()">&nbsp;&nbsp;Back&nbsp;&nbsp;</button>
+          </div>
+        </div>
+  <!-- </div> -->
+  <div class="col-md-12 col-xs-12 col-sm-12 col-lg-12 grpgname1" style="margin-top: -20px;">
+    <h2 class="text-center namefund">{{graph_chitnumber | uppercase}}</h2>
+  </div>
+  <div class="col-md-12 col-xs-12 col-sm-12 col-lg-12 close4" id="chartContainer">
+  </div>
+  <!--  <div class="ol-md-12 col-xs-12 col-sm-12 grpgname grpgname2">
+      <table class="tab">
+        <tr>
+          <td class="graphcan">
+            <canvas id="LineChart"></canvas>
+          </td>
+        </tr>
+      </table>
+    </div> -->
+</div>
+<style type="text/css">
+  .grpgname {
+    margin-bottom: 10px;
+    margin-top: 20px;
+  }
+
+  .grpgname1 {
+    margin-bottom: 10px;
+  }
+
+  .graphcan {
+    height: 488px;
+    width: 920px;
+    display: block;
+  }
+
+  .tab {
+    margin-left: 230px;
+    margin-top: 20px
+  }
+
+  .bttn {
+    margin-bottom: 10px;
+    margin-left: 20px;
+  }
+
+  .grpgname2 {
+    margin-bottom: 0%;
+  }
+
+  .close4 {
+    height: 400px;
+    width: 90%;
+    margin-left: 85px;
+    box-shadow: -15px -12px 18px 1px rgba(0, 0, 0, 0.31);
+  }
+
+  @media only screen and (max-width: 767px) {
+    .close4 {
+      margin-left: 0px;
+      overflow: auto;
+    }
+  }
+
+  @media only screen and (min-width: 360px) and (max-width: 640px) {
+    .graphcan {
+      height: 400px;
+      width: 370px;
+      display: block;
+    }
+
+    .tab {
+      margin-left: 0px;
+      margin-top: 20px
+    }
+
+    .grpgname2 {
+      margin-bottom: 45%;
+    }
+
+    .check {
+      font-size: 12px;
+    }
+    .bttn {
+    /* margin-bottom: -20px; */
+    margin-left: -30px;
+  }
+  }
+</style>

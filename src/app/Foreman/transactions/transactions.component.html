@@ -1,0 +1,40 @@
+
+
+ <div class="col-xs-offset-1 col-xs-10 uploadtop uploadnew toppest1 ">
+    <div class="row">
+        <div class="foremanregistrationUploaddocs text-center formenchoice">
+            <h2>Transaction History</h2>
+    <div class="col-md-offset-0 col-md-12 col-xs-offset-0 col-xs-12 col-sm-offset-1 col-sm-10 text-center tablecss">
+        <div class="row">
+            <div class="table-responsive" id="table" >
+            
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th class="">Fraternity Id</th>
+                            <th class="">Fraternity Number</th>
+                            <th class="">Fraternity Amount</th>
+                            <th class="">Fraternity Duration</th>
+                            <th class="">Status</th>
+                        </tr>
+                    </thead>
+                    <tbody ng-repeat="transinfo in transinfoobj">
+                        <td ng-click="chitinfopop(transinfo)">{{transinfo.id}}
+                        </td>
+                        <td ng-click="chitinfopop(transinfo)">{{transinfo.chit_number}}
+                        </td>
+                        <td ng-click="chitinfopop(transinfo)">{{transinfo.chit_amount}}
+                        </td>
+                        <td ng-click="chitinfopop(transinfo)">{{transinfo.chit_duration}}
+                        </td>
+                        <td ng-click="chitinfopop(transinfo)">{{transinfo.status}}
+                        </td>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>
+    </div>
+     

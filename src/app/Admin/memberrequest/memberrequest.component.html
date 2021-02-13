@@ -1,0 +1,50 @@
+
+<div class="col-xs-12 col-sm-12 col-md-12 homelangingpage5">
+  <div class="col-xs-12 col-sm-12 col-md-12 mangtop5">
+      <div>
+      <h3 class="text-center formenchoice">
+  Member Request </h3>
+      </div>
+          
+      <div class="col-xs-12 col-md-12 col-sm-12 addbutt">
+          <button ng-show="permissions[0]=='ADD' || permissions[2]=='ADD' || permissions[1]=='ADD' || permissions[3]=='ADD'||permissions[4]=='ADD'" class="btn btn-success pull-right myButtonadd" ng-click="addexcutive()">
+              <i class="glyphicon glyphicon-plus"></i> Add
+          </button>
+          </div>
+      </div>
+      <div class="col-xs-12 col-sm-12 col-md-12" id="memfrmnreq">
+      <div  class="table-responsive">
+      <table class="table table-bordered">
+          <thead>
+              <tr>
+                  <th class="text-center">Company Name</th>
+                  <th class="text-center">Fraternity Name</th>
+                  <th class="text-center">Member ID</th>
+                  <th class="text-center">Foreman ID</th>
+                  <th class="text-center">Member Score</th>
+                  <th class="text-center">Member Credit Limit</th>
+                  <th class="text-center">Actions</th>
+              </tr>
+          </thead>
+          <tbody>
+              <tr ng-repeat="object in featurelist">
+                  <td>{{object.company_name}}</td>
+                  <td>{{object.chit_name}}</td>
+                  <td>{{object.member_id}}</td>
+                  <td>{{object.foreman_id}}</td>
+                  <td>{{object.rating}}</td>
+                  <td>{{object.credit}}</td>
+                  <td>
+                      <a ng-show="permissions[0]=='APPROVE' || permissions[2]=='APPROVE' || permissions[1]=='APPROVE' || permissions[3]=='APPROVE'||permissions[4]=='APPROVE'" class="btn btn-success" ng-click="memberapprove(object)">APPROVE</a>
+                      <a ng-show="permissions[0]=='EDIT' || permissions[2]=='EDIT' || permissions[1]=='EDIT' || permissions[3]=='EDIT'||permissions[4]=='EDIT'" class="btn btn-primary" ng-click="editexecutivelist(object)">Edit</a>
+                      <a ng-show="permissions[0]=='DELETE' || permissions[2]=='DELETE' || permissions[1]=='DELETE' || permissions[3]=='DELETE'||permissions[4]=='DELETE'" class="btn btn-danger" ng-click="editforemanlist()">Delete</a>
+                     <a ng-show="permissions[0]=='DECLINE' || permissions[2]=='DECLINE' || permissions[1]=='DECLINE' || permissions[3]=='DECLINE'||permissions[4]=='DECLINE'" class="btn btn-danger" ng-click="memberdisapprove(object)">DECLINE</a>
+
+                      <a class="btn btn-default" ng-click="vieweprofilefrmemberrequest(object.member_id)">View</a>
+                  </td>
+              </tr>
+          </tbody>
+      </table>
+      </div>
+      </div>
+  </div>

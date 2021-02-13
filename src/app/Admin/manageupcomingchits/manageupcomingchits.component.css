@@ -1,0 +1,132 @@
+/*.heyyyhoooo{
+  color:white
+}*/
+
+.modal-header{
+  background: #337ab7;
+  color: white;
+
+}
+.ent-label
+{
+  margin-left: 15px;
+}
+
+.homelangingpage1{
+    margin-top: 100px;
+}
+  .topp{
+      margin-top: 47px;
+  }
+  .formenchoice {
+    text-align: center;
+    text-align: center;
+    font-weight: bolder;
+    color: #0a58a4;
+    box-shadow: 16px -1px 60px 0px;
+    margin-left: -34px;
+    margin-top: -8px;
+}
+  /* .zxc{
+
+    margin-left: -31px;
+  } */
+ .adminup1{
+    width: 100%;
+    /* position: fixed;; */
+    margin-top:50px;
+    /* height: 350PX; */
+}
+.decenutt{
+  width: 53%;
+  margin-left: -5px;
+}
+.faternity{
+background: #337ab7;
+    color: white;
+    text-align: center;
+    margin-top: -24px;
+    width: 100%;
+    /* margin-left: -39px; */
+    padding: 6px;
+  }
+.approvebutt{
+   width: 53%;
+  margin-left: -5px;
+
+}
+.viebut{
+  width: 47%;
+  margin-left: 4px;
+}
+.upcominghead{
+  background-color: #0a58a4;
+  color: white;
+  position: relative;
+}
+  th, td {
+  text-align: center;
+}
+.scroll{
+overflow: auto;
+}
+
+#as {
+  width: 210px;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  background-color: white;
+  /*background-image: url('searchicon.png');*/
+  background-position: 10px 10px;
+  background-repeat: no-repeat;
+  padding: 12px 20px 12px 40px;
+  -webkit-transition: width 0.4s ease-in-out;
+  transition: width 0.4s ease-in-out;
+  box-shadow: 1px 3px 1px;
+  margin-top: 20px;
+  margin-left: 40%;
+}
+
+#as:focus {
+  width: 60%;
+}
+@media only screen and (min-width:320px) and (max-width: 767px) {
+    .homelangingpage1 {
+      margin-top: -80px;
+  }
+  .mangtop1 {
+      margin-top: -27px;
+  }
+  .formenchoice{
+    text-align: center;
+    text-align: center;
+    font-weight: bolder;
+    color: #0a58a4;
+    box-shadow: 16px -1px 60px 0px;
+     margin-left: 0px;
+     margin-top: 38px;
+}
+.zxc{
+    margin-left: -14px;
+    margin-top: 24px;
+}
+.adminup1 {
+    margin-left: 0px;
+    width: 100%;
+    overflow: auto;
+    margin-top: 0px;
+}
+
+#as {
+  margin-left: -62%;
+    margin-top: 70px;
+}
+#as:focus {
+  width: 150%;
+}
+.row{
+  margin-left: 0px;
+}
+}

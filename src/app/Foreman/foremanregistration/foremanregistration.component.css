@@ -1,0 +1,78 @@
+
+::ng-deep.cdk-overlay-container {
+  z-index: 1050;
+}
+p{
+  font-weight: normal;
+  margin-top: 11px;
+}
+.mat-form-field{
+  width: 75%;
+  margin-top: 25px;
+}
+.modal-header{
+  background-color: #337ab7;
+  padding: 25px;
+  color: white;
+  text-align: center;
+}
+.modal-body{
+  overflow: auto;
+}
+.radiobtn{
+  margin-left: 12%;
+}
+.radiolabel{
+  margin-left: 12%;
+}
+::ng-deep.mat-radio-label-content {  
+  padding-left: 0px !important;
+  padding-right: 65px !important;
+}
+.close{
+  color: white
+}
+.address{
+  overflow: auto;
+  height: 475px;
+}
+.profipic{
+  margin: 3% 0% 0% 12%;
+}
+.mat-divider{
+  border-top-color:#9c8c8c;
+  width: 86%;
+}
+.finalbtn{
+  margin-top: 5%;
+  margin-left: 25%;
+}
+@media only screen and (min-width:300px) and (max-width: 850px) {
+
+  .mat-form-field{
+    width: 100%;
+  }
+  .profipic{
+    margin: 3% 0% 0% 0%;
+  }
+  .radiolabel{
+    margin-left: 1%;
+  }
+  .mat-divider{   
+    width: 100%;
+  }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

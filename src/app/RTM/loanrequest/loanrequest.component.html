@@ -1,0 +1,68 @@
+<div class="lenderrespp">
+    <h1>
+        <!-- <img src="images/Loan_History.png" style="width: 5%" class="headinglendd"> -->
+        &nbsp; New Loan Request</h1>
+    <div>
+        <div ng-show="newloanrequestloader">
+            <div class=loader></div>
+        </div>
+    </div>
+    <div class="table-responsive tabledashboard">
+        <div class="Loan loanrequest icon ">
+            <table class="table table-bordered text-center">
+                <thead class="tableheader thcolor">
+                    <tr>
+                        <th style="text-align: center;">Loan Id</th>
+                        <th style="text-align: center;">Member Name</th>
+                        <th style="text-align: center;">Loan Amount</th>
+                        <th style="text-align: center;">Member Id</th>
+                        <th style="text-align: center">Member Count</th>
+                        <th style="text-align: center;">Fund Id</th>
+                        <th style="text-align: center;">Loan Type</th>
+                        <th style="text-align: center;">Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let data of loandetails" class="cursor">
+                        <td>{{data.id}}</td>
+                        <td>{{data.member_name}}</td>
+                        <td>{{data.loan_amount}}</td>
+                        <td>{{data.member_id}}</td>
+                        <td>{{data.mem_count}}</td>
+                        <td>{{data.chit}}</td>
+                        <td>{{data.loan_type}}</td>
+                        <td>
+                            <button type="button" class="btn btn-success" style="margin-bottom:3px;"
+                                (click)="acceptloan1(data)">Disburse</button>
+                            <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog"
+                                aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+                                <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h3 class="modal-title" id="exampleModalLongTitle">Loan Accepted</h3>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            You have accepted the loan. Our RM(Relationship Manager) will contact you
+                                            soon to tell you when to disburse the amount.
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-primary" ng-click="close()"
+                                                data-dismiss="modal">Close</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr *ngIf="!loandetails[0]">
+                        <td class="text-center orangefont" colspan="8">
+                            <h2>No New Loans </h2>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>

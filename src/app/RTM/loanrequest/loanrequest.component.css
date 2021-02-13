@@ -1,0 +1,31 @@
+.orangefont{
+	color: red;
+	font-size: 20px;
+}
+
+
+.thcolor{
+	background-color: #0a2175;
+    color: white;
+}
+.modal-header{
+	background-color:#337ab7 ;
+	color: white;
+	text-align: center;
+}
+::ng-deep .mat-dialog-container{
+	padding: 0px;
+}
+.modal-body{
+	margin-left: 20%;
+	margin-top: 10px;
+}
+
+@media only screen and (min-width: 360px) and (max-width:850px) {
+::ng-deep .cdk-overlay-pane{
+    max-width: 93vw;
+  }
+  .input{
+	  margin-top: 20px;
+  }
+}

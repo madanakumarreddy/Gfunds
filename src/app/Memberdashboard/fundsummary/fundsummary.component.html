@@ -1,0 +1,64 @@
+
+  <div class=" col-md-offset-1 col-md-10 runningleft ">
+  <h2 class="text-center formenchoice toppest1 aligntop">Fund Summary</h2></div>
+
+  
+        <!-- <div ng-show="newloanrequestloader">
+            <div class=loader></div>
+        </div> -->
+    
+    <div class=" col-md-10 table-responsive tabledashboard" id="data">
+        <div class="Loan loanrequest icon ">
+            <table class="table table-bordered text-center">
+                <thead class="tableheader" style="background-color: #337ab7;color: white;">
+                    <tr>
+                        <th style="text-align: center;">Sl.no </th>
+                        <th style="text-align: center;">Fund Name</th>
+                        <th style="text-align: center;">Fund Amount</th>
+                        <th style="text-align: center;">FundLoan Type</th>
+                        <th style="text-align: center;">Paid Amount</th>
+                        <th style="text-align: center;">Auction Count</th>
+                        <th style="text-align: center;">Member Count</th>
+                        <th style="text-align: center;">Balance Amount</th>
+                        <th style="text-align: center;">Payment Status</th>
+                        <th style="text-align: center;">Details</th>
+                         <!-- <th style="text-align: center;">Action</th> -->
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let data of swathi; let i=index" class="cursor" >
+                        <td>{{i+1}}</td>
+                        <td>{{data.chitdetails[0]['chit_number']}}</td>
+                        <td>{{data.chitdetails[0]['chit_amount']}}</td>
+                        <td>{{data.loan_type}}</td>
+                        <td *ngIf = "data.paid_amount == null">0</td>
+                        <td *ngIf = "data.paid_amount != null">{{data.paid_amount}}</td>
+                        <td>{{data.auction_count}}</td>
+                        <td>{{data.member_count}}</td>
+                        <td>{{data.balance}}</td>
+                        <!-- <td>{{data.payment_status}}</td> -->
+
+                        <td>
+                            <button class="btn btn-success" *ngIf="data.payment_status=='Paid'">{{data.payment_status}}</button>
+                            <button class="btn btn-danger" *ngIf="data.payment_status=='Pending'">{{data.payment_status}}</button>
+                        </td>
+                    
+                        <!-- <td>{{data}}</td>. -->
+
+                        <td>
+                            
+                             <button class="btn btn-primary" (click)="loandetails(data)">View</button>
+                        </td>
+                        
+                    </tr>
+                    <!-- <tr *ngIf="!swathi">
+                        <td class="text-center orangefont" colspan="10"> No Funds </td>
+                    </tr> -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div  id ="data" *ngIf="!swathi[0]">
+        <h3 class="col-md-10 table-responsive tabledashboard" style="text-align: center;color:red; margin-top: 0px;"> No Funds Summary</h3>
+    </div>
+

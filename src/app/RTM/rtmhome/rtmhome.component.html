@@ -1,0 +1,98 @@
+<div class="lenderdashboard" style="margin-top: 150px;">
+    <div class="row">
+        <!-- <h1><img src="images/newloanrequest.png" align="center" style="width: 5%; margin-left:20px";>&nbsp; Active Loans</h1> -->
+    </div>
+    <div class="col-md-6 form-group">
+        <input type="text" class="form-control" [(ngModel)]="Search" placeholder="Search">
+    </div>
+    <div class="table-responsive col-md-12">
+        <table class="table table-bordered text-center">
+            <thead class="tableheader">
+                <tr>
+                    <th style="text-align: center">SL NO.</th>
+                    <th style="text-align: center">Member Name</th>
+                    <th style="text-align: center">Member Id</th>
+                    <th style="text-align: center">Member Count</th>
+                    <th style="text-align: center">Fund Id</th>
+                   <th style="text-align: center">Loan Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr  class="cursor"  id="myduesbody">
+                    <td (click)="loan_details(view)"></td>
+                    <td (click)="loan_details(view)"></td>
+                    <td (click)="loan_details(view)"></td>
+                    <td (click)="loan_details(view)"></td>
+                    <td (click)="loan_details(view)"></td>
+                   <td>
+                        <button class="btn btn-primary" (click)="disburse(view)">Disburse</button>
+                    </td>
+                    <td>
+                        <button class="btn btn-primary" style="color: #ffffff;" (click)="changestatus(view)">Active</button>
+                    </td>
+                </tr>
+                <tr >
+                    <td colspan="6" class="text-center orangefont">No Active Loans</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+   
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

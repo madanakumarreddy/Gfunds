@@ -1,0 +1,126 @@
+<div class="modal-header  col-xs-12 santadmn">
+  <div class="text-right">
+    <span type="button" (click)="closepop()" class="spnt">&times;</span>
+  </div>
+  <div class="acct">
+    <h3 class="aa">CREATE YOUR ACCOUNT</h3>
+  </div>
+</div>
+<div class="modal-body" class='space' style="margin-top:50px;">
+  <form name="memberlandingform" class="labelstyle form-horizontal" #form1="ngForm">
+
+    <div class="form-group text-left">
+      <label for="fullname control-label" class="col-md-4">Name<small>(as per aadhar card)</small></label>
+      <div class="col-md-7">
+        <input type="text" size="25" id="fullname" class="form-control" name="fullname" [(ngModel)]="user.fullname"
+          placeholder="please type your name" maxlength="120" (keypress)="keyPress($event)" required
+          dont-begin-with-zero="a-z A-Z" no-repeat ng-trim="false" style="text-transform: capitalize;">
+      </div>
+    </div>
+    <div class="form-group text-left">
+
+      <label for="dob" class="col-md-4">DOB</label>
+      <div class="col-md-7">
+        <div class="col-md-12 inputleft">
+
+          <input class="form-control date" name="dob" matInput [matDatepicker]="userDOB" [(ngModel)]="user.date"
+            placeholder="dd-mm-yyyy" required>
+
+        </div>
+        <div class="col-md-2 dobpp">
+          <mat-datepicker-toggle matSuffix [for]="userDOB"></mat-datepicker-toggle>
+          <mat-datepicker #userDOB></mat-datepicker>
+        </div>
+
+      </div>
+
+
+      <div class="form-group text-left">
+        <label for="mobilenumber" class="col-xs-12 col-md-4 pop">Mobile</label>
+        <div class="col-xs-12 col-md-7 pop1">
+          <div class="input-group">
+
+            <input type="text" id="mobnum" #mobile_number="ngModel" pattern="[6-9]{1}[0-9]{9}" name="mobilenumber"
+              [(ngModel)]="user.username" (keypress)="keyPress2($event)" placeholder="Enter your mobile number"
+              class="form-control" minlength="10" maxlength="10" required>
+
+            <span class="input-group-btn">
+
+              <button class="btn btn-default btn-success" type="button" (click)="generateotp(user)"
+                [disabled]="mobile_number.errors?.pattern" *ngIf="!box" style="width: 84%;
+    margin-right: 8px;">
+                <div class="loader"></div>Send OTP
+              </button>
+            </span>
+            <span class="input-group-btn" ng-disabled="disableresend">
+              <button *ngIf="box" class="btn btn-default btn-primary" type="button" (click)="generateotp(user)">
+                <div class="loader" style="display:{{loaderss}}"></div>Resend
+              </button>
+            </span>
+            <span class="input-group-btn" *ngIf="false">
+              <button class="btn btn-default btn-success" type="button"><span class="glyphicon glyphicon-ok"></span>
+              </button>
+            </span>
+          </div>
+          <span *ngIf="mobile_number.errors?.pattern" style="color:red;float: left;margin-left: 15px;">please enter
+            valid mobile number</span>
+          <span *ngIf="exist && !mobile_number.errors?.pattern" style="color:red;float: left;">{{message}}</span>
+        </div>
+        <!-- <span *ngIf="mobile_number.errors?.pattern" style="color:red;float: left;">please enter valid mobile number</span> -->
+      </div>
+    </div>
+    <div class="form-group text-left" *ngIf="box">
+      <label for="OTP" class="col-md-4 ">OTP</label>
+      <div class="col-md-7 ">
+        <input type="text" #otp="ngModel" class="form-control" name="OTP" [(ngModel)]="user.otp"
+          (change)="verifyotp(user.otp)" (keypress)="keyPress2($event)" placeholder="Enter your OTP" only-digits
+          minlength="6" maxlength="6" required>
+        <span *ngIf="(otp.value==otp1)" style="color:green;float: left;margin-left: 15px;">Verified <span
+            class="glyphicon glyphicon-ok"></span> </span>{{Verified}}
+        <span *ngIf="(otp.value==otp1)" style="color:red;float: left;">{{otperror}}</span>
+      </div>
+    </div>
+    <div class="form-group text-left">
+      <label for="password" class="col-md-4">Password</label>
+      <div class="col-md-7">
+        <input type="password" name="password" #pass="ngModel" [(ngModel)]="user.password" class="form-control"
+          placeholder="Enter your password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}" ng-pattern="pass" required
+          style="width:100%;">
+        <span *ngIf="pass.errors?.pattern" style="color:red;float: left;">Valid password must contain at least one
+          number and one uppercase and lowercase letter, and at least 6 or more characters</span>
+        <!-- <span ng-show="memberlandingform.password.$dirty && memberlandingform                   <span *ngIf="pass.errors?.pattern" style="color:red;float: left;">Valid password must contain at least one number and one uppercase and lowercase letter, and at least 6 or more characters</span>
+                   <span *ngIf="pass.errors?.pattern" style="color:red;float: left;">Valid password must contain at least one number and one uppercase and lowercase letter, and at least 6 or more characters</span>
+                   <span *ngIf="pass.errors?.pattern" style="color:red;float: left;">Valid password must contain at least one number and one uppercase and lowercase letter, and at least 6 or more characters</span>
+.password.$invalid" style="color:red;float: left;">Valid password requires 6-20 characters with one number and uppercase character</span> -->
+      </div>
+    </div>
+    <div class="foremantermscss">
+      <p>
+        <input type="checkbox" name="iagree1" [(ngModel)]="user.iagree1" required /> I have read and agree to the <a
+          href="" (click)="membertemrsconditions()" target="_blank">TERMS AND CONDITIONS</a></p>
+      <p>
+        <input type="checkbox" name="iagree2" [(ngModel)]="user.iagree2" required> I agree to the terms and conditions
+        of Gowdanar Chits Private Limited <a href="" (click)="privacy()" target="_blank"> GFUND </a></p>
+      <p>
+        <input type="checkbox" name="iagree3" [(ngModel)]="user.iagree3" required> I agree to the terms and conditions
+        of RTM CAPITAL Private Limited <a href="" (click)="privacy1()" target="_blank"> RTM</a></p>
+
+    </div>
+
+    <!-- <input type="submit" (click)="saveData(user)" class="btn btn-primary createacct" ng-disabled="memberlandingform.$invalid||!verified" value="CREATE YOUR ACCOUNT" class="fa fa-spinner fa-spin" class="close" style="margin-top: 25px;"> -->
+    <div style="text-align: center;">
+      <button *ngIf="button == false" (click)="saveData(user,form1.invalid)"
+        class="btn btn-success button createacct btnpt" [disabled]="!form1.form.valid">CREATE YOUR ACCOUNT</button>
+      <button *ngIf="button == true" (click)="saveCaData(user,form1.invalid)"
+        class="btn btn-success button createacct btnpt" [disabled]="!form1.form.valid">CREATE ACCOUNT</button>
+    </div>
+
+  </form>
+
+  <div class="form-group">
+    <div ng-show="loaderss">
+      <div class="loader2"></div>
+    </div>
+  </div>
+</div>
+<span style="color:red;">{{error}}</span>

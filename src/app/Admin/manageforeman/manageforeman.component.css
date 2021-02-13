@@ -1,0 +1,254 @@
+ 
+/* .editing {
+  border: steelblue;
+  background: rgba(0, 0, 0, 0.22);
+  border-style: solid;
+  border-width: thin;
+  box-shadow: 0px 0px 2px 1px rgba(51, 122, 183, 0.75);
+
+  padding: 4px 1px 5px 5px;
+  color: #333;
+  font-size: 15px;
+  width: 60%;
+}
+
+.editing {
+  border: none;
+  background: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+} */
+
+.modal-header{
+  background: #337ab7;
+  color: white;
+
+}
+.formenchoice {
+    text-align: center;
+    font-weight: bolder;
+    color: #0a58a4;
+    box-shadow: 16px -1px 60px 0px;
+    margin-left: 16px;
+    margin-top: 88px;
+}
+
+#chartContainer{
+  height: 400px;
+  width: 90%;
+
+  box-shadow: -15px -12px 18px 1px rgba(0, 0, 0, 0.31);
+}
+ 
+#padback{
+      width: 48%;
+    padding: 16px 29px;
+    margin-left: -480px;
+}
+
+  .addbtnfrmn{
+      margin-left: 834px;
+
+  }
+.bttn{
+  margin-left: 270px;
+
+}
+  .mngfrmn{
+    margin-left: 9px;
+    width: 100%;
+   
+
+  }
+
+  .grpgname2{
+        margin-left: -249px;
+    margin-top: -16px;
+  }
+
+
+.sacchoice
+  {
+  margin-left: -27px;
+  width: 100%;
+  padding: 5px;
+  margin-top: 1em;
+  text-align: center;
+  font-weight: bolder;
+  color: #0a58a4;
+  box-shadow: 3px -1px 12px 0px;
+}
+
+  .divborder {
+    margin-top: 105px;
+    width: 46vh!important;
+    height: 37vh!important;
+ 
+    /* margin-left: 95px; */
+    box-shadow: 1px 1px 2px 1px #e3dfdf;
+    -webkit-transition: all .3s ease;
+    -moz-transition: all .3s ease;
+    -o-transition: all .3s ease;
+    -ms-transition: all .3s ease;
+    transition: all .3s ease;
+}
+
+.divborder:hover {
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    box-shadow: 0 0 20px rgba(0, 0, 0, .2);
+}
+
+.line1{
+    text-align: center;
+    background-color: #1d8ccd;
+    color: white;
+    height: 34px;
+}
+.chitlogo {
+    height: 21vh;
+    padding-top: 2.5vh;
+}
+.img1 {
+    height: 15vh;
+    width: 15vh;
+    margin-left: 5em;
+    border-radius: 18px;
+}
+.chitlogo .imgdiv {
+    width: 14vh;
+    height: 14vh;
+    border-radius: 5px;
+    border: 1px solid #0a58a4;
+}
+.ima{
+
+    width: 96px;
+    height: 97px;
+    margin-left: -16px;
+}
+.line3{
+        margin-left: -14px;
+    margin-top: 57px;
+    background-color: #1d8ccd;
+    color: white;
+    width: 296px;
+    height: 33px;
+
+
+}
+  .chitlogo .amount {
+        padding: 5px 0px;
+        margin-left: 17px;
+        text-align: center;
+        margin-top: 0.5vh;
+    
+        width: 15vh;
+        box-shadow: 2px 0.5px 0.3px 1px rgb(165, 169, 191);
+        border-left: 0px;
+        border-bottom-right-radius: 15px;
+        border-top-right-radius: 15px;
+    }
+    .buttontext{
+        margin-top: 9px;
+        cursor: pointer;
+
+    }
+    .chitamount{
+        margin-top: 9px;
+    }
+    .toppest1 {
+    text-align: center;
+    text-align: center;
+    font-weight: bolder;
+    color: #0a58a4;
+    box-shadow: 16px -1px 60px 0px;
+  
+
+}
+
+.viewbut{
+    width: 99px;
+    margin-left: 3px;
+}
+.deletbut{
+    width: 88px;
+    margin-left: 3px;
+}
+.fundbutt{
+    width: 100%;
+}
+.manageforemanhead{
+    background-color: #0a58a4;
+  color: white;
+}
+  th,
+td {
+  text-align: center;
+}
+
+
+#as {
+  width: 210px;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  
+  background-color: white;
+
+  background-position: 10px 10px;
+  background-repeat: no-repeat;
+  padding: 12px 20px 12px 40px;
+  -webkit-transition: width 0.4s ease-in-out;
+  transition: width 0.4s ease-in-out;
+  box-shadow: 1px 3px 1px;
+
+  margin-top: -75px;
+  margin-bottom: 50px;
+  margin-left: 70%;
+}
+
+#as:focus {
+  width: 30%;
+}
+@media only screen and (min-width: 320px) and (max-width: 767px) {
+    .formenchoice {
+    text-align: center;
+    font-weight: bolder;
+    color: #0a58a4;
+    box-shadow: 16px -1px 60px 0px;
+    /* margin-left: -1px; */
+    margin-top: -25px;
+}
+  .mngfrmn{
+          margin-left: 14px;
+    width: 100%;
+  }
+ 
+.tabl{
+  margin-top: -32px;
+}
+#as:focus {
+  width:70%;
+  margin-left: 13%;
+  margin-top: -25px;
+  margin-bottom: 37px;
+}
+#as:focus {
+  width: 70%;
+}
+#as{
+  margin-left: 14%;
+    margin-top: -32px;
+}
+.ascrol{
+  overflow: scroll;
+  width:263px;
+}
+}
+
+
+
+

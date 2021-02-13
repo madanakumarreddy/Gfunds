@@ -1,0 +1,87 @@
+
+
+  <div class="professionpopupadderess">
+    <div class="modal-header modalhead">
+  <div class="text-right" style="float: right;">
+    <span type="button" (click)="closepop()" class="crossdiv">&times;</span>
+  </div>
+        <!-- <div class="modal-header newhead"> -->
+
+    <b><h4 class="modal-title headline">Please enter present address</h4></b>
+
+        </div>
+        <div class="modal-body newbody1">
+            <div name="presentaddressform" >
+                <div class="col-md-6 text-center" style="margin-top: 20px">
+                    <input type="text" class="form-control" id="houseno" name="houseNumber" [(ngModel)]="user.house_number" placeholder="Enter your House /Flat no" ng-required="true" no-repeat ng-trim="false" some-special-char (keypress) = "keyPress($event)">
+                </div>
+                <div class=" col-md-6 text-center " style="margin-top: 20px ">
+                    <input type="text" class="form-control" id="houseno" name="buildingName" [(ngModel)]="user.building_name" placeholder="Building name" ng-required="true" ng-pattern="/^(?:[0-9A-za-z]+|([/\s]))$/" no-repeat ng-trim="false" no-special-char ng-required="true" dont-begin-with-zero="A-Za-z 0-9" no-special-char no-repeat (keypress) = "keyPress1($event)">
+                </div>
+                <div class="col-md-6 text-center" style="margin-top: 20px ">
+                    <input type="text" class="form-control" id="streetname" name="street" [(ngModel)]="user.street" placeholder="Street name" dont-begin-with-zero="#/ ,0-9a-zA-Z-" no-repeat ng-trim="false" ng-required="true">
+                </div>
+                <div class="col-md-6 text-center" style="margin-top: 20px">
+                    <input type="text" class="form-control" id="landmark" name="homeLandmark" [(ngModel)]="user.home_land_mark" placeholder="Landmark" ng-required="true" ng-pattern="/^(?:[0-9A-za-z]+|([/\s]))$/" no-repeat ng-trim="false" no-special-char (keypress) = "keyPress($event)">
+                </div>
+                <div class="col-md-6 text-center" style="margin-top: 20px">
+                    <select class="form-control" name="state1" (change) = "changeCountry1($event.target.value)"  [(ngModel)] = "user.present_state">
+                        <option>Select State</option>
+                        <option *ngFor="let count of state">{{count.name}}</option>
+                    </select>
+
+                </div>
+                <div class="col-md-6 text-center" style="margin-top: 20px">
+                    <select class="form-control" name="first" placeholder="Phantasyland" [(ngModel)]="user.present_district">
+            <option>Select district</option>
+            <option *ngFor ="let city of cities">
+              {{city}}
+            </option>
+          </select>
+                </div>
+                <div class="col-md-6 text-center" style="margin-top: 20px">
+                    <input type="text" class="form-control" name="city" placeholder="Please enter city" [(ngModel)]="user.present_city" ng-required="true" ng-trim="false" dont-begin-with-zero="A-Z a-z" no-special-char no-repeat (keypress) = "keyPress1($event)">
+                </div>
+                <div class="col-md-6 text-center" style="margin-top: 20px">
+                    <input type="text" class="form-control" id="pincode" name="pincode" [(ngModel)]="user.pin_code" placeholder="Pincode" minlength="6" maxlength="6" ng-required="true" dont-begin-with-zero="0-9" (keypress) = "keyPressPincode($event)">
+                </div>
+                <div class="col-md-12">
+      <div class="modal-footer">
+                        <button  class="btn btn-primary" [mat-dialog-close] = "user">Save</button>
+        <button class="btn btn-warning" (click)="closepop()">Cancel
+        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <style type="text/css">
+        .crossdiv{
+            font-size: 28px;
+            cursor: pointer;
+            margin-right: 14px;
+            font-weight: bold;
+        }
+        .modalhead{
+            color: white;
+            background: #337ab7;
+            margin-top: -24px;
+            margin-left: -24px;
+            margin-right: -24px;
+
+        }
+@media only screen and (min-width:300px) and (max-width: 767px) {
+
+    .crossdiv{
+            font-size: 20px;
+        }
+    .headline{
+        font-size: 17px;
+    }
+}
+
+
+
+    </style>

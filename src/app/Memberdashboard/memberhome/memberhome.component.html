@@ -1,0 +1,91 @@
+<div *ngIf="graphmes && !disp">
+<div class=" col-md-offset-1 col-md-11 col-sm-11 col-xs-11 runningleft ">
+  <h2 class="text-center formenchoice toppest1" id="Gra">{{title}}</h2></div>
+
+  
+<table class="table table-responsive">
+  
+  <tr id="scroll">
+    <!-- <td class="col-md-12 col-xs-12">
+      <canvas id="LineChart" style="width: 1521px;
+    height: 506px;">
+      </canvas>
+    </td> -->
+    <td class="col-md-12 col-xs-12 col-sm-12">
+    	  <canvas id="chartJSContainer" style="width: 1521px;
+         height: 506px;"></canvas>
+     
+     
+    </td>
+  </tr>
+</table>
+</div>
+
+
+
+
+
+<div id="PopRes1" #PopRes1 class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header text-center"style="background-color:#337ab7;color:white">
+        <p class="modal-title">WELCOME To  GFUNDS</p>
+      </div>
+      <div class="modal-body" style="text-align: center;">
+        <p>Glad you registered for the GFUNDS, Kindly Wait till Admin verify your profile .Thank You</p>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal" (click)="success()">Ok</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div *ngIf="!graphmes && !disp">
+  <div class="container design">
+    <h2 style="color: blue;">What To Do Next?</h2>
+    <div class="step text-left" >
+      <p style="color: black;"><b>Step 1.</b>Go To Upcomming Funds.<p>
+      <p style="color: black;"><b>Step 2.</b>Send Request To Your  Interested Fund.</p>
+      <p style="color: black;"><b>Step 3.</b>In DropDown Choose Number Of Funds That You Want To Participate.</p>
+      <p style="color: black;"><b>Step 4.</b>Wait Till Foreman Add You For The Respective Fund.</p>
+    </div>
+    <h2></h2>
+  
+</div>
+</div>
+
+
+
+<div *ngIf="disp">
+  <div class="container design">
+    <h2 style="color: blue;">What To Do Next</h2>
+    <div class="row">
+     <p>Please Wait Till Foremen Add You To Respective Fund. </p>
+    </div>
+    
+  
+</div>
+</div>
+<style>
+  .step{
+    font-size: 23px;
+    margin-left: 10%;
+  }
+.modal-title{
+  font-size: 25px;
+}
+@media only screen and (min-width: 360px) and (max-width: 640px) {
+  .modal-title{
+
+font-size: 18px;
+}
+.step{
+  font-size: 16px
+}
+}
+</style>
+
+
+

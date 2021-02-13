@@ -1,0 +1,299 @@
+
+<div class="abcd">
+  <div class="container-fluid boardcss">
+    <div class="row">
+      <div class="board">
+        <div class="board-inner">
+          <ul class="nav nav-pills" id="myTab">
+            <div class="liner"></div>
+            <li class="active">
+              <a href="#fpd" data-toggle="pill" title="Personal Details">
+                            <span class="round-tabs one">
+                                <i class="glyphicon glyphicon-user"></i>
+                            </span>
+                        </a>
+            </li>
+            <li>
+              <a href="#fdetls" data-toggle="pill" title="Foreman Details">
+                            <span class="round-tabs two">
+                                <i class="glyphicon glyphicon-file"></i>
+                            </span>
+                        </a>
+            </li>
+            <li>
+              <a href="#frds" data-toggle="pill" title="Residential Details">
+                            <span class="round-tabs three">
+                                <i class="glyphicon glyphicon-home"></i>
+                            </span>
+                        </a>
+            </li>
+            <li>
+              <a href="#fcd" data-toggle="pill" title="Company Details">
+                            <span class="round-tabs four">
+                                <i class="glyphicon glyphicon-briefcase"></i>
+                            </span>
+                        </a>
+            </li>
+            <li class="editdiv">
+              <button class="btn btn-primary editbutton" *ngIf="!edit" (click)="edit = !edit">Edit</button>
+              <div ng-show="viewprofileloading">
+                <div class="loader"></div>
+              </div>
+            </li>
+            <button class="btn btn-primary editbutton1 cancelbutton" *ngIf="edit" (click)="edit = !edit">Cancel</button>
+            <button class="btn btn-primary editbutton1" *ngIf="edit" [disabled]="!edit" (click)="savedata(foremandetails)">Save</button>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="tableborder">
+    <div class="table-responsive">
+      <div class="tab-content">
+        <div class="tab-pane fade in active" id="fpd">
+          <table class="table table-striped tableText text-center">
+            <thead>
+              <tr>
+                <td colspan="2">
+                  <b>PERSONAL DETAILS</b>
+                </td>
+              </tr>
+            </thead>
+            <tbody class="tableText">
+              <tr>
+                <th style="width:50%;">Applicant Name</th>
+                <th>
+                  <input type="text" [(ngModel)]="foremandetails[0].full_name" [ngClass]="{'noeditable': !edit, 'editing': edit}" only-alphabets ng-required="true " no-repeat ng-trim="false" [disabled]="!edit">
+                </th>
+              </tr>
+              <tr>
+                <th>DOB</th>
+                <th>
+                  <input type="text" [ngClass]="{'noeditable': !edit, 'editing': edit}" [(ngModel)]="foremandetails[0].date_of_birth" [disabled]="!edit">
+                </th>
+              </tr>
+              <tr>
+                <th>Mobile Number</th>
+                <th>
+                  <input type="text" [ngClass]="{'noeditable': !edit, 'editing': edit}" [(ngModel)]="foremandetails[0].mobile_number" ng-disabled="edit" [disabled]="!edit">
+                </th>
+              </tr>
+              <tr>
+                <th>Marital Status</th>
+                <th>
+                  <select [ngClass]="{'noeditable': !edit, 'editing': edit}" [(ngModel)]="foremandetails[0].marital_status" ng-disabled="edit" [disabled]="!edit">
+                    <option ng-disabled="true">---Select Marital Status ---</option>
+                    <option value="Unmarried">Unmarried</option>
+                    <option value="Married">Married</option>
+                  </select>
+                </th>
+              </tr>
+              <tr *ngIf="foremandetails[0].marital_status=='Married'">
+                <th>Spouse Name</th>
+                <th>
+                  <input type="text" [ngClass]="{'noeditable': !edit, 'editing': edit}" [(ngModel)]="foremandetails[0].spouse_name" [disabled]="!edit">
+                </th>
+              </tr>
+              <!-- <tr>
+                <th>Fraternity Score</th>
+                <th>{{foremandetails.gchits_score}}</th>
+              </tr> -->
+              <tr>
+                <th>Upload foremandetails Photo</th>
+                <th>
+                  <input type="file" name="front_photo" file-model="front_photo" [(ngModel)]="front_photo" class="form-control" (change)="foremanpic($event)">
+                  <button class="btn btn-primary" (click)="foremanimage()" id="formerupload">upload</button>
+                  <button class="btn btn-danger" ng-click="changeforemandetailsimage1()" ng-show="uploading" id="formerupload">cancel</button>
+                </th> 
+              </tr>
+            </tbody>
+          </table>
+          <!-- </div> -->
+        </div>
+        <!-- <div class="table-responsive"> -->
+        <div class="tab-pane fade" id="fdetls">
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <td colspan="2">
+                  <b>FOREMAN DETAILS</b>
+                </td>
+              </tr>
+            </thead>
+            <tbody class="tableText">
+              <tr>
+                <th style="width:50%;">Aadhar Number</th>
+                <th>
+                  <input type="text" [ngClass]="{'noeditable': !edit, 'editing': edit}" [(ngModel)]="foremandetails[0].aadhaar_card" [disabled]="!edit" ng-required="true">
+                </th>
+              </tr>
+              <tr>
+                <th>PAN Card Number</th>
+                <th>
+                  <input type="text" [ngClass]="{'noeditable': !edit, 'editing': edit}" [(ngModel)]="foremandetails[0].applicant_pancard_number" [disabled]="!edit">
+                </th>
+              </tr>
+            </tbody>
+          </table>
+          <!-- </div> -->
+        </div>
+        <!-- <div class="table-responsive"> -->
+        <div class="tab-pane fade" id="bank">
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <td colspan="2">
+                  <b>BANK DETAILS</b>
+                </td>
+              </tr>
+            </thead>
+            <tbody class="tableText">
+              <tr>
+                <th style="width:50%;">Bank Name</th>
+                <th>
+                  <input type="text" [ngClass]="{'noeditable': !edit, 'editing': edit}" [(ngModel)]="foremandetails[0].bank_name" [disabled]="!edit">
+                </th>
+              </tr>
+              <tr>
+                <th>Account Holder Name</th>
+                <th>
+                  <input type="text" [ngClass]="{'noeditable': !edit, 'editing': edit}" [(ngModel)]="foremandetails[0].account_name" [disabled]="!edit" ng-required="true" dont-begin-with-zero="a-z A-Z">
+                </th>
+              </tr>
+              <tr>
+                <th>Account Number</th>
+                <th>
+                  <input type="text" [ngClass]="{'noeditable': !edit, 'editing': edit}" [(ngModel)]="foremandetails[0].account_number" [disabled]="!edit" minlength="12" maxlength="12" ng-required="true" dont-begin-with-zero="0-9" check-validation='numberField'>
+                </th>
+              </tr>
+              <tr>
+                <th>IFSC Code</th>
+                <th>
+                  <input type="text" [ngClass]="{'noeditable': !edit, 'editing': edit}" [(ngModel)]="foremandetails[0].ifsc_code" [disabled]="!edit" capitalize minlength="11" maxlength="11" ng-pattern="/^[A-Z]{4}\d{7}$/" ng-required="true" dont-begin-with-zero="a-z A-Z0-9" no-repeat ng-trim="false">
+                </th>
+              </tr>
+              <tr>
+                <th>Account Type</th>
+                <th>
+                  <select [ngClass]="{'noeditable': !edit, 'editing': edit}" [(ngModel)]="foremandetails[0].account_type" [disabled]="!edit" ng-options="account
+                            for account in accounttype">
+                    <option ng-disabled="true">---Select Account Type---</option>
+                  </select>
+                </th>
+              </tr>
+            </tbody>
+          </table>
+          <!-- </div> -->
+        </div>
+        <!-- <div class="table-responsive"> -->
+        <div class="tab-pane fade" id="frds">
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <td colspan="2">
+                  <b> RESIDENTIAL DETAILS</b>
+                </td>
+              </tr>
+            </thead>
+            <tbody class="tableText">
+              <tr>
+                <th style="width:50%;">House No</th>
+                <th>
+                  <input type="text" name="housename" [ngClass]="{'noeditable': !edit, 'editing': edit}" [(ngModel)]="foremandetails[0].house_number" ng-disabled="edit" ng-pattern="/^(?:[0-9A-za-z]+|([/\s]))$/" no-repeat ng-trim="false" no-special-char [disabled]="!edit">
+                </th>
+              </tr>
+              <tr>
+                <th>Building Name</th>
+                <th>
+                  <input type="text" name="Buildingname" [ngClass]="{'noeditable': !edit, 'editing': edit}" [(ngModel)]="foremandetails[0].building_name" [disabled]="!edit" only-alphabets ng-required="true" no-repeat ng-trim="false">
+                </th>
+              </tr>
+              <tr>
+                <th>Street Name</th>
+                <th>
+                  <input type="text" name="streetname" [ngClass]="{'noeditable': !edit, 'editing': edit}" [(ngModel)]="foremandetails[0].street" [disabled]="!edit" dont-begin-with-zero="#/ ,0-9a-zA-Z-" no-repeat ng-trim="false" ng-required="true">
+                </th>
+              </tr>
+              <tr>
+                <th>Landmark Name</th>
+                <th>
+                  <input type="text" name="house Landmark name" [ngClass]="{'noeditable': !edit, 'editing': edit}" [(ngModel)]="foremandetails[0].home_land_mark" [disabled]="!edit" ng-required="true" ng-pattern="/^(?:[0-9A-za-z]+|([/\s]))$/" no-repeat ng-trim="false" no-special-char>
+                </th>
+              </tr>
+              <tr>
+                <th>Business State</th>
+                <th>
+                  <select [ngClass]="{'noeditable':!edit,'editing':edit}" [disabled]="!edit" (change)="change1Country()" [(ngModel)]="foremandetails[0].state">
+                    <option>----select state----</option>
+                    <option *ngFor="let count of countryList">{{count.name}}</option>
+                  </select>
+                </th>
+              </tr>
+              <tr>
+                <th>District</th>
+                <th>
+                  <select [ngClass]="{'noeditable': !edit, 'editing': edit}" [(ngModel)]="foremandetails[0].district" [disabled]="!edit">
+                    <option>---Select District---</option>
+                    <option *ngFor="let city of cities">{{city}}</option>
+                  </select>
+                </th>
+              </tr>
+              <tr>
+                <th>City</th>
+                <th>
+                  <input type="text" name="city" [ngClass]="{'noeditable': !edit, 'editing': edit}" [(ngModel)]="foremandetails[0].city" [disabled]="!edit" only-alphabets ng-required="true " no-repeat ng-trim="false">
+                </th>
+              </tr>
+              <tr>
+                <th>Pincode</th>
+                <th>
+                  <input type="text" name="pincode" [ngClass]="{'noeditable': !edit, 'editing': edit}" [(ngModel)]="foremandetails[0].pin_code" [disabled]="!edit" minlength="6" maxlength="6" ng-required="true" dont-begin-with-zero="0-9">
+                </th>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <!-- </div> -->
+        <!-- <div class="table-responsive"> -->
+        <div class="tab-pane fade" id="fcd">
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <td colspan="2">
+                  <b>COMPANY DETAILS</b>
+                </td>
+              </tr>
+            </thead>
+            <tbody class="tableText">
+              <tr>
+                <th style="width:50%;"> Fraternity Company</th>
+                <th>
+                  <input type="text" name="chitcompany" [ngClass]="{'noeditable': !edit, 'editing': edit}" [(ngModel)]="foremandetails[0].chit_company" [disabled]="!edit">
+                </th>
+              </tr>
+              <tr>
+                <th>Fraternity Company Address</th>
+                <th>
+                  <input type="text" name="chitcompanyaddress" [ngClass]="{'noeditable': !edit, 'editing': edit}" [(ngModel)]="foremandetails[0].chit_company_address" [disabled]="!edit" dont-begin-with-zero="#/ ,0-9a-zA-Z-" no-repeat ng-trim="false" ng-required="true">
+                </th>
+              </tr>
+              <tr>
+                <th>Fraternity Company Landmark</th>
+                <th>
+                  <input type="text" name="chitcompanylandmark" [ngClass]="{'noeditable': !edit, 'editing': edit}" [(ngModel)]="foremandetails[0].chit_company_landmark" [disabled]="!edit" onll-alphats ng-required="true" no-repeat ng-trim="false" [disabled]="!edit">
+                </th>
+              </tr>
+              <tr>
+                <th>Balance Amount</th>
+                <th>
+                  <input type="text" [ngClass]="{'noeditable': !edit, 'editing': edit}">
+                </th>
+              </tr>
+            </tbody>
+          </table>
+          <!-- </div> -->
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

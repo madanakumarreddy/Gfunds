@@ -1,0 +1,46 @@
+
+
+.crossymbol {
+    float: right;
+    size: -19px;
+    width: 20px;
+    height: 20px;
+    padding-top: 0px;
+    padding-left: 5px;
+}
+
+.modal-header {
+    padding: 15px;
+    border-bottom: 1px solid #e5e5e5;
+    background-color: #ed6506;
+    text-align: center;
+    color: white;
+}
+
+.modal-title {
+    margin: 0;
+    line-height: 1.42857143;
+    color: white;
+}
+
+.modal-body table.loan-table>tbody>tr>th {
+    text-align: center;
+}
+
+.modal-dialog {
+    width: 720px;
+}
+
+ #paginationStyle {
+    text-align: right;
+    padding: 18px;
+    /*font-size: large;*/
+}
+#spanmessage {
+    font-size: 20px;
+    color: red;
+}
+#myduesbody {
+    background: whitesmoke;
+    color: black;
+}

@@ -1,0 +1,63 @@
+<div class=" col-md-offset-1 col-md-11 runningleft ">
+  <h2 class="text-center formenchoice toppest1">Running Funds</h2>
+</div>
+<div class="col-md-12 col-xs-12 col-sm-12" ng-show="tab==1"><br><br><br><br>
+<div class="col-xs-12 col-sm-12 col-md-12" ng-show="alldetails.length>0">
+<div class="row" style="margin-bottom: -35px">
+  <span id="itemsperpagemargin">
+  <label for="Items Per Page">Entity Per Page &nbsp;</label>
+  <select id="itemperpagestyle" [(ngModel)] = "itemsPerPage123" (change) = "userpag(itemsPerPage123)">
+
+  <option value="1">1</option>
+  <option value="2">2</option>
+  <option value="3">3</option>
+  <option value="4">4</option>
+  <option value="5">5</option>
+  <option value="6">6</option>
+  <option value="7">7</option>
+  <option value="8">8</option>
+  <option value="9">9</option>
+  <option value="10">10</option>
+  <option value="15">15</option>
+  <option value="20">20</option>
+  </select>
+  </span> &nbsp;
+          </div>
+        </div>
+<div class="col-md-3 col-xs-12 col-sm-12 divborder " *ngFor="let data of member_runningdata | paginate: { itemsPerPage :perPage, currentPage:p };" style="margin-bottom: 30px;">
+  <div class="row ">
+    <div class="col-xs-12 col-sm-12 col-md-12 line1 text-center ">
+      <div class="row">
+        <label class="chitamount ">{{data.chit_amount|currency:'INR'}}</label>
+        <label class="mcount" rel="tooltip" data-toggle="tooltip" data-placement="left" title="Fund Count"> </label><span class="dot">{{data.running_count}}</span>
+      </div>
+    </div>
+    <div class="col-xs-12 col-sm-12 col-md-12 chitlogo ">
+      <div class="col-xs-6 col-sm-6 col-md-6 imgdiv" [ngStyle]="{'background-image':' url(' + data.company_logo + ')'}" style="background-size: 100% 100%;">
+      </div>
+      <div class="col-xs-6 col-sm-6 col-md-6 amount ">
+        <div class="row ">{{data.chit_duration+" "+'Months'}}</div>
+      </div>
+      <div class="col-xs-12 col-sm-12 col-md-12 " style="color: #0a58a4; text-transform: capitalize;margin: 2vh 0vh; ">
+        <div class="row ">
+          {{data.chit_number | uppercase}}&nbsp;({{data.chit_location | uppercase}})
+        </div>
+      </div>
+    </div>
+    <hr>
+    <div class="col-xs-12 col-sm-12 col-md-12 line3 ">
+      <div class="row ">
+        <div class="col-xs-12 col-sm-12 col-md-12  buttontext1" (click)="getrunningfund(data)"> VIEW PROGRESS</div><br>
+      </div>
+    </div>
+  </div>
+</div>
+<div *ngIf="!member_runningdata[0]" class="col-xs-12 col-sm-12 col-md-12">
+  <div class="text-center " style="color: red">
+    <h2>No Running Funds Found</h2>
+  </div>
+</div>
+</div>
+<div class="col-md-offset-9 mobpag">
+<pagination-controls (pageChange)= "p = $event" ></pagination-controls>
+</div>

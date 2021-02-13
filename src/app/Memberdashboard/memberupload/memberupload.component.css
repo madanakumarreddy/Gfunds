@@ -1,0 +1,142 @@
+
+.uploadmemtop input {
+    border-style: solid;
+    border-width: thin;
+   
+}
+.updoc{
+    margin-left: 35px
+}
+
+.documents{
+    margin-left: 60px;
+}
+
+.uploadmemtop button {
+    font-weight: bolder;
+    font-size: 17px;
+    background: rgba(3, 27, 58, 0.74);
+    color: white;
+    margin-top: 5px;
+}
+
+.head{
+    color: #ffff;
+    background-color: #337ab7;
+    text-align: center;;
+
+}
+#foremargin {
+        width: 89%;
+        /* margin-left: 12px; */
+    }
+.membr tr th {
+    font-size: 24px;
+    font-weight: bold;
+    color: #0c0c0c;
+}
+.startdiv {
+    height: 38em;
+    margin-top: 4px;
+}
+.abc{
+    text-align: center;
+}
+
+/* .loader {
+    border: 2px solid white;
+    border-radius: 50%;
+    border-top: 4px solid #ed6560;
+    width: 40px;
+    height: 40px;
+    -webkit-animation: spin 2s linear infinite;
+    animation: spin 2s linear infinite;
+    float: center;
+} */
+
+#uplod {
+    margin-left: 351px;
+    box-shadow: 1px 1px 12px 0px #0A58A4;
+}
+
+@-webkit-keyframes spin {
+    0% {
+        -webkit-transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+    }
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@media only screen and (min-width:320px) and (max-width: 767px) {
+    #uplod {
+        margin-left: 0px;
+    }
+    .updoc{
+    margin-left: 2px
+}
+    .startdiv {
+        margin-top: 5em;
+    }
+    .membr tr th {
+        font-size: 11px;
+        font-weight: bold;
+        color: #0c0c0c;
+    }
+    .filety{
+        font-size: 9px;
+        width:auto;
+    }
+    .uploadmemtop button {
+        font-size: 10px;
+    }
+    .txtsize{
+        font-size: 9px;
+    margin-left: -9px;
+    }
+    .documents{
+        margin-left: 5px;
+    }
+    .table-responsive{
+        margin-left: -2px;
+    }
+    ::ng-deep.cdk-overlay-pane{
+        max-width: 92vw !important;
+      }
+}
+
+@media only screen and (min-width:768px) and (max-width: 1024px) {
+    #uplod {
+        margin-left: 0px;
+    }
+    .startdiv {
+        margin-top: 5em;
+    }
+    .membr tr th {
+        font-size: 11px;
+        font-weight: bold;
+        color: #0c0c0c;
+    }
+    .filety{
+        font-size: 9px;
+        width:auto;
+    }
+    .uploadmemtop button {
+        font-size: 10px;
+    }
+    .txtsize{
+        font-size: 11px;
+        margin-left: -44px;
+    }
+}
+
+

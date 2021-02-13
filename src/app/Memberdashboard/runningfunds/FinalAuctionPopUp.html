@@ -1,0 +1,48 @@
+<div class="modal-header" style="color: white;text-align: center;
+    background: #337ab7;margin-top: -24px;margin-left: -24px;">
+    <h3 class="modal-title">Auction Completed Successfully</h3>
+</div>
+<div class="modal-body">
+
+
+    <div class="col-md-12 text-center">
+        <p style="text-align: center; margin-top: 40px;">The auction is alloted to {{finalPop.full_name}} with prize money of {{finalPop.prize_money}}/-</p>
+ 
+    </div>
+</div>
+
+
+
+<div class="modal-footer">
+    
+    <button class="btn btn-primary" type="button"  (click)="onNoClick()" data-dismiss="modal">Ok</button>
+</div>
+
+
+
+
+<style>
+.modal-header{
+    width: 108%;
+}
+.modal-body{
+    padding: 0px;
+}
+.modal-footer{
+    padding: 0px;
+    padding-top: 15px;
+}
+.h3{
+    margin-top: 0px;
+    margin-bottom: 2px;
+}
+@media only screen and (min-width: 360px) and (max-width: 640px) {
+    .modal-header{
+    width: 120%;
+}
+::ng-deep.cdk-overlay-pane{
+    /* width: 110% !important; */
+    max-width: 96vw !important;
+}
+}
+</style>

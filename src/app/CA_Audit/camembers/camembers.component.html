@@ -1,0 +1,50 @@
+<div class="col-md-12 col-xs-12">
+  <h2 class="text-center  toppest1 col-md-offset-1 col-md-10">
+    Total Auctions Performed</h2>
+</div>
+<div class="col-md-8 col-xs-8 col-md-offset-1">
+  <button class="btn btn-success" (click)="addedmemback()" style="background-color: #337ab7;">Back</button>
+</div>
+<div class="col-md-12">
+<div class=" col-md-4 col-md-offset-4 col-sm-4 col-xs-12 " id="tab">
+  <table class="table table-bordered tableText text-center">
+    <thead>
+      <tr>
+        <th class="mainHead">Auction </th>
+        <th class="mainHead">View Transactions</th>
+      </tr>
+    </thead>
+    <tbody class="tableText1">
+      <tr *ngFor="let data of cnt"> 
+        <td>{{data.auction_count}}</td>
+        <td>
+          <button class="btn btn-primary" (click)="getmembertrans(data.auction_count,data.chit)">Transactions</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+</div>
+
+    <!-- <div class="container" >
+      <table class="table table-bordered table-sm">
+       <thead style="background-color: #0a58a4;color: white;">
+         <tr class="text-center">
+           <th class="text-center">AUCTION</th>
+           <th class="text-center">View Transactions</th>
+         </tr>
+       </thead>
+       <tbody>
+         <tr class="text-center" *ngFor="let data of cnt">
+           <td>{{data.auction_count}}</td>
+           <td> <button class="btn btn-primary"(click)="getmembertrans(data.auction_count,data.chit)">View</button>
+           </td>
+         </tr>
+       </tbody>
+     </table>
+   </div> -->
+<div class="col-xs-12 col-sm-12 col-md-12" *ngIf="!cnt">
+  <div class="text-center">
+    <h1 id="norecordsstyle">No Auctions Performed</h1>
+  </div>
+</div>

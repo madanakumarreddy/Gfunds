@@ -1,0 +1,37 @@
+<div>
+  <div class="col-md-12 loginBG">
+    <div class="row">
+      <div class="col-sm-6  col-md-3 login-shadow">
+        <div class="col-md-12 text-center" style="margin: auto;">
+          <div class="row">
+            <div>
+
+            <div class="col-md-12 login-head">LOGIN</div>
+             <form class="login-form" name="adminlogin">
+              <div class="form-container1 invalid-input1">
+                <input type="text" class="form-control" id="username" name="username" [(ngModel)]="user.username" minlength="10" maxlength="10" (keypress)="keyPress($event)" required="true">
+                <span class="username">Enter the phone number</span>
+              </div>
+              <br>
+              <div class="form-container1 invalid-input2">
+                <input type="password" class="form-control" id="password" name="password" [(ngModel)]="user.password" required="true">
+                <span class="username">Enter the password</span>
+              </div>
+              <div>
+                <small style="color: red"> <b>{{err}}</b></small>
+              </div>
+              <div class="col-md-12 text-center">
+                <button id="submit" class="btn btn btn-primary text-center login-button" (click)="login(user)">Submit</button>
+              </div>
+              <p><a class="text-center" routerLink="/forgotpswd">Forgot Password?</a></p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="foot"> copyright &#169; GFUNDS 2018 - all rights reserved
+    </div>
+  </div>
+</div>

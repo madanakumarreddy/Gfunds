@@ -1,0 +1,245 @@
+.toppest1 {
+  text-align: center;
+  text-align: center;
+  font-weight: bolder;
+  color: #0a58a4;
+  box-shadow: 16px -1px 60px 0px;
+  /* margin-top: 125px; */
+  /* margin-left: 85px; */
+}
+
+.form-inline {
+  text-align: center;
+  margin-top: 15px;
+  font-size: 20px;
+}
+
+.toppest2 {
+  text-align: center;
+  text-align: center;
+  font-weight: bolder;
+  color: #0a58a4;
+  box-shadow: 16px -1px 60px 0px;
+  /* margin-left: 100px; */
+}
+
+.tableres {
+  margin-top: 40px;
+  /* margin-left: 81px; */
+}
+
+.mainHead {
+  padding: 0px 10px 0px 10px;
+}
+
+table>thead:first-child>tr:first-child>th {
+  background: #0a58a4;
+  color: white;
+  font-size: 16px;
+  text-align: center;
+  font-weight: bold;
+}
+
+table>tbody>tr>td {
+  background: white;
+  color: black;
+  font-size: 14px;
+  text-align: center;
+}
+
+.backcolor {
+  color: #fff;
+  background-color: #337ab7;
+  border-color: black;
+}
+
+.tableText {
+  color: #242d2a !important;
+  box-shadow: 1px 1px 12px 0px #0A58A4;
+}
+
+.divborder {
+  margin-top: 50px;
+  margin-bottom: 50px;
+  width: 40vh!important;
+  height: 37vh!important;
+  /*margin: 16px 16px;*/
+  /* margin-left: 150px; */
+  box-shadow: 1px 1px 2px 1px #e3dfdf;
+  -webkit-transition: all .3s ease;
+  -moz-transition: all .3s ease;
+  -o-transition: all .3s ease;
+  -ms-transition: all .3s ease;
+  transition: all .3s ease;
+  border-left: 1px solid #1d8ccd;
+  border-right: 1px solid #1d8ccd;
+}
+
+.divborder:hover {
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+  -moz-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  box-shadow: 0 0 20px rgba(0, 0, 0, .2);
+}
+
+#star-six {
+  margin: 50px;
+  width: 0;
+  height: 0;
+  border-left: 76px solid #FF9800;
+  border-right: 50px solid #ffffff;
+  border-bottom: 100px solid #ffffff;
+  /* position: relative; */
+  box-shadow: 0 5px 5px -3px rgba(0, 0, 0, .2), 0 8px 10px 1px rgba(0, 0, 0, .14), 0 3px 14px 2px rgba(0, 0, 0, .12);
+}
+
+#auction {
+  margin: -57px;
+  font-size: 28px;
+  color: rgb(63, 81, 181);
+}
+
+.star1 {
+  background-color: rgb(63, 81, 181);
+  color: white;
+  width: 130px;
+  height: 37px;
+  border-radius: 8Px;
+}
+
+.badge {
+  background-color: #337ab7;
+  font-size: 108px;
+  margin-top: 17px;
+  margin-left: 80px;
+  padding-top: 10px;
+}
+
+.chitamount1 {
+  margin-top: 0.4vh;
+  cursor: pointer;
+}
+
+.line1 {
+  height: 36px;
+  border-bottom: 1px solid grey;
+  background: #1d8ccd;
+  color: white;
+}
+
+.more1 {
+  color: white;
+  text-align: center;
+  height: 6vh;
+  padding: 1.5vh;
+  margin-top: -6px;
+}
+
+.line3 {
+  background: #1d8ccd;
+  color: white;
+  margin-top: 50px;
+  height: 36px;
+}
+
+.auctionbox {
+  margin-top: 40px;
+  margin-left: 20px;
+}
+
+.headpart {
+  background: #0a58a4;
+  color: white;
+  /* font-size: 16px; */
+  text-align: center;
+  font-weight: bold;
+  padding: 23px;
+  width: 100%;
+  margin-left: 0px;
+}
+
+table>thead:first-child>tr:first-child>th {
+  background: #0a58a4;
+  color: white;
+  font-size: 16px;
+  text-align: center;
+  font-weight: bold;
+}
+
+table>tbody>tr>td {
+  color: #0a58a4;
+  font-size: 16px;
+}
+.textPointer:hover {
+  cursor: pointer;
+  font-weight :bold ;
+}
+
+
+.tableText {
+  color: #242d2a !important;
+  box-shadow: 1px 1px 12px 0px #0A58A4;
+}
+
+.backbtn {
+  left: 86px;
+}
+
+.star1 {
+  background-color: rgb(63, 81, 181);
+  color: white;
+  width: 130px;
+  height: 37px;
+  border-radius: 8px;
+}
+
+.membertrandetails {
+  /* margin-left: 15px; */
+  margin-top: 28px;
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+  .toppest1 {
+    margin-left: -1px;
+  }
+  /* .table-responsive{
+    
+    } */
+}
+
+@media only screen and (min-width: 1024px) and (max-width: 1366px) {
+  /* .toppest1{
+    margin-left: 80px;
+  } */
+  /* .table-responsive{
+    padding: 10px;  
+} */
+}
+
+@media only screen and (min-width: 375px) and (max-width: 812px) {
+  .toppest1 {
+    margin-left: -6px;
+  }
+  .divborder {
+    margin-left: 30px;
+  }
+  .table-responsive {
+    padding: 10px;
+  }
+}
+
+@media only screen and (min-width: 320px) and (max-width: 568px) {
+  .toppest1 {
+    margin-left: 1px;
+  }
+  .divborder {
+    margin-left: 30px;
+  }
+  /* .table-responsive{
+    margin-left: -37px
+  } */
+  .table-responsive {
+    padding: 10px;
+  }
+}

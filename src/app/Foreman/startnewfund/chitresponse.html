@@ -1,0 +1,38 @@
+<div class=" chit col-xs-12 col-sm-12 col-md-12">
+    
+        <h3 style="text-align: center;">Fund Response</h3>
+
+    </div>
+    <div class="col-xs-12 col-md-12 col-sm-12 modal-body newbody">
+    	<p>Fund saved Successfully. Please wait for our Admin to validate the fund.</p>
+    </div>
+    
+    
+    <div class="modal-footer text-center">
+        <button class="btn btn-primary" (click)="onNoClick()">Ok</button>
+      
+    </div>
+
+<style>
+.chit{
+    color: white;
+    background: #337ab7;
+}
+p{
+font-size: 20px;
+text-align: center;
+}
+
+::ng-deep.mat-dialog-container{
+
+padding: 0px;
+
+}
+@media only screen and (min-width: 320px) and (max-width: 640px){
+    
+::ng-deep.cdk-overlay-pane{
+    max-width: 96vw !important;
+}
+}
+
+</style>

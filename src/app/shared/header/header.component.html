@@ -1,0 +1,72 @@
+    <div>
+        <div id="content" class="container" style="width: 100%;">
+            <div class="row">
+                <div id="gchit-page">
+                    <header id="gchit-masthead" class="gchit-site-header gchit-white bggrr">
+                        <div class="gchit-container gchit-clearfix">
+                            <div id="gchit-site-branding">
+                                <a >
+                                    <img src="assets/img/GFUNDS LOGO.png" alt="GChits">
+                                    <!-- <span class="head-gchits">GCHITS</span>-->
+                                </a>
+                            </div>
+                            <!-- .site-branding -->
+                            <div class="gchit-toggle-nav">
+                                <a href="javascript:void(0)" class="closebtn" id="clickone" onclick="openNav()"><span></span></a>
+                                <a href="javascript:void(0)" class="closebtn" id="clicktwo" onclick="closeNav()" style="display: none;"><span></span></a>
+                            </div>
+                             <nav id="gchit-site-navigation" class="gchit-main-navigation">
+                        <div *ngIf="showHeaderCompo" class="gchit-menu gchit-clearfix ">
+                            <ul id="menu-primary-menu" class="gchit-clearfix sf-js-enabled sf-arrows">
+                                <li><a routerLink="/">HOME</a></li>
+                                <li><a  ng-show="log" routerLink='/upcomingfunds'>UPCOMING FUNDS</a></li>
+                                <!-- <li><a  ng-show="log" routerLink='/runningfunds'>RUNNING FUNDS</a></li> -->
+                               <!--  <li><a href="#foremanlandingpage" ng-show="log">FOREMAN</a></li> --> 
+                               <!--  <li><a routerLink="/fraternityfund" ng-show="log">FRATERNITY FUND</a></li> -->
+                                <li ng-show="log"><a routerLink="/login">SIGN IN</a></li>
+                                <!-- <li><a ng-click="signuprpop()" ng-show="log">SIGN UP</a></li> -->
+                                <li><a (click)="signUpPopup()">SIGN UP</a></li>
+
+                                <!-- <li ng-show="log"><a href="#login">LOGIN</a></li -->
+                               <!--  <li ng-show="!log"><a ng-click="logout()" class="login1 ">LOGOUT</a></li> -->
+                            </ul>
+                        </div>
+
+                        <div *ngIf= "showLogout" class="lgout">
+                            <li><a (click)="logoutAdmin()">LOGOUT</a></li>
+
+                        </div>
+                    </nav>
+                      
+                        </div>
+                        <div  class="top-bar">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="call-us top-bar-block">
+                                        <i class="icon-phone"></i>
+                                        <span>
+                        Call us at :<a href="tel:7019508385"> +91 7019508385</a> 
+                        </span>
+                                    </div>
+                                    <div class="mail-us top-bar-block">
+                                        <i class="icon-email"></i> <span> E-mail:
+                            info.gfunds@gowdanar.com </span>
+                                    </div>
+                                    <div style="float: right;color: #c2c8ce;font-size: 23px;padding: 0px 40px;">
+                                        <a href=""><i class="fa fa-google" target="_blank"></i></a>
+                                        <a href="https://www.facebook.com/Gchits-171573950207366/?modal=admin_todo_tour" target="_blank"><i class="fa fa-facebook"></i></a>
+                                        <a href="https://www.linkedin.com/in/gowdanar-chitfunds-private-limited-246259164/" target="_blank"> <i class="fa fa-linkedin"></i></a>
+                                        <a href="https://twitter.com/gowdanar_gchits"><i class="fa fa-twitter" target="_blank"></i></a>
+                                        <a href=""><i class="fa fa-youtube" target="_blank"></i></a>
+                                   </div>
+                                </div>
+                            </div>
+                        </div>
+                    </header>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+
+

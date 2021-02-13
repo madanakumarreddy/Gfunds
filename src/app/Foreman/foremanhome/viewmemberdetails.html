@@ -1,0 +1,420 @@
+    <div class="col-md-12 ">
+        <h3 class="text-center formenchoice toppest1">Member Details</h3>
+    </div>
+    <!-- <div class="col-md-10  text-center"> -->
+        <br>
+        <br>
+        <div class=" col-md-10 col-md-offset-1">
+            <button  class="btn btn-primary pull-left " (click)="auctionback1()">Back</button>
+        </div>
+            <div class="col-md-10 col-sm-10 col-xs-11 col-md-offset-1  col-sm-offset-1 table-responsive" >
+                <table class="table table-bordered tableText text-center">
+                    <thead>
+                        <tr>
+                            <th class="mainHead">Serial No</th>
+                            <th class="mainHead">Member Name</th>
+                            <th class="mainHead">Mobile Number</th>
+                            <th class="mainHead">Member Location </th>
+                            <th class="mainHead">Transaction Id</th>
+                            <!-- <th class="mainHead">Member Star Ratings</th> -->
+                            <th class="mainHead">View Profile</th>
+                        </tr>
+                    </thead>
+                    <tbody class="tableText1">
+                        <tr *ngFor="let data of MemberData; let i = index;">
+                            <td>{{i+1}}</td>
+                            <td>{{data.full_name}}</td>
+                            <td>{{data.mobile_number}}</td>
+                            <td>{{data.city}}</td>
+                            <td>
+     <button class="btn btn-default" (click)="entertransaction1({chitId:data.chit,memberId:data.member_count,auctionNo:data.auction_count})"
+                                [disabled]="data.flag == ''">{{data.foreman_transaction}}</button>
+                            </td>
+                            <!-- <td><span style="color:gold;margin-left: 5px" ng-repeat="num in getRating(data[0].member_rating) track by $index" class="glyphicon glyphicon-star"></span></td> -->
+                            <td>
+                                <button class="btn btn-primary" (click)="viewmemberprofile(data.member)">View</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        
+    <!-- </div> -->
+
+
+<div class="modal fade" #viewAllDetails id="exampleModal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="!submitted">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content" style="height: 547px;overflow: auto;">
+      <div class="modal-header" class="headpr">
+        <h3 class="modal-title headpart" id="exampleModalLabel" style="text-align: center">PROFILE DETAILS</h3>
+        <button style="margin-top: -56px;font-size: 26px; color: white;margin-right: 10px;" type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="form-inline" style="text-align: center;margin-top: 19px;">
+        <div class="form-group">
+          <div class="row foremanregistrationviewprofile">
+            <div class="table-responsive">
+                <table class="table table-bordered tableText" *ngIf="viewDetails && viewDetails.length > 0">
+                    
+                    <tbody class="tableText1">
+                        <tr>
+                            <th class="viewspan" style="width:50%;">Name</th>
+                            <td>
+                                <span class="viewobject">
+                            {{viewDetails[0].full_name}}
+                        </span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th class="viewspan">DOB</th>
+                            <td>
+                                <span class="viewobject">
+                            {{viewDetails[0].date_of_birth}}
+                        </span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th class="viewspan">Gender</th>
+                            <td>
+                                <span class="viewobject">
+                            {{viewDetails[0].gender}}
+                        </span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th class="viewspan">Qualification</th>
+                            <td>
+                                <span class="viewobject">
+                            {{viewDetails[0].qualification}}
+                        </span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th class="viewspan">Mobile Number</th>
+                            <td>
+                                <span class="viewobject">
+                            {{viewDetails[0].mobile_number}}
+                        </span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th class="viewspan">State</th>
+                            <td>
+                                <span class="viewobject">
+                            {{viewDetails[0].state}}
+                        </span>
+                            </td>
+                        </tr>
+                        <tr>
+                                <th class="viewspan">District</th>
+                                <td>
+                                    <span class="viewobject">
+                            {{viewDetails[0].district}}
+                        </span>
+                                </td>
+                           
+                        </tr>
+                        <tr>
+                            <th class="viewspan">City</th>
+                            <td>
+                                <span class="viewobject">
+                            {{viewDetails[0].city}}
+                        </span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th class="viewspan">Fraternity Score</th>
+                            <td>
+                                <span class="viewobject">
+                            {{finalscore}}
+                        </span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th class="viewspan">Credit Limit</th>
+                            <td>
+                                <span class="viewobject">
+                            {{viewDetails[0].credit_limit}}
+                        </span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th class="viewspan">Cibli Score</th>
+                            <td>
+                                <span class="viewobject">
+                            {{viewDetails[0].cibil_score}}
+                        </span>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="row foremanregistrationviewprofile">
+            <div class="table-responsive">
+                <table class="table table-bordered tableText" *ngIf="viewDetails && viewDetails.length > 0">
+                    <thead>
+                        <td colspan="2" class="mainHead">
+                            PERSONAL DETAILS
+                        </td>
+                    </thead>
+                    <tbody class="tableText1 tableText11">
+                        <tr>
+                            <th class="viewspan" style="width:50%;">Religion</th>
+                            <td>
+                                <span class="viewobject">
+                            {{viewDetails[0].religion}}
+                        </span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th class="viewspan" style="width:50%;">Alternate Phone Number</th>
+                            <td>
+                                <span class="viewobject">
+                            {{viewDetails[0].alternate_number}}
+                        </span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th class="viewspan" style="width:50%;">Aadhar Number</th>
+                            <td>
+                                <span class="viewobject">
+                            {{viewDetails[0].aadhaar_card}}
+                        </span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th class="viewspan">PAN Card Number</th>
+                            <td>
+                                <span class="viewobject">
+                            {{viewDetails[0].pancard_number}}
+                        </span>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="row foremanregistrationviewprofile">
+            <div class="table-responsive">
+                <table class="table table-bordered tableText" *ngIf="viewDetails && viewDetails.length > 0">
+                    <thead>
+                        <td colspan="2" class="mainHead">
+                            BANK DETAILS
+                        </td>
+                    </thead>
+                    <tbody class="tableText1">
+                        <tr>
+                            <th class="viewspan" style="width:50%;">Bank Name</th>
+                            <td>
+                                <span class="viewobject">
+                            {{viewDetails[0].selected_bank}}
+                        </span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th class="viewspan" style="width:50%;">Branch Name</th>
+                            <td>
+                                <span class="viewobject">
+                            {{viewDetails[0].branch_name}}
+                        </span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th class="viewspan">Account Name</th>
+                            <td>
+                                <span class="viewobject">
+                            {{viewDetails[0].holder_name}}
+                        </span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th class="viewspan">Account Number</th>
+                            <td>
+                                <span class="viewobject">
+                            {{viewDetails[0].account_number}}
+                        </span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th class="viewspan">IFSC Code</th>
+                            <td>
+                                <span class="viewobject">
+                            {{viewDetails[0].account_number}}
+                        </span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th class="viewspan">Account Type</th>
+                            <td>
+                                <span class="viewobject">
+                            {{viewDetails[0].account_type}}
+                        </span>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="row foremanregistrationviewprofile">
+            <div class="table-responsive">
+                <table class="table table-bordered tableText" *ngIf="viewDetails && viewDetails.length > 0">
+                    <thead>
+                        <td colspan="2" class="mainHead">
+                            RESIDENTIAL DETAILS
+                        </td>
+                    </thead>
+                    <tbody class="tableText1">
+                        <tr>
+                            <th class="viewspan" style="width:50%;">House No</th>
+                            <td>
+                                <span class="viewobject">
+                            {{viewDetails[0].house_no}}
+                        </span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th class="viewspan">Building Name</th>
+                            <td>
+                                <span class="viewobject">
+                            {{viewDetails[0].building_name}}
+                        </span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th class="viewspan">Street Name</th>
+                            <td>
+                                <span class="viewobject">
+                            {{viewDetails[0].member_rating}}
+                        </span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th class="viewspan">Landmark Name</th>
+                            <td>
+                                <span class="viewobject">
+                            {{viewDetails[0].member_rating}}
+                        </span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th class="viewspan">State</th>
+                            <td>
+                                <span class="viewobject">
+                            {{viewDetails[0].busines_state}}
+                        </span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th class="viewspan">District</th>
+                            <td>
+                                <span class="viewobject">
+                            {{viewDetails[0].district}}
+                        </span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th class="viewspan">City</th>
+                            <td>
+                                <span class="viewobject">
+                            {{viewDetails[0].city}}
+                        </span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th class="viewspan">Pincode</th>
+                            <td>
+                                <span class="viewobject">
+                            {{viewDetails[0].busines_pincode}}
+                        </span>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="row foremanregistrationviewprofile">
+            <div class="table-responsive">
+                <table class="table table-bordered tableText" *ngIf="viewDetails && viewDetails.length > 0">
+                    <thead>
+                        <td colspan="2" class="mainHead">
+                            PROFESSIONAL DETAILS
+                        </td>
+                    </thead>
+                    <tbody class="tableText1">
+                        <tr>
+                            <th class="viewspan" style="width:50%;"> Profession Type</th>
+                            <td>
+                                <span class="viewobject">
+                            {{viewDetails[0].profession}}
+                        </span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th class="viewspan">Sector</th>
+                            <td>
+                                <span class="viewobject">
+                            {{viewDetails[0].member_rating}}
+                        </span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th class="viewspan">Organisation Name</th>
+                            <td>
+                                <span class="viewobject">
+                            {{viewDetails[0].organization_name}}
+                        </span>
+                            </td>
+                        </tr>
+                        
+                        <tr>
+                            <th class="viewspan">Designation</th>
+                            <th> <span class="viewobject">
+                            {{viewDetails[0].designation}}
+                        </span></th>
+                        </tr>
+                    </tbody>
+                </table>
+                
+            </div>
+        </div>
+      </div>
+  </div>
+      <div class="modal-body " style="float: right;">
+        <button class="btn btn-primary" data-dismiss="modal">Ok</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" #verifytrans1 id="exampleModal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="!submitted">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header" style="background-color: #1d8ccd">
+        <h3 class="modal-title" id="exampleModalLabel" style="text-align: center;color: white">Enter Transaction Id
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        </h3>
+      </div>
+      <div class="form-inline" style="text-align: center;margin-top: 15px;">
+        <div class="form-group">
+          <label for="email">Transaction ID:</label>
+          <input type="text" class="form-control" placeholder="Enter Transaction ID" [(ngModel)]="transdata1.data">
+        </div>
+      </div>
+      <div class="modal-body text-center">
+        <button class="btn btn-success" data-dismiss="modal" (click)="savetrans1(transdata1.data)">Submit</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+.row{
+    margin-left: 0px;
+    margin-right: 0px;
+}
+
+</style>

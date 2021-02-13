@@ -1,0 +1,72 @@
+
+            <div class="col-md-12" id="adminhometop">
+                <h3 id="adminwelcome">RTM Trackers Info</h3>
+            </div>
+            <div class="col-md-12">
+                <div class="row">
+                        <div class="col-md-4 col-xs-4 col-sm-4"  ng-click="Tracker1Details('M5')" id="adminhomecircle">
+                            <div class="row">
+                                <i class="glyphicon glyphicon-user" id="admincircleicon"></i>
+                                <br>
+                                <span id="adminlabel1">RTM-1</span>
+                                <br>
+                                <span class="counter" value="autoStartVar1" to="borrcount1" id="admincountstyle1">
+                    {{ autoStartVar1 | number:0 }}
+                </span>
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-xs-4 col-sm-4" style="margin-left: 150px;" id="adminhomecircle"  ng-click="Tracker1Details('M6')">
+                            <div class="row">
+                                <i class="glyphicon glyphicon-user" id="admincircleicon"></i>
+                                <br>
+                                <span id="adminlabel1">RTM-2</span>
+                                <br>
+                                <span class="counter" value="autoStartVar12" to="trueborrowercount" id="admincountstyle1" style="margin-left: 57px;">
+                    {{ autoStartVar12 | number:0 }}
+                </span>
+                            </div>
+                        </div>
+                    <a ui-sref="rtm-dashboard.RTM-TrackerDetails">
+                        <div class="col-md-4 col-xs-4 col-sm-4" style="margin-left: 150px;" id="adminhomecircle" ng-click="Tracker1Details('M7')">
+                            <div class="row">
+                                <i class="glyphicon glyphicon-user" id="admincircleicon"></i>
+                                <br>
+                                <span id="adminlabel1">RTM-3</span>
+                                <br>
+                                <div class="counter" value="autoStartVar22" to="closedappl" id="admincountstyle1" style="margin-left: 53px;">
+                                    {{ autoStartVar22 | number:0 }}
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <br><br>
+            <div class="col-md-12" id="splitmargin" >
+                <div class="row">
+                        <div class="col-md-4 col-xs-4 col-sm-4" id="adminhomecircle"  ng-click="Tracker1Details('M8')">
+                            <div class="row">
+                                <i class="glyphicon glyphicon-user" id="admincircleicon"></i>
+                                <br>
+                                <span id="adminlabel1">RTM-4</span>
+                                <br>
+                                <span class="counter" value="autoStartVar2" to="lendrcount1" id="admincountstyle1" style="margin-left: 57px;">
+                    {{ autoStartVar2 | number:0 }}
+                </span>
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-xs-4 col-sm-4" style="margin-left: 150px;" id="adminhomecircle"  ng-click="Tracker1Details('M9')">
+                            <div class="row">
+                                <i class="glyphicon glyphicon-user" id="admincircleicon"></i>
+                                <br>
+                                <span id="adminlabel1">RTM-5</span>
+                                <br>
+                                <span class="counter" value="autoStartVar11" to="truelendercount" id="admincountstyle1" style="margin-left: 57px;">
+                    {{ autoStartVar11 | number:0 }}
+                </span>
+                            </div>
+                        </div>
+                </div>
+            </div>
+        
+        

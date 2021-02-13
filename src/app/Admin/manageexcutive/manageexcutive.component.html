@@ -1,0 +1,53 @@
+<!-- <app-adminhome></app-adminhome> -->
+
+<div class="col-xs-12 col-sm-12 col-md-12 homelangingpage4">
+  <div class="col-xs-12 col-sm-12 col-md-12 mangtop4">
+      <div>
+      <h3 class="text-center formenchoice toppest1">
+  Executive List </h3>
+      </div>
+
+
+      <div class="col-xs-12 col-sm-12 col-md-12 addbutta">
+
+          <!-- <button *ngIf="permissions[0]=='ADD' || permissions[2]=='ADD' || permissions[1]=='ADD' && permissions[3]=='ADD'||permissions[4]=='ADD'" class="btn btn-success pull-right myButtonadd" (click)="addexcutive()">
+              <i class="glyphicon glyphicon-plus"></i> Add
+          </button> -->
+      </div>
+        </div>
+
+        <div class="col-xs-12 col-sm-12 col-md-12 mngexec">
+      <div  class="table-responsive">
+      <table class="table table-bordered">
+          <thead class="excuthead">
+              <tr>
+                  <th class="text-center">Excutive Id</th>
+                  <th class="text-center">First Name</th>
+                  <th class="text-center">Email Id</th>
+                  <th class="text-center">Mobile Number</th>
+                  <th class="text-center">Role</th>
+                  <!-- <th class="text-center">Actions</th> -->
+              </tr>
+          </thead>
+          <tbody *ngFor="let execInfo of executInfo">
+              <tr>
+                  <td>{{execInfo.id}}</td>
+                  <td>{{execInfo.first_name}}</td>
+                  <td>{{execInfo.email_id}}</td>
+                  <td>{{execInfo.mobile_number}}</td>
+                  <td>{{execInfo.role}}</td>
+                  <!-- <td>
+                      <a *ngIf="permissions[0]=='APPROVE' || permissions[2]=='APPROVE' || permissions[1]=='APPROVE' || permissions[3]=='APPROVE'||permissions[4]=='APPROVE'" class="btn btn-default" (click)="viewformanlist()">APPROVE</a>
+                      <a *ngIf="permissions[0]=='EDIT' || permissions[2]=='EDIT' || permissions[1]=='EDIT' || permissions[3]=='EDIT'||permissions[4]=='EDIT'" class="btn btn-primary"(click)="editexecutivelist(execinfo)">Edit</a>
+                      <a *ngIf="permissions[0]=='DELETE' || permissions[2]=='DELETE' || permissions[1]=='DELETE' || permissions[3]=='DELETE'||permissions[4]=='DELETE'" class="btn btn-danger" (click)="editforemanlist()">Delete</a>
+                      <a *ngIf="permissions[0]=='DECLINE' || permissions[2]=='DECLINE' || permissions[1]=='DECLINE' || permissions[3]=='DECLINE'||permissions[4]=='DECLINE'" class="btn btn-danger" (click)="editforemanlist()">DECLINE</a>
+                      <a class="btn btn-default" (click)="viewexecutive(execinfo)">View</a>
+                  </td> -->
+              </tr>
+          </tbody>
+      </table>
+      </div>
+  </div>
+  </div>
+
+

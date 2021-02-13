@@ -1,0 +1,27 @@
+<div class="col-md-12 col-sm-12 col-xs-12" style="margin-top: 130px">
+  <div class="col-md-4 col-sm-4 col-xs-4">
+    <button class="btn btn-primary text-center" id="demo" [disabled]="vari">{{hours}}</button>
+  </div>
+  <div class="col-md-4 col-sm-4 col-xs-4 text-center" style="font-size: 22px;">{{chit_name}}</div>
+  <div class="col-md-4 col-sm-4 col-xs-4 text-center">
+    <button class="btn btn-primary pull-right" (click)="backtorunn()">Back</button>
+  </div>
+</div>
+<div class="jumbotron col-md-12 col-sm-12 col-xs-12 jumbcls">
+  <div *ngFor="let list of auctionlist">
+    <span class="chat chat2">
+        <h5>{{list.member}}</h5>
+        <h5>{{list.bidamount}}</h5>
+        <h5 style="float:right;">{{list.biddingtime| date:'h:mm:ss a'}}</h5>
+        </span>
+  </div>
+  <div class="input-group">
+    <input type="text" name="amount" placeholder="Please Enter Bid Amount" [(ngModel)]="amount" class="form-control inpcls">
+    <span (click)="auctionSend(amount)" class="btn btn-success input-group-addon inpcls1">&nbsp;Send&nbsp;</span>
+  </div>
+</div>
+<div class="col-md-12 col-sm-12 col-xs-12 text-center">
+  <div class="row">
+    <button (click)="refreshdata()" type="button" class="btn btn-primary">Refresh</button>
+  </div>
+</div>

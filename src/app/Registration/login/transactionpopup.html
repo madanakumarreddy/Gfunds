@@ -1,0 +1,61 @@
+<div class="modal-header modalhead">
+    <div>
+        <h4>
+            <span> Auction Payment Amount&nbsp;{{transdetails1.amount}}&nbsp;For Auction
+                &nbsp;-{{transdetails1.auction}}&nbsp;{{transdetails1.chitname}}{{transdetails1.chit_id}}</span></h4>
+    </div>
+</div>
+
+<div class="modal-body amnt">
+    <div>
+        <p>Account Name: {{transdetails1.foremanaccountname}}</p>
+        <p>Account Number: {{transdetails1.foremanaccountnumber}}</p>
+        <p>Bank Name: {{transdetails1.foremanbankname}}</p>
+        <p>Bank Branch: {{transdetails1.foremanbankbranch}}</p>
+        <p>Bank IFSC: {{transdetails1.foremanbankifsc}}</p>
+        <div>
+            <span><b>If amount Deposited please enter the TransactionId:</b>
+                <input type="text" name="auctiontrans" [(ngModel)]="aucttrans.auctiontrans " [disabled]="aucttrans.rtm">
+            </span>
+        </div>
+        <div *ngIf="!aucttrans.auctiontrans">
+            <span>Want to Raise <b>RTM loan?.</b> Please Click here:
+                &nbsp;&nbsp;&nbsp;<input type="checkbox" placeholder="Rtmloan" name="rtm" [(ngModel)]="aucttrans.rtm">
+            </span>
+        </div>
+    </div>
+</div>
+
+<div class="modal-footer">
+    <button type="button" class="btn btn-primary" 
+        [mat-dialog-close]="aucttrans">Ok</button>
+    <button type="button" class="btn btn-danger" (click)="logouttrans()">Logout</button>
+</div>
+
+<style type="text/css">
+    .modalhead {
+        background: #337ab7;
+        color: white;
+        padding: 11px -1px 0px 0px;
+        margin: -24px -24px 10px -24px;
+        padding: 30px 39px;
+        font-size: 18px;
+    }
+
+    .amnt {
+        font-size: 18px;
+
+    }
+
+
+    @media only screen and (max-width:768px) {
+        .modalhead {
+            /*margin-left: 4px;*/
+            font-size: 13px;
+        }
+
+        .amnt {
+            font-size: 12px;
+        }
+    }
+</style>

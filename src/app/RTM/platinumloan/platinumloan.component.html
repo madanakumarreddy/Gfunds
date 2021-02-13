@@ -1,0 +1,44 @@
+<div class="lenderdashboard">
+    <div class="row">
+        <h1 style="margin-left: 31px;">
+            <!-- <img src="images/newloanrequest.png" align="center" style="width: 5%;">&nbsp;  -->
+            Platinum Loans</h1>
+    </div>
+    <div class="col-md-6 form-group">
+        <input type="text" class="form-control" ng-model="search" placeholder="Search">
+    </div>
+    <div class="table-responsive col-md-12">
+        <table class="table table-bordered text-center">
+            <thead class="tableheader thcolor">
+                <tr>
+                    <th style="text-align: center">SL NO.</th>
+                    <th style="text-align: center">Member Name</th>
+                    <th style="text-align: center">Fund Id</th>
+                    <th style="text-align: center">Member Id</th>
+                    <th style="text-align: center;">Member Count</th>
+                    <th style="text-align: center">Loan Amount</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let view of platinumloan | paginate: { itemsPerPage: itemsPerPage, currentPage: p };let i=index">
+                    <td>{{i+1}} </td>
+                    <td>{{view.member_name}} </td>
+                    <td>{{view.chit}} </td>
+                    <td>{{view.member_id}} </td>
+                    <td>{{view.member_count}}</td>
+                    <td>{{view.payable_amount}} </td>
+
+                </tr>
+                <tr *ngIf="!platinumloan">
+                    <td class="text-center orangefont" colspan="8">
+                        <h2>No Platinum Loans </h2>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div style="text-align: right;">
+        <pagination-controls (pageChange)="p = $event"></pagination-controls>
+    </div>
+</div>

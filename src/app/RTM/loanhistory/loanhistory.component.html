@@ -1,0 +1,35 @@
+<div class="lenderresp">
+    <h1>
+        <!-- <img src="images/Loan_History.png" class="headinglend">&nbsp; -->
+         Loan History</h1>
+    <div class="table-responsive tabledashboard">
+        <div class="loan history icon">
+            <table class="table table-bordered text-center">
+                <thead class="tableheader thcolor">
+                    <tr>
+                        <th>Member Name</th>
+                        <th>Member Id</th>
+                        <th>Loan Amount</th>
+                        <th>Loan Disbursed</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngIf = "viewhistory.length > 0" class="cursor" ng-repeat="view in viewhistory">
+                        <td ng-click="loan_details(view)">{{view.member_name}}</td>
+                        <td ng-click="loan_details(view)">{{view.member_id}}</td>
+                        <td ng-click="loan_details(view)">{{view.payable_amount}}</td>
+                        <td ng-show="view.status=='Accepted'">
+                            <button class="btn btn-primary" ng-click="disburse(view.id)">Disburse</button>
+                        </td>
+                        <td ng-show="view.status!='Accepted'">
+                            <button class="btn btn-primary" ng-disabled="true">{{view.status}}</button>
+                        </td>
+                    </tr>
+                    <tr ng-show="viewhistory.length==0">
+                        <td colspan="5" class="text-center orangefont"><h2>No Loans Accepted</h2></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

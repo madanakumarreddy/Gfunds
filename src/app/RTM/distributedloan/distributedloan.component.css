@@ -1,0 +1,61 @@
+.currentmember {
+    display: inline-block;
+    max-width: 100%;
+    margin-bottom: 5px;
+    font-weight: bold;
+    }
+    .search {
+        background: #2356a2;
+        border-bottom-right-radius: 6px;
+        border-top-right-radius: 6px;
+        outline: 0px;
+        position: static;
+    }
+    
+    .topmargin {
+        margin: 16px 0px;
+    }
+    
+    .search:hover,
+    .search:focus {
+        background: #2356a2;
+        border-bottom-right-radius: 6px;
+        border-top-right-radius: 6px;
+        outline: 0px;
+    }
+    
+    .searchicon {
+        font-size: larger;
+        color: white;
+    }
+    
+    .borrowersearchtable {
+        border: 1px solid #ddd;
+    }
+    .upgrade-button{
+        color: red;
+        font-size: large;
+    }
+    
+    .currentmemtype {
+        opacity: 1.0;
+        height: 130px;
+        width: 170px;
+    }
+
+    .upgradeto {
+        opacity: 0.3;
+        height: 100px;
+        width: 140px;
+        cursor: pointer;
+    }
+
+    .upgradeto:hover {
+        opacity: 1.0;
+    }
+
+    .cannotupgrade {
+        opacity: 0.3;
+        height: 100px;
+        width: 140px;
+    }

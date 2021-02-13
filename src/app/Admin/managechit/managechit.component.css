@@ -1,0 +1,139 @@
+.formenchoice {
+    text-align: center;
+    text-align: center;
+    font-weight: bolder;
+    color: #0a58a4;
+    box-shadow: 16px -1px 60px 0px;
+    margin-left: 16px;
+    margin-top: 140px;
+}
+ .noeditable {
+background: rgba(0, 0, 0, 0.22);
+border-style: solid;
+border-width: thin;
+box-shadow: 0px 0px 2px 1px rgba(51, 122, 183, 0.75);
+padding: 4px 1px 5px 5px;
+color: #333;
+font-size: 15px;
+width: 60%;
+}
+
+.editing {
+border: none;
+background: none;
+-moz-appearance: none;
+-webkit-appearance: none;
+box-shadow: none;
+
+}
+.btn{
+  /* margin-left: -15px; */
+  margin-right: 11px;
+ }
+  #mngfrmnch{
+      margin-left:-52px;
+  }
+
+  .modal-header{
+
+    background-color: #0a58a4;
+
+    color: white;
+
+  }
+
+  .close{
+
+      color:white;
+
+  }
+
+  p{
+
+    font-size: 20px;
+
+  }
+  .mngchtad{
+      margin-left: 467px;
+  }
+
+  .tblmngcht{
+      margin-left: 10px;
+     
+  }
+  .viewbutt{
+    width: 67px;
+    margin-left: 3px;
+  }
+  th,
+td {
+  text-align: center;
+}
+.managechithead{
+  background-color: #0a58a4;
+  color: white;
+}
+#as {
+  width: 210px;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  background-color: white;
+  /*background-image: url('searchicon.png');*/
+  background-position: 10px 10px;
+  background-repeat: no-repeat;
+  padding: 12px 20px 12px 40px;
+  -webkit-transition: width 0.4s ease-in-out;
+  transition: width 0.4s ease-in-out;
+  box-shadow: 1px 3px 1px;
+  margin-top: -30px;
+  margin-bottom: 30px;
+  margin-left: 70%;
+  /* float: right; */
+}
+
+#as:focus {
+  width: 30%;
+}
+.zxc{
+  margin-left: 20px;
+}
+@media only screen and (min-width: 320px) and (max-width: 767px) {
+
+
+  .formenchoice {
+    text-align: center;
+    text-align: center;
+    font-weight: bolder;
+    color: #0a58a4;
+    box-shadow: 16px -1px 60px 0px;
+    margin-left: 0px;
+     margin-top: -30px; 
+}
+.tblmngcht {
+     margin-left: 0px; 
+     overflow: auto;
+     margin-top: 12px;
+}
+.managfunddele{
+  width: 100%;
+
+}
+  .viewbutt{
+    width:100%;
+    margin-left: 0px;
+    margin-top: 3px;
+  }
+
+#as {
+    margin-left: 8%;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    float:left;
+    }
+    #as:focus {
+      width: 80%;
+    }
+
+}

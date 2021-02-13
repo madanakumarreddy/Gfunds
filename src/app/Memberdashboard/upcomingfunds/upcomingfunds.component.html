@@ -1,0 +1,113 @@
+<div class="col-md-12 col-xs-12 col-sm-12 menu">
+  <ul class="chits upcoming no-bullets col-md-12">
+    <li class="col-md-6 col-xs-12 col-sm-6" (click)="memberupcoming()">
+      <p class="chitsdone" style="color: #1d8ccd;">
+        UPCOMING FUNDS<span class="upnote" style="margin-left: 30px"><label class="notification notification1">{{member_count}}</label></span></p>
+    </li>
+    <!-- <a>Approved Members<br><span><label class="notification">{{members.approved_count}}</label></span> </a> -->
+    <li class="upcoming  col-md-6 col-xs-12 col-sm-6" (click)="memberReq()">
+      <p class="chitsdone" style="color: #1d8ccd;">
+        REQUESTED FUNDS <span class="upnote">
+                  <label class="notification">{{requestedcount}}</label>
+                </span></p>
+    </li>
+  </ul>
+</div>
+<div class="col-md-12 col-xs-12 col-sm-12" id="norecordsstyle" *ngIf="!request">
+  <div class="row">
+    <div class="col-md-3 col-xs-12 col-sm-12 divborder" id="upc" *ngFor="let chit of chit  | paginate: { itemsPerPage: 10, currentPage: p }">
+      <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12 line1 text-center">
+          <label class="chitamount"><b>{{chit.chit_amount | currency}}</b></label>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-12 chitlogo">
+          <div class="col-xs-6 col-sm-6 col-md-6 imgdiv" [ngStyle]="{'background-image':' url(' + chit.company_logo + ')'}" style="background-size: 100% 100%;">
+          </div>
+          <div class="col-xs-6 col-sm-6 col-md-6 amount">
+            <div class="row">{{chit.chit_duration+" "+'Months'}}</div>
+          </div>
+          <div class="col-xs-12 col-sm-12 col-md-12 requechit" style="text-transform: capitalize;">
+            <div class="row" style="text-transform: uppercase;margin-top: 20px">
+              {{chit.chit_number | uppercase}}&nbsp;({{chit.chit_location | uppercase}})</div>
+          </div>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-12  line3">
+          <div class="row">
+            <div class="col-xs-6 col-sm-6 col-md-6 more" (click)="viewmoredetails(chit)"><b class="fontalign"> READ MORE</b></div>
+            <div class="col-xs-6 col-sm-6 col-md-6 more" (click)="chitrequest(chit.id)"><b class="fontalign sep"> SEND REQUEST</b>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="col-md-12 col-xs-12 col-sm-12" id="recordsstyle" *ngIf="request">
+  <div class="row">
+    <div class="col-md-3 col-xs-12 col-sm-12 divborder" *ngFor="let data of requesteddata | paginate: { itemsPerPage: 10, currentPage: p }" style="color: #0a58a4;">
+      <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12 line1 text-center">
+          <div class="row">
+            <label class="chitamount"><b>{{data.chit_amount | currency: 'INR':true}}</b></label>
+            <label class="mcount" rel="tooltip" data-toggle="tooltip" data-placement="left" title="Fund Count"></label><span class="dot">{{data.mcount}}</span>
+          </div>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-12 chitlogo">
+          <div class="col-xs-6 col-sm-6 col-md-6 imgdiv" [ngStyle]="{'background-image':' url(' + data.company_logo + ')'}" style="background-size: 100% 100%;">
+          </div>
+          <div class="col-xs-6 col-sm-6 col-md-6 amount">
+            <div class="row">{{data.chit_duration+" "+'Months'}}</div>
+          </div>
+          <div class="col-xs-12 col-sm-12 col-md-12 " style="text-transform: capitalize;">
+            <div class="row requechit" style="text-transform: uppercase;margin-top: 20px">
+              {{data.chit_number}}&nbsp;({{data.chit_location}})
+            </div>
+          </div>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-12  line3 text-center">
+          <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 more buttontext" (click)="reqFundDetails(data)"> <b>READ MORE</b></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="col-xs-12 col-sm-12 col-md-12" *ngIf="!chit[0] && !request">
+  <div class="text-center">
+   <h2 id="norecordsstyle" style="color:red">No Upcoming Funds Found</h2>
+  </div>
+</div>
+<div class="col-xs-12 col-sm-12 col-md-12" *ngIf="!requesteddata[0] && request">
+  <div class="text-center">
+   <h2 id="recordsstyle" style="color:red">No Requested Funds Found</h2>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+<div class="modal fade" #sendrequestresp id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="!submitted">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header" style="text-align: center; color: white;background-color: #337ab7;">
+        <h3 class="modal-title" id="exampleModalLabel">Request Sent Successfully</h3>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body text-center">
+        <span>You Are Successfully Participated {{showc}} Times in This Fund</span>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal">ok</button>
+      </div>
+    </div>
+  </div>
+</div>

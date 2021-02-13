@@ -1,0 +1,95 @@
+<div class="col-md-12 col-xs-12 col-sm-12 container">
+  <div class=" mangtop ">
+    <div class="col-xs-12">
+      <h3 class="text-center formenchoice">Manage Members </h3>
+    </div>
+  </div>
+  <div class="col-xs-12 col-sm-12 col-md-12 col-md-offset-1 col-sm-offset-1 col-xs-offset-1 text-center toppp">
+    <ul class="text-center">
+      <li class="col-md-3 col-xs-12 text-center"
+        [ngClass]="selectedColourPalette == 1? 'border-' + colourPaletteOne.primary:'border-' + colourPaletteOne.secondary"
+        (click)="tab(1)">
+        <a>New Members<br><span><label class="notification">{{members.newmember_count}}</label></span></a>
+      </li>
+      <li class="col-md-3 col-xs-12  text-center"
+        [ngClass]="selectedColourPalette == 2? 'border-' + colourPaletteOne.primary:'border-' + colourPaletteOne.secondary"
+        (click)="tab(2)">
+        <a>Approved Members<br><span><label class="notification">{{members.approved_count}}</label></span> </a>
+      </li>
+      <li class="col-md-3 col-xs-12  text-center"
+        [ngClass]="selectedColourPalette == 3? 'border-' + colourPaletteOne.primary:'border-' + colourPaletteOne.secondary"
+        (click)="tab(3)">
+        <a>Disapproved Members<br><span><label class="notification">{{members.unapproved_count}}</label></span> </a>
+      </li>
+    </ul>
+  </div>
+
+  <div class="col-xs-12 col-sm-12 col-md-12">
+    <div class="row">
+      <div>
+        <h4 class="text-center formenchoice toppest1">
+          {{listchoice}}</h4>
+      </div>
+      <div class="col-xs-6 col-sm-6 col-md-6 " *ngIf="list1[0]">
+        <div class="row">
+          <label for="Items Per Page">Entity Per Page</label>
+          <select style="width:70px;" [(ngModel)]="usersPerPage" class="form-control" (change)="size(usersPerPage)">
+            <option value="2">2</option>
+            <option value="5">5</option>
+            <option value="10">10</option>
+            <option value="15">15</option>
+            <option value="20">20</option>
+            <option value="25">25</option>
+            <option value="30">30</option>
+            <option value="50">50</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-group">
+        <input type="text" id="asearch" name="Search" class="form-control" placeholder="Search By Name......"
+          [(ngModel)]="searchText" />
+      </div>
+    </div>
+    <div class="managememtable" *ngIf="list1[0]">
+      <table class="table table-bordered">
+        <thead class="managemembhead">
+          <tr>
+            <th>First Name</th>
+            <th>Email Id</th>
+            <th>Mobile Number</th>
+            <th>Rating</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr
+            *ngFor="let hero of list1 |filter : searchText:'full_name'| paginate: { itemsPerPage: itemsPerRecord, currentPage: p };">
+            <td>{{hero.full_name}}</td>
+            <td>{{hero.email_id}}</td>
+            <td>{{hero.mobile_number}}</td>
+            <!-- <td>{{hero.member_rating}}</td> -->
+            <td>
+              <span style="color:gold; margin-left: 5px " *ngFor=" let num of getRating(hero.member_rating)"
+                class="glyphicon glyphicon-star "></span>
+            </td>
+            <td>
+              <a class="btn btn-primary viewbutton" (click)="details(hero)">View</a>
+              <a class="btn btn-info approvebutt" *ngIf="listchoice=='New Members'||listchoice=='Disapproved Members'"
+                (click)="approvemember(hero,'approve')">APPROVE</a>
+              <a class="btn btn-danger declinebutt" *ngIf="listchoice=='Approved Members'||listchoice=='New Members'"
+                (click)="approvemember(hero,'decline')">DECLINE</a>
+            </td>
+          </tr>
+        </tbody>
+
+      </table>
+    </div>
+    <div style="text-align: right;">
+      <pagination-controls (pageChange)="p = $event"></pagination-controls>
+    </div>
+    <div *ngIf="!list1[0]" class="norecord">
+      <h1>No Records Found</h1>
+    </div>
+    <div class="col-md-12 col-sm-12 rightalignment">
+    </div>
+  </div>

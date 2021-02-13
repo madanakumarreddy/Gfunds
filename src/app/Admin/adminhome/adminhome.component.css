@@ -1,0 +1,288 @@
+.adming {
+    color: white;
+    font-size: 14px;
+    padding-top: 35px;
+    cursor: pointer;
+    outline: 0;
+}
+
+.dobpp {
+    margin-left: -64px;
+    margin-top: -6px;
+}
+.space {
+    margin-top:50px;
+    overflow-x: hidden;
+}
+
+.adminf {
+    color: white;
+    font-size: 14px;
+    padding-top: 35px;
+    margin-top: 18px;
+    margin-bottom: -28px;
+}
+
+i {
+    vertical-align: middle;
+    margin-right: 9px;
+}
+
+.register {
+    cursor: pointer;
+    list-style-type: none;
+    padding: 20px 2px;
+    line-height: 0;
+}
+
+/* .register:hover {
+    background-color: rgba(0, 0, 0, 0.36);
+} */
+
+#topdashboardbody {
+    width: 20%;
+}
+
+.toppages {
+    width: 80%;
+}
+
+.dashboardbody-background {
+    /*background-image: url(images/dashbackgroundlow.png);*/
+    background-size: cover;
+}
+
+#dashboardbody {
+    max-height: 100%;
+    overflow: scroll;
+    position: fixed;
+    width: 22%;
+    text-align: left;
+    background: #0a58a4;
+    height: 100vh;
+    top: 29px;
+}
+
+.receiveotp {
+    margin-left: -39px;
+}
+
+.membertermscss, .foremantermscss {
+    color: #333;
+    font-size: 10px;
+    margin-top: 24px;
+    margin-left: 21px;
+    font-weight: 200;
+    text-align: -webkit-left;
+}
+
+.foremantermscss p {
+    margin: 0;
+}
+
+.secondrow {
+    margin-left: 0px;
+}
+
+.adminff {
+    font-size: 10px;
+}
+
+.notification {
+    background: #0a58a4;
+    border-radius: 10px;
+    padding: 5px 9px;
+    margin-bottom: 0px;
+    width: 69px;
+    font-size: 14px;
+    color: white;
+    margin-left: -29px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.adminhometopcss {
+    margin-top: 60px;
+}
+
+.createbuttom {
+    margin-right: 132px;
+}
+
+.pop {
+    margin-left: 15px;
+}
+
+.pop1 {
+    margin-left: -11px;
+}
+
+@media only screen and (min-width: 320px) and (max-width: 767px) {
+    .pop1 {
+        margin-left: -1px;
+    }
+    .adminf {
+        color: white;
+        font-size: 14px;
+        padding-top: 0px;
+        margin-top: 0px;
+        margin-bottom: -28px;
+        margin-left: 0px;
+    }
+    /*.adminff{
+    font-size: 10px;
+    color: white;
+    margin-left: -15px;
+}*/
+    .firstrow {
+        margin-left: -19px;
+        padding-left: 5px;
+    }
+    .secondrow {
+        margin-left: 18px;
+        padding-left: 8px;
+    }
+    .adming {
+        color: white;
+        font-size: 10px;
+        /*padding-top: 25px;*/
+        /*margin-left: -23px;*/
+    }
+    i {
+        vertical-align: middle;
+        margin-right: -1px;
+    }
+    #glyphdynstyle {
+        font-size: 19px;
+        margin-left: -11px;
+        margin-right: 0px;
+        color: white;
+    }
+    .dashboardbody-background {
+        overflow: hidden;
+    }
+    .foremantermscss {
+        margin-left: -3px;
+    }
+}
+
+/*foremensignup popup------------*/
+
+.santadmn {
+    color: white;
+    background: #337ab7;
+    margin-top: -24px;
+    block-size: 68px;
+    width: 600px;
+    margin-left: -24px;
+}
+
+.spnt {
+    font-size: 24px;
+    cursor: pointer;
+    margin-right: 14px;
+    font-weight: bold;
+}
+
+.acct {
+    margin-left: 10px;
+    font-size: 25px;
+    margin-top: -30px;
+}
+
+.aa {
+    margin: auto;
+    text-align: center;
+}
+
+.inputleft {
+    margin-left: -15px;
+    width: 322px;
+    padding-bottom: 14px;
+}
+
+.btnpt {
+    margin-left: 25px;
+    margin-top: 20px;
+}
+
+@media only screen and (min-width: 320px) and (max-width: 767px) {
+    .pop {
+        margin-left: 12px;
+    }
+    #mobnum {
+        margin-left: 13px;
+    }
+    .acct {
+        margin-top: 0px;
+        text-align: center;
+        margin-left: -78px;
+    }
+    .santadmn {
+        width: 289px;
+    }
+    .inputleft {
+        margin-left: -17px;
+        width: 243px;
+        padding-bottom: 14px;
+    }
+    .btnpt {
+        margin-left: 5px;
+        margin-top: 20px;
+        width: 195px;
+    }
+    .spnt {
+        font-size: 18px;
+        margin-right: -10px;
+    }
+    .dobpp {
+        margin-left: 163px;
+        margin-top: -51px;
+    }
+    .aa {
+        margin-left: 40px;
+    }
+    mat-datepicker {
+        width: 248px;
+        height: 266px;
+    }
+    ::ng-deep .mat-datepicker-content .mat-calendar {
+        width: 256px !important;
+        height: 296px !important;
+    }
+}
+
+@media only screen and (min-width: 320px) and (max-width: 767px) {
+    .aa {
+        margin-top: -18px;
+        font-size: 18px;
+    }
+}
+
+@media only screen and (min-width: 320px) and (max-width: 568px) {
+    .santadmn {
+        width: 289px;
+    }
+    .acct {
+        font-size: 15px;
+    }
+}
+
+@media only screen and (min-width: 384px) and (max-width: 640px) {
+    .santadmn {
+        width: 309px;
+    }
+    .spnt {
+        /*font-size:18px;*/
+        margin-right: 21px;
+    }
+    .inputleft {
+        margin-left: -17px;
+        width: 115%;
+        padding-bottom: 14px;
+    }
+    .dobpp {
+        margin-left: 184px;
+        margin-top: -51px;
+    }
+}

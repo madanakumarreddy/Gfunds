@@ -1,0 +1,34 @@
+<div class=" col-md-offset-1 col-md-11 runningleft ">
+  <h2 class="text-center formenchoice toppest1">Member Fund Alloted Details</h2></div>
+ <div class="col-md-3 col-xs-12 col-sm-12 divborder" *ngFor="let data of alloteddetails">
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-12 line1 text-center" style=" color: white">
+                    <label class="chitamount">{{data.chit_name}}</label>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-12 text-center " style=" color: #1d8ccd;">
+                    <label class="chitamount l1">Bid Amount:{{data.bid_amount}}</label>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-12 text-center " style=" color: #1d8ccd;">
+                    <label class="chitamount l2"> Receiving Amount:{{data.receiving_member_amount}} </label>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-12 ">
+                    <div class="">
+                        <img class="img1" [src]="data.company_logo">
+                    </div>
+                </div>
+                <div style="font-weight: bold;" class="col-xs-12 col-sm-12 col-md-12  line3 line4">
+                    <div class="row">
+
+                        <div class="col-xs-12 col-sm-12 col-md-12 more buttontext"
+
+                        (click)="transmemberchit1(data)" style="text-align: center;">Confirm </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <br>
+        <br>
+    <div class="text-center" style="color: red;margin-top: 50px;" *ngIf="!alloteddetails[0]">
+        <h2>No Funds Alloted</h2>
+    </div>

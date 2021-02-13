@@ -1,0 +1,73 @@
+
+<div class="col-md-12 tabfor">
+  <div class="col-md-6 tabfor2" >
+
+  <div class="table-responsive" >
+    <button type="button" class="btn btn-primary fundback" (click) = "goPrev()" >BACK</button>
+        <table class="table  table-bordered" >
+            <thead>
+                <tr>
+                    <td colspan="2">FUND DETAILS</td>
+                </tr>
+            </thead>
+            <tbody class="tableText">
+                <tr>
+                    <th style="width: 50%;">Member Name:
+                    </th>
+                    <th>{{swa.member_name}}</th>
+                </tr>
+                <tr>
+                    <th style="width: 50%;">Fund Amount:
+                    </th>
+                    <th>{{swa.chitdetails[0].chit_amount}}</th>
+                </tr>
+                <tr>
+                    <th style="width: 50%;">Balance Amount:</th>
+                    <th>{{swa.balance }}</th>
+                </tr>
+                <tr>
+                    <th style="width: 50%;">Disbursed Amount:</th>
+                    <th>{{swa.payable_amount}}</th>
+                </tr>
+                <tr>
+                    <th style="width: 50%;">Paid Amount:</th>
+                    <th>0
+                    </th>
+                </tr>
+                <tr>
+                    <th style="width: 50%;">Auction Count:</th>
+                    <th>{{swa.auction_count}}
+                    </th>
+                </tr>
+                <tr>
+                    <th style="width: 50%;">Fund Name:</th>
+                    <th>{{swa.chitdetails[0].chit_number}}
+                    </th>
+                </tr>
+               
+                <tr>
+                    <th style="width: 50%;">Fund Type:</th>
+                    <th>{{swa.chitdetails[0].chit_type}}
+                    </th>
+                </tr>
+                <tr>
+                    <th style="width: 50%;">Interest Amount:</th>
+                    <th>{{swa.interest_amount}}
+                    </th>
+                </tr>
+                <tr>
+                    <th style="width: 50%;">Disbursed Date:</th>
+                    <th>{{swa.disbursed_date}}
+                    </th>
+                </tr>
+                <tr>
+                    <th style="width: 50%;">Transaction Id:</th>
+                    <th>{{swa.transaction_id}}
+                    </th>
+                </tr>
+                
+            </tbody>
+        </table>
+      </div>
+</div>
+    </div>

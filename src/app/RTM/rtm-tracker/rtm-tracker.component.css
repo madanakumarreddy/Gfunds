@@ -1,0 +1,53 @@
+
+#adminhometop {
+        margin-top: 12px;
+    margin-bottom: 35px;
+}
+#adminwelcome {
+        text-align: center;
+    font-style: oblique;
+    text-align: center;
+    font-weight: bolder;
+    color: brown;
+}
+#adminhomecircle {
+    background: beige;
+    border-radius: 119px;
+    width: 185px;
+    height: 186px;
+    margin-left: 52px;
+    box-shadow: 0px 3px 3px 0px rgba(0,0,0,0.2);
+    margin-bottom: 61px
+}
+
+#adminhomecircle:hover {
+    background: wheat;
+    -webkit-transform: rotateY(360deg);
+    -moz-transform: rotateY(360deg);
+    -o-transform: rotateY(360deg);
+    transform: rotateY(360deg);
+    -webkit-transition: 1.0s;
+    -webkit-transform-style: preserve-3d;
+    -moz-transition: 1.0s;
+    -moz-transform-style: preserve-3d;
+    -o-transition: 1.0s;
+    -o-transform-style: preserve-3d;
+    transition: 1.0s;
+    transform-style: preserve-3d;
+    position: relative;
+}
+
+#admincircleicon {
+    margin-left: 81px;
+    margin-top: 57px;
+    font-size: 24px;
+    color: red;
+    margin-bottom: 13px;
+    
+}
+
+#adminlabel1 {
+    margin-left: 64px;
+    font-size: 19px;
+    color: black;
+}

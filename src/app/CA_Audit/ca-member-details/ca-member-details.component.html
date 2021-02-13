@@ -1,0 +1,72 @@
+<div>
+  <h2 class="col-md-10 text-center col-md-offset-1 toppest1">Member Transaction</h2>
+</div>
+<div class="col-md-8 col-xs-8 col-md-offset-1">
+  <button class="btn btn-success" (click)="backToAuction()" style="background-color: #337ab7;">Back</button>
+</div>
+<div class=" table-responsive col-md-10 col-sm-10 col-xs-10 col-md-offset-1" style="margin-top: 20px;">
+  <table class="table table-bordered tableText text-center">
+    <thead>
+      <tr>
+        <th class="mainHead">Serial No</th>
+        <th class="mainHead"> Member Mobile Number</th>
+        <th class="mainHead">Member Name</th>
+        <th class="mainHead">Member Count </th>
+        <th class="mainHead">Transaction Id</th>
+        <th class="mainHead">Transaction Date</th>
+        <th class="mainHead">Paid Amount</th>
+      </tr>
+    </thead>
+    <tbody class="tableText1">
+      <tr *ngFor="let data of showmembertrans; let i=index">
+        <td>{{i+1}}</td>
+        <td>{{data.member[0].mobile_number}}</td>
+        <td>{{data.member[0].full_name}}</td>
+        <td>{{data.member_count}}</td>
+        <td>{{data.transaction_id}}</td>
+        <td>{{data.trans_date | slice:0:10}}</td>
+        <td>{{data.paid_amount}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+ 
+ <!-- <div>
+  <h2 class="text-center  toppest1 col-md-offset-1 col-md-10">
+    Member Transaction</h2></div>
+    <div class="col-md-offset-1 col-md-10 col-xs-12 col-sm-12 membertrandetails" id="mem">
+      <div class="col-md-12">
+  <button class="btn btn-success pull-left" (click)="backToAuction()" style="background-color: #337ab7;">Back</button>
+</div>
+<div class="col-md-12">
+  <div class="col-md-4 col-sm-4 col-xs-12">
+    <table class="table  table-bordered">
+      <thead>
+        <tr>
+          <th>Seri No</th>
+          <th>Member Mobile Number
+</th>
+          <th>Member Name</th>
+          <th>Member Count</th>
+          <th>Transaction Id</th>
+          <th>Transaction Date</th>
+          <th>Paid amount</th>
+        </tr>
+      </thead>
+      <tbody class="tableText">
+        <tr *ngFor="let data of showmembertrans; let i=index">
+          <td>{{i+1}}</td>
+          <td>{{data.member[0].mobile_number}}</td>
+          <td>{{data.member[0].full_name}}</td>
+          <td>{{data.member_count}}</td>
+          <td>{{data.transaction_id}}</td>
+          <td>{{data.trans_date | slice:0:10}}</td>
+          <td>{{data.paid_amount}}</td>
+        </tr>
+      </tbody>
+
+    </table>
+  </div>
+</div>
+</div> -->
+

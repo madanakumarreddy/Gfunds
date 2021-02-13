@@ -1,0 +1,64 @@
+<div class=" col-md-offset-1 col-md-10 runningleft ">
+  <div>
+    <h2 class="text-center formenchoice toppest1" style=" margin-left: 0px;">Transaction History</h2>
+  </div>
+  <!-- <div class="col-md-10" *ngIf="!trans[0]" style="text-align: center;color: red;">
+    <h2>No Transactions Found</h2>
+  </div> -->
+  <div *ngIf="hideShowtrans">
+    <div><button class="btn btn-primary back" id="media" (click)="backTouniqFund()">Back</button> </div>
+    <div *ngIf ='chitDetails' class="col-md-10 col-sm-12 col-xs-12 tablemar ">
+      <div class="table-responsive">
+        <table class="table  table-bordered tableText">
+          <thead>
+            <tr>
+              <th>Sl.No</th>
+              <th>Auction</th>
+              <th>Member Count</th>
+              <th>Transaction Id</th>
+              <th>Transaction Date</th>
+              <th>Paid Amount</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let data of chitDetails; let i = index">
+              <td id='A'>{{i+1}}</td>
+              <td>{{data.auction}}</td>
+              <td>{{data.mem_count}}</td>
+              <td>{{data.transaction_id}}</td>
+              <td>{{data.trans_date}}</td>
+              <td>{{data.paid_amount}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="col-md-10" *ngIf="!chitDetails[0]" id="tans" style="text-align: center;color: red;     margin-top:-16px;">
+      <h2>No Chit Details Found</h2>
+    </div>
+  </div>
+
+  <div class="col-md-10 col-sm-12 col-xs-12 tablemar " *ngIf="!hideShowtrans">
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" *ngIf="!uniqChits[0]" style="text-align: center;color: red;">
+      <h2>No Chits Found</h2>
+    </div>
+    <div class="col-md-10 col-sm-12 col-xs-12 tablemar " *ngIf="uniqChits[0]" id="tans">
+      <div class="table-responsive">
+        <table class="table  table-bordered tableText">
+          <thead>
+            <tr>
+              <th>Sl.No</th>
+              <th>Chit Name</th>
+              <th>ChitInfo</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let data of uniqChits; let j = index">
+              <td id='A'>{{j+1}}</td>
+              <td id='A'>{{data.chitName}}</td>
+              <td><button class="btn btn-primary" (click)="viewTransData(data.chit)">View</button></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>

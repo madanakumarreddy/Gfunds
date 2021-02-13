@@ -1,0 +1,318 @@
+
+.ptr{
+    cursor: pointer;
+}
+.sitecls {
+    height: 156px;
+    width: 85%;
+}
+
+.footcls {
+    color: #a5a5a5;
+    background-color: #132156;
+    /* margin-top: 597px; */
+}
+
+.formen-reg-btn {
+    width: 30%;
+    position: absolute;
+    /* z-index: 9; */
+    margin-left: -643px;
+}
+
+.login-btn {
+    background-color: darkorange;
+    border-radius: 11px;
+    /* width: 84%; */
+    padding: 6px 14px;
+}
+
+.play-btn {
+    color: #0961a5;
+    font-size: 37px;
+    margin-left: -50px;
+}
+
+.play-text {
+    cursor: pointer;
+    color: #170f0f;
+    margin-top: -31px;
+    margin-left: 35px;
+}
+
+.box-button {
+    border: 2px solid;
+    border-color: #0956a5;
+    margin-left: 451px;
+    padding-top: 8px;
+    margin-top: -203px;
+}
+
+button.sign-up {
+    background: #06b3fd;
+    color: white;
+    font-weight: bold;
+    font-family: font4;
+}
+
+.your-email label {
+    color: #00b4ff;
+    font-size: 15px;
+    font-weight: bold;
+    font-family: font4;
+}
+
+.ourpartners {
+    margin-top: 22px;
+    /*background: url(images/Our_Partners.png);*/
+    height: 27vh;
+    background-size: 100% 100%;
+}
+
+.count {
+    font-size: 70px;
+    font-family: font3;
+}
+
+.angular-count {
+    margin: 30px 0;
+}
+
+.count+p {
+    font-size: 21px;
+    font-family: font3;
+}
+
+.full-width-screen {
+    height: 87vh;
+    font-family: font4;
+}
+
+.why-gchits img {
+    width: 100vw;
+    height: 100vh;
+}
+
+#video-container {
+    position: absolute;
+    opacity: .4;
+}
+
+video {
+    width: 100vw;
+    transform: scaleX(1.25);
+}
+
+h1.line-one {
+    font-size: 50px;
+    margin-top: 200px;
+}
+
+h1.about-us {
+    margin-left: 108px;
+    font-family: font1;
+    font-size: 37px;
+    color: #0960a5;
+}
+
+.about-us-div p {
+    font-size: 18px;
+    color: #0960a5;
+    font-family: font4;
+    text-align: justify;
+}
+
+footer h1 {
+    font-family: font1;
+    color: #c1c1c1;
+}
+
+.footer-div {
+    background: #132156;
+}
+
+.why-gchits-img {
+    display: none;
+}
+
+.why-gchits {
+    display: block;
+}
+
+.Search-Chits {
+    padding-bottom: 30px;
+}
+
+.Search-chitstext {
+    font-size: 25px;
+    cursor: pointer;
+    margin-top: -24px;
+    margin-left: 20px;
+}
+
+@media screen and (max-width: 767px) and (min-width: 320px) {
+    .sitecls {
+        height: 156px;
+    }
+    .formen-reg-btn {
+        margin-left: -157px;
+        margin-top: 10px;
+        width: 33%;
+    }
+    .play-text {
+        font-size: 20px;
+        cursor: pointer;
+        color: #170f0f;
+        margin-top: -31px;
+        margin-left: 32px;
+    }
+    video {
+        width: 100vw;
+        transform: scaleX(1);
+    }
+    .why-gchits {
+        display: none;
+    }
+    .why-gchits-img {
+        display: block;
+        margin-top: 36%;
+    }
+    .box-button {
+        margin-left: 25px;
+        margin-top: -93px;
+        /* width: 77%; */
+    }
+    .login-btn {
+        font-weight: bold;
+        background-color: darkorange;
+        border-radius: 11px;
+        /* width: 84%; */
+        padding: 4px 16px;
+        margin-left: -9px;
+    }
+    .play-btn {
+        color: #0961a5;
+        font-size: 32px;
+        margin-left: 20px;
+    }
+    h1.line-one {
+        font-size: 17px;
+        margin-top: 95px;
+    }
+    #line-two {
+        font-size: 14px;
+    }
+    .why-gchits img {
+        width: 50vw;
+        height: 50vh;
+    }
+    .about-us-div p {
+        font-size: 18px;
+        color: #0960a5;
+        font-family: font4;
+        /* text-align: justify; */
+        line-height: 1.5;
+    }
+    .footer-div {
+        background: #132156;
+        /* margin-top: 283%; */
+    }
+    .about-us-div {
+        margin: 22px;
+    }
+    h1.about-us {
+        font-family: font1;
+        font-size: 38px;
+        color: #0960a5;
+        text-align: center;
+    }
+    .full-width-screen {
+        height: 49vh;
+        font-family: font4;
+    }
+    .count {
+        font-size: 58px;
+        font-family: font3;
+    }
+    .Search-Chits {
+        padding-bottom: 30px;
+    }
+    .Search-chitstext {
+        font-size: 22px;
+        cursor: pointer;
+        margin-top: -24px;
+        margin-left: 20px;
+    }
+    #video-container{
+        margin-top: 10em;
+    }
+}
+
+@media only screen and (max-width:1024px) and (min-width: 768px) {
+    .sitecls {
+        height: 138px;
+        width: 97%;
+    }
+    .box-button {
+        margin-left: 236px;
+        margin-top: -403px;
+    }
+    .why-gchits img {
+        margin-top: -340px;
+        width: 96vw;
+    }
+    video {
+        width: 88vw;
+    }
+    .allignme {
+        margin-left: -5px;
+        margin-right: -5px;
+    }
+}
+
+@media only screen and (max-width:1024px) and (min-width: 1024px) {
+    .box-button {
+        margin-left: 365px;
+        margin-top: -519px;
+    }
+    /*#gchit-masthead{
+        right: 134px;
+    }*/
+    video {
+        width: 89vw;
+    }
+}
+
+@media only screen and (max-width:480px) and (min-width: 320px) {
+    .box-button {
+        margin-top: -56px;
+    }
+}
+
+.cdk-global-overlay-wrapper {
+    pointer-events: auto;
+    display: block;
+    position: relative;
+    overflow: auto;
+    text-align: center;
+  }
+  
+  .cdk-global-overlay-wrapper::before {
+    content: '';
+    display: inline-block;
+    height: 100%;
+    white-space: nowrap;
+  }
+  
+  .cdk-overlay-pane {
+    display: inline-block;
+    position: relative;
+    text-align: left;
+    white-space: normal;
+  }
+
+  
+
+
+
+

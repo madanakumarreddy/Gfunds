@@ -1,0 +1,35 @@
+.disbursement_details.html .modal-body table th {
+    text-align: left;
+}
+
+.history th {
+    text-align: center;
+}
+.orangefont{
+	color: red;
+}
+
+.lenderresp h1 img.headinglend {
+    width: 5%;
+}
+
+.disbursemsg {
+    font-size: 24px;
+    font-weight: bolder;
+    color: #ed6505;
+}
+
+.disbursetracid p {
+    color: #296396;
+    font-size: 18px;
+}
+
+.disbursetracid .inputdiv {
+    margin: 21px 0px;
+}
+
+
+.thcolor{
+	background-color: #0a2175;
+    color: white;
+}

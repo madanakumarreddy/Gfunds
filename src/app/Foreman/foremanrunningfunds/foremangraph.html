@@ -1,0 +1,225 @@
+
+  <div class="runninggraph foremangra" >
+    <div class=" col-sm-12 col-md-12 col-xs-12 col-lg-12 clss">
+      <!-- <div class="row"> -->
+        <div class=" col-sm-6 col-md-2 col-xs-6 col-lg-2 text-center bttn">
+          <div class="row">
+            <button class="btn btn-primary govtleft1  backleft" id="padback" (click)="gotopage()">&nbsp;&nbsp;Back&nbsp;&nbsp;</button>
+          </div>
+        </div>
+        <div class=" col-sm-6 col-md-2 col-xs-6 col-lg-2 text-center bttn ">
+          <div class="row">
+            <button class="btn btn-primary govtleft1 aucleft" [disabled]="!allow" (click)="actionChat()">&nbsp;&nbsp;Auction&nbsp;&nbsp;</button>
+          </div>
+        </div>
+
+         <div class="col-md-2 col-xs-6 col-sm-3">
+          <input type="file" id="file-upload" name="fixeddeposit" (change)="govtfd($event)" *ngIf="!agrement">
+          <label for="file-upload" class="custom-file-upload fdcertleft text-center govtleft1" *ngIf="!agrement  ">FD Copy</label>
+          <small *ngIf="agrement">{{agrement.name}}</small>
+          <button class="btn btn-primary auctionz" *ngIf="agrement " value="hi" (click)="fixedcopy()">Upload </button>
+          <!-- <button class="btn btn-primary auctionz" *ngIf="copydetails" value="hi" >Fd copy Uploaded</button> -->
+        </div>
+        <div class="col-md-2 col-xs-6 col-sm-3 ">
+         <input type="file" id="file-upload" name="fixeddeposit" (change)="govtfd1($event)" *ngIf="!agrement1">
+          <label for="file-upload" class="custom-file-upload govtleft govtleft1 text-center" *ngIf="!agrement1">Govt.Copy</label>
+          <small *ngIf="agrement1">{{agrement1.name}}</small>
+          <button class="btn btn-primary auctionz" *ngIf="agrement1" value="hi" (click)="govtcopy()">Upload </button>
+           <!-- <button class="btn btn-primary auctionz" *ngIf="copydetails1" value="hi" >Govt copy Uploaded </button> -->
+        </div>
+        <div class=" col-sm-6 col-md-2 col-xs-6 col-lg-2 text-center bttn">
+          <!-- <div class="row"> -->
+
+            <button class="btn btn-primary auctionz check">Next Payable Amount
+              <br> 
+              <span *ngIf = "nextpay">{{nextpay | currency:"₹"}}</span>
+              <span *ngIf = "!nextpay">{{ 0 }}</span>
+            </button>
+          <!-- </div> -->
+        </div>
+        <div class="col-sm-6 col-md-2 col-xs-6 col-lg-2 text-center btonz bttn">
+          <!-- <div class="row"> -->
+            <button ng-click="callmemberdetails()" class="btn btn-primary raise1 raisfundleft">Raise Fund Request
+              <br>
+              <span *ngIf = "finalprmoney">{{finalprmoney | currency:"₹"}}</span>
+              <span *ngIf = "!finalprmoney">{{ 0 }}</span>
+            </button>
+          <!-- </div> -->
+        </div>
+      <!-- </div> -->
+    </div>
+    <div class=" col-sm-12  col-md-12 col-xs-12 col-lg-12 grpgname ">
+      <h4 class="sacchoice">Next Auction Date & Time : {{timeaction| date:'EEEE, MMMM d, y, h:mm:ss a'}}</h4>
+    </div>
+
+    <!-- <div class="col-md-12 col-xs-12 col-sm-12 col-lg-12 grpgname1">
+      <h2 class="text-center namefund">{{graph_chitnumber | uppercase}}</h2>
+    </div>
+
+    <div id="chartContainer" style="height: 400px; width: 90%;  box-shadow: -15px -12px 18px 1px rgba(0, 0, 0, 0.31);" class="col-md-12 col-xs-12">
+  </div> -->
+
+
+  <div class="col-md-12 col-xs-12 col-sm-12 col-lg-12 grpgname1 desk"  >
+    <h2 class="text-center namefund">{{graph_chitnumber | uppercase}}</h2>
+
+    
+
+     <div id="chartContainer" style="height: 360px; width: 90%;"></div>
+   
+
+  </div>
+
+
+
+
+  <div class="col-md-12 col-xs-12 col-sm-12 col-lg-12 grpgname1 mob">
+    <h2 class="text-center namefund">{{graph_chitnumber | uppercase}}</h2>
+
+   
+
+
+     <div id="chartContainer1" style="height: 360px; width: 100%;"></div>
+
+
+<h4>Note:</h4>
+<span>Press this &nbsp;<i class="fa fa-arrows"></i>&nbsp;Button to Scroll</span><br>
+<span>Press this &nbsp;<span class="glyphicon glyphicon-repeat"></span>&nbsp;Button to Refresh</span>
+
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ </div>
+<div class="modal fade" #fdcopy>
+  <div class="modal-dialog modal-md">
+    <div class="modal-content">
+      <div class="modal-header" style="background-color: #337ab7; height:50px;">
+        <button type="button" class="close" data-dismiss="modal"style="color:white">&times;</button>
+        <h3 class="modal-title" style="color: white;text-align: center;">Success</h3>
+      </div>
+      <div class="modal-body">
+        <p class="text-center">FD copy uploaded successfully<p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" data-dismiss="modal" class="reshedu1 btn btn-primary">ok</button>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade" #govtcopy1>
+  <div class="modal-dialog modal-md">
+    <div class="modal-content">
+      <div class="modal-header" style="background-color: #337ab7; height:50px;">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h3 class="modal-title" style="color: white;text-align: center;">Success</h3>
+      </div>
+      <div class="modal-body">
+        <p class="text-center">Govt copy uploaded successfully</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button " data-dismiss="modal" class=" btn btn-primary reshedu1">ok</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+   
+
+
+
+
+
+
+  
+
+ 
+
+    
+<style type="text/css">
+  .grpgname{
+    margin-bottom: 10px;
+    margin-top:-12px;
+  }
+  .grpgname1{
+    margin-bottom: -8px;
+    margin-top: -27px
+
+  }
+  .graphcan{
+    height: 488px;
+    width: 920px;
+    display: block;
+  }
+  .tab{
+    margin-left: 230px; 
+    margin-top:20px
+  }
+  .bttn{
+    margin-bottom: 10px;
+  }
+  .grpgname2{
+    margin-bottom: 0%;  
+  }
+  .govtleft1{
+    padding-bottom: 15px;
+    padding-top: 15px;
+  }
+  .mob{
+  display: none;
+}
+
+.desk{
+  display: block;
+}
+
+  @media only screen and (min-width: 360px) and (max-width: 640px){
+    .graphcan{
+      height: 400px;
+      width: 370px;
+      display: block;
+    }
+    .tab{
+      margin-left: 0px; 
+      margin-top:20px
+    }
+    .grpgname2{
+      margin-bottom: 45%;
+    }
+    .check{
+      font-size: 14px;
+      width: 135px;
+      margin-top: 5px;
+
+    }
+    .mob{
+    display: block;
+  }
+
+  .desk{
+    display: none;
+  }
+
+    
+  }
+</style>

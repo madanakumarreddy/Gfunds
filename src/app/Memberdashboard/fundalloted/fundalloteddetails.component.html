@@ -1,0 +1,95 @@
+ 
+ <div>
+        <button class="btn btn-primary transferback " (click)="memchitaucback()" id="backmargin">
+            Back</button>
+    </div>
+<div class="col-md-12 transfer">
+<div class="col-xs-12 col-sm-12 col-md-6 text-center " *ngFor = "let data of fundata">
+    
+    <!-- <div class="table-responsive" > -->
+        <table class="table  table-bordered" >
+            <thead>
+                <tr>
+                    <td colspan="2" style="font-weight: bolder;">CONFIRM TRANSACTION</td>
+                </tr>
+            </thead>
+        </table>
+              <div class="table-responsive maralign" >
+        <table class="table  table-bordered" >
+            <tbody class="tableText">
+                <tr>
+                    <th style="width: 50%;">Auction Number:
+                    </th>
+                    <th>{{data.auction_count}}</th>
+                </tr>
+                <tr>
+                    <th style="width: 50%;">Auctioned Date:
+                    </th>
+                    <th>{{data.auctiondate}}</th>
+                </tr>
+                <tr>
+                    <th style="width: 50%;">Fraternity Name:</th>
+                    <th>{{data.fundname || cnumber }}</th>
+                </tr>
+                <tr>
+                    <th style="width: 50%;">Bid Amount:</th>
+                    <th>{{data.bid_amount}}</th>
+                </tr>
+                <tr>
+                    <th style="width: 50%;">Prize Money:</th>
+                    <th>{{data.receiving_member_amount}}
+                    </th>
+                </tr>
+                <tr>
+                    <th style="width: 50%;">Loan Amount:</th>
+                    <th>
+                        {{data.silver_loan_type || 0}}
+                    </th>
+                </tr>
+                <tr>
+                    <th style="width: 50%;">Member Receiving Amount:<br>(Prize Money - Loan Amount)</th>
+                    <th> 
+                        {{data.receiving_member_amount}}
+
+                        <!-- {{data.Final_receiving_amount || pmoney}} -->
+                    </th>
+                </tr>
+                <tr>
+                    <th style="width: 50%;">Transaction ID</th>
+                    <th>
+                        <button class="btn btn-success" *ngIf="data.foreman_transaction_status=='Done'">{{data.foreman_transaction}}</button>
+                        <button class="btn btn-default" *ngIf="data.foreman_transaction_status==null">No-Transaction</button>
+                    </th>
+                </tr>
+                <tr>
+                    <th style="width: 50%;">Payment Status:</th>
+                    <th>
+                        <p *ngIf="data.foreman_transaction_status==null">Foreman Transaction Pending</p>
+                        <p *ngIf="data.foreman_transaction_status=='Done'">
+                            Foreman Transaction Completed
+                        </p>
+                    </th>
+                </tr>
+            </tbody>
+            </table>
+              </div>
+      
+    <!-- </div> -->
+</div>
+
+</div>
+<!-- <script type="text/ng-template" id="verifytransid.html">
+
+    <div class="modal-header newhead">
+    <div class="col-md-6"style="text-align: right;">
+        <h3 class="modal-title">Note</h3></div>
+        <div class="text-right col-md-6" style="float: right;">
+           <span type="button" ng-click="close()" style="font-size: 28px; cursor: pointer; margin-right: 14px; font-weight: bold;">&times;</span>
+       </div>
+    </div>
+    <div class="modal-body newbody1">
+        <button class="btn btn-success" ng-click="transactionverify('PAID')">Correct</button>
+        <button class="btn btn-danger" ng-click="transactionverify('UNPAID')">Wrong</button>
+    </div>
+
+</script> -->

@@ -1,0 +1,1424 @@
+/*.santadmn{
+    color: white;
+    background: #337ab7;
+    margin-top: -24px;
+    block-size: 68px;
+    width: 602px;
+    margin-left: -25px;
+    }*/
+/*.receiveotp{
+    margin-left: -39px;
+}*/
+.lgout{
+    margin-top: 14px;
+    float: right;
+}
+
+/*.bott{
+    margin-bottom: -26px;
+}
+*/
+/*.downn{
+    margin-top: 21px;
+}*/
+
+/*.bggrr{
+    z-index: 10;
+}*/
+/*.menu-item span {
+    padding: 6px;
+    box-shadow: 2px 2px 3px #a5abca;
+    color: white;
+    border-radius: 0px;
+    font-weight: bold;
+    background: #3a6986;
+    cursor: pointer;
+}*/
+
+/* css for signup Popup */
+/*
+.signupPopHead {
+
+    background-color: #337ab7;
+    text-align: center;
+     margin: -45px -25px 25px -25px; 
+    margin: -5% -6% 15% -6%; 
+     border:2px solid #337ab7; 
+
+}*/
+/*.sendotp {
+
+    margin-left: -56px;
+}
+*/
+/*.popname{
+    margin-left: 64px;
+    margin-top: 14px;
+    font-weight: bold;
+    font-size: 20px;
+    color: white;
+    padding: 1px 0 10px 0;
+    text-align: center;
+}*/
+/*.mat-dialog-content{
+    margin-top: -70px;
+}*/
+/*.reduce{
+    font-size: smaller;
+    margin-left: 44px;
+}*/
+/*.account{
+    margin-left: 158px;
+}
+*/
+
+/*.modal-header {
+    background: #0080c5;
+    color: white;
+    text-transform: capitalize;
+    padding: 2px;
+    text-align: center;
+}*/
+
+/*.modal-footer,
+.modal-header {
+    border: 1px solid block;
+}*/
+
+/*.modal {
+    background: rgba(197, 197, 197, 0.65);
+}*/
+
+.modal-body h3 {
+    text-align: center;
+    margin: 14px 0px;
+}
+
+.modal-footer,
+.modal-header {
+    border: 0px;
+}
+
+.modal-footer {
+    padding-top: 0px;
+}
+
+.modal {
+    background: rgba(197, 197, 197, 0.65);
+}
+
+.modal-header h3 {
+    color: white;
+    margin: 10px 0px;
+    font-size: 20px;
+}
+
+.modal-dialog {
+    transition: all .5s ease-out;
+    animation-name: modalfade;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes modalfade {
+    0% {
+        opacity: 0;
+        transform: translate(0, 0);
+    }
+    100% {
+        opacity: 1;
+        transform: translate(0, 57px);
+    }
+}
+
+
+.modal-header h3 {
+    color: white;
+    margin: 10px 0px;
+}
+
+.viewpage {
+    margin-top: 89px;
+    height: 88vh;
+    overflow: scroll;
+}
+
+::-webkit-scrollbar {
+    display: none;
+    width: 0;
+    height: 0;
+}
+
+header #gchit-site-branding span.head-gchits {
+    font-size: 30px;
+    margin: 0px 0px 0px -26px;
+    font-weight: bold;
+    text-shadow: 1px 1px 1px;
+}
+
+header #gchit-site-branding {
+    padding: 0px 33px;
+}
+
+header #gchit-site-branding img {
+    max-height: 52px;
+    padding-top: 4px;
+}
+
+.checkbox input[type=checkbox] {
+    position: static;
+    margin: 0px;
+}
+
+header .gchit-main-navigation a:link,
+header .gchit-main-navigation a {
+    color: #0b4682;
+}
+
+header .gchit-main-navigation a {
+    text-decoration: none;
+    padding: 0 15px;
+    position: relative;
+    text-transform: capitalize;
+    font-weight: 700;
+    font-size: 14px;
+    transform: scale(1.1);
+}
+
+header .gchit-main-navigation li {
+    cursor: pointer;
+    float: left;
+    position: relative;
+    line-height: 52px;
+    border-bottom: 0;
+    transition: all 300ms linear 0ms;
+}
+
+header .viewpage {
+    padding-top: 13vh;
+    position: fixed;
+}
+
+
+/*header {
+    background: white;
+    top: 0px;
+    height: 132px;
+    box-shadow: 0 2px 4px solid skyblue;
+}*/
+
+
+/*
+.dashboardbody-scrollmenu {
+    padding-top: 15vh;
+}*/
+
+.dashboardbody-scrollmenu {
+    padding-top: 2vh;
+}
+
+.newbody .form-group input {
+    border: steelblue;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.45);
+    border-style: solid;
+    border-width: thin;
+    box-shadow: 0px 0px 5px 1px rgba(51, 122, 183, 0.75);
+}
+
+
+/*.gchit-main-navigation li:hover {
+    background: #1d96e1;
+}*/
+
+
+/*.gchit-main-navigation li{
+    position: relative;
+    transition: all 300ms linear 0ms;
+}*/
+
+.gchit-main-navigation li:after {
+    display: block;
+    content: '';
+    border-bottom: solid 3px #1ec3a3;
+    transform: scaleX(0);
+    transition: all 300ms linear 0ms;
+    transform-origin: 0% 50%;
+}
+
+.gchit-main-navigation li:hover a {
+    color: #1ec3a3;
+    text-decoration: none;
+}
+
+.gchit-main-navigation li:hover:after {
+    transform: scaleX(1);
+}
+
+.gchit-main-navigation a {
+    display: block;
+    text-decoration: none;
+    padding: 0px 15px;
+    position: relative;
+    text-transform: capitalize;
+    font-weight: 700;
+    font-size: 13px;
+    transform: scale(1.2);
+}
+
+.top-bar {
+    margin-top: 69px;
+    height: 32px;
+    background-color: RGBA(255, 255, 255, 0.1);
+    line-height: 30px;
+    border-bottom: 1px solid #e9e9e9;
+    background-color: #000c48;
+}
+
+#gchit-masthead {
+    /*background: url(../images/dashback.jpg);*/
+    margin-top: -5px;
+    background-color: white;
+    position: fixed;
+    left: 0;
+    right: 0;
+    z-index: 999;
+    min-height: 11vh;
+    transition: all 0.6s ease-in-out;
+    -moz-transition: all 0.6s ease;
+    -webkit-transition: all 0.6s ease;
+    box-shadow: 0 2px 4px #086d96;
+}
+
+#gchit-page .gchit-scrolled {
+    top: 0;
+}
+
+#gchit-masthead.gchit-white.gchit-scrolled {
+    background: rgba(255, 255, 255, 1);
+}
+
+.gchit-container {
+    width: 100%;
+    padding: 0 10px;
+}
+
+#gchit-site-branding {
+    float: left;
+    width: 30%;
+    padding: 0px 0;
+}
+
+#gchit-site-branding span.head-gchits {
+    font-size: 25px;
+    margin: 0px 0px 0px -44px;
+    font-weight: bold;
+    text-shadow: 1px 1px 1px;
+}
+
+#gchit-site-navigation {
+    float: right;
+    width: 70%;
+}
+
+.gchit-main-navigation .gchit-menu {
+    float: right;
+}
+
+.gchit-main-navigation ul {
+    list-style: none;
+    margin: 0;
+    padding-left: 0;
+}
+
+#gchit-site-branding img {
+    max-height: 145px;
+}
+
+.top-bar .social-icons {
+    overflow: hidden;
+    float: right;
+    width: auto;
+    position: relative;
+    z-index: 3;
+}
+
+.top-bar .social-icons>ul {
+    margin: 0;
+    background-color: transparent;
+    float: right;
+}
+
+.top-bar .social-icons li {
+    float: right;
+    font-size: 18px;
+    padding: 0 5px;
+    margin: 0 5px;
+}
+
+.top-bar .social-icons .social-media-icon {
+    background-color: transparent;
+    border: none;
+    margin: 0;
+}
+
+
+
+.chit-result .chit-logo {
+    width: 25%;
+    position: relative;
+    margin-bottom: 15px;
+    margin-left: 5%;
+    border: 1px solid #ccc;
+    height: 45vh;
+    box-shadow: 1px 2px 15px;
+    background-repeat: no-repeat!important;
+    background-size: 100%!important;
+    background-position: center center!important;
+    z-index: 1;
+    margin-top: 50px;
+}
+
+.chit-result .chit-logo:before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    left: 0;
+    top: 0;
+    z-index: 0;
+    opacity: .9;
+}
+
+.chit-result .single-chit-result {
+    background-size: 100%!important;
+    position: relative;
+    z-index: 3;
+    height: 21vh;
+    text-align: center;
+    width: 21vh;
+    overflow: hidden;
+    border-radius: 50%;
+    margin: auto;
+}
+
+.chit-more-name {
+    font-size: 1vw;
+    color: black;
+    font-weight: bolder;
+}
+
+.chit-more-amount {
+    background: #0068b3;
+    padding: 1vh 0vh;
+    color: #eaeaea;
+    margin-top: 4vh;
+}
+
+.form-group .forbtn {
+    padding: 8px 25px 5px 25px;
+    font-size: 14px;
+}
+
+#tablefontstyle th {
+    padding: 10px 5px 6px;
+    font-size: 18px;
+}
+
+.checkbox input[type=checkbox] {
+    margin-top: 3px;
+}
+
+.social-icons .facebook-icon {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    border: 1px solid #e8e8e8;
+}
+
+ul,
+li {
+    padding: 0 0;
+    margin: 0 0;
+    list-style-type: none;
+}
+
+.call-us,
+.top-bar-block {
+    color: #c2c8ce;
+    float: left;
+    padding-right: 10px;
+}
+
+.call-us span {
+    color: #c2c8ce;
+    font-weight: 700;
+}
+
+.top-bar-block:last-child {
+    border-right: 0;
+}
+
+.call-us span,
+.top-bar-block span {
+    padding-left: 10px;
+    font-size: 13px;
+}
+
+body {
+    margin: 0;
+}
+
+body,
+button,
+input,
+select,
+textarea {
+    color: #333;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+.gchit-toggle-nav {
+    display: none;
+    position: absolute;
+    top: 50px;
+    right: 20px;
+    height: 40px;
+    width: 40px;
+    cursor: pointer;
+}
+
+.gchit-white .gchit-toggle-nav span,
+.gchit-white .gchit-toggle-nav span:after,
+.gchit-white .gchit-toggle-nav span:before {
+    background: #135ea7;
+}
+
+.gchit-toggle-nav span:before {
+    bottom: -12px;
+}
+
+.gchit-toggle-nav span:after {
+    top: -12px;
+}
+
+.gchit-toggle-nav span:after,
+.gchit-toggle-nav span:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    height: 2px;
+    width: 100%;
+    background: #FFF;
+    border-radius: 3px;
+}
+
+.gchit-toggle-nav span {
+    position: relative;
+    display: block;
+    width: 30px;
+    height: 2px;
+    background: #FFF;
+    margin-top: 19px;
+    border-radius: 3px;
+}
+
+.checkbox input[type=checkbox] {
+    margin: 3px 10px 0px 10px;
+}
+
+.table-striped>tbody>tr:nth-of-type(odd) {
+    background-color: #3d3d3d!important;
+}
+
+#tablefontstyle {
+    color: #0a58a4;
+}
+
+.home-side-menu {
+    border: 3px solid #e3dfdf;
+    padding: 7px;
+    text-align: center;
+    margin-top: 10px;
+    cursor: pointer;
+    /* background: #000c48;
+    color: white;*/
+    text-transform: uppercase;
+}
+
+#myDIV,
+#myDIV1,
+#myDIV2,
+#myDIV3 {
+    display: none;
+}
+
+.chit-results-main {
+    position: relative;
+    background-size: 100%;
+}
+
+.closebtn3,
+.close-btn-close {
+    display: none;
+}
+
+.filter-div {
+    display: none;
+}
+
+.rightalignment {
+    text-align: right;
+}
+
+.divborder:hover .line1 {
+    background: #1d8ccd;
+}
+
+.divborder:hover .enquire {
+    /*background: rgb(20, 95, 167);*/
+    background: #1d8ccd;
+    /*color: white;*/
+    cursor: pointer;
+}
+
+.line3 .more:hover {
+    background: #1d8ccd;
+    color: white;
+    cursor: pointer;
+}
+
+.divborder:hover .line1 .chitamount {
+    color: white;
+}
+
+.line3 .enquire:hover {
+    color: white;
+}
+
+.divborder:hover {
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    box-shadow: 0 0 20px rgba(0, 0, 0, .2);
+}
+
+.divborder {
+    width: 40vh;
+    height: 35vh;
+    margin: 16px 16px;
+    box-shadow: 1px 1px 2px 1px #e3dfdf;
+    -webkit-transition: all .3s ease;
+    -moz-transition: all .3s ease;
+    -o-transition: all .3s ease;
+    -ms-transition: all .3s ease;
+    transition: all .3s ease;
+}
+
+.divborder:before {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+}
+
+.divborder:before {
+    opacity: 0.1;
+    background-size: 100%;
+   /* background-image: url("../images/Gowdanar -chits_Without BG_Wings_Web.png")*/
+}
+
+.avaliablechits {
+    font-size: 25px;
+    border-bottom: 3px solid #e3dfdf;
+    margin-bottom: 16px;
+    color: #3e7dac;
+}
+
+.companiesdiv {
+    /* display: none; */
+    width: 20%;
+    /* margin-left: 34%; */
+    z-index: 1;
+    position: fixed;
+    height: 664px;
+    overflow: auto;
+    top: 89px;
+    font-weight: bold;
+}
+
+.companies {
+    height: 41vh;
+    overflow: auto;
+    padding-left: 8px;
+}
+
+.companies1 {
+    height: 22vh;
+    overflow: auto;
+    padding-left: 8px;
+}
+
+.line1 {
+    border-bottom: 1px solid #0a58a4;
+    height: 5vh;
+    text-align: center;
+}
+
+.line3 {
+    border-top: 1px solid #0a58a4;
+    height: 6vh;
+    margin-top: 3vh;
+}
+
+.line1 .chitamount {
+    color: #0a58a4;
+    margin-top: 0.4vh;
+    font-size: 19px;
+}
+
+.chitlogo {
+    height: 21vh;
+    padding-top: 2.5vh;
+}
+
+.chitlogo .imgdiv {
+    width: 14vh;
+    height: 14vh;
+    border-radius: 5px;
+    border: 1px solid #0a58a4;
+}
+
+.more,
+.enquire {
+    color: #1d8ccd;
+    text-align: center;
+    height: 6vh;
+    padding: 1.5vh;
+}
+
+#norecordsstyle {
+    font-weight: bold;
+    color: tomato;
+}
+
+.chit-results-main {
+    margin-left: 20%
+}
+
+.closebtn3 {
+    display: none;
+}
+
+.star {
+    width: 20vh;
+    margin-top: 11px;
+    color: blue;
+}
+
+.filter-div {
+    display: none;
+}
+
+.rightalignment {
+    text-align: right;
+}
+
+.divborder:hover .line1 {
+    background: rgb(20, 95, 167);
+}
+
+.line3 .more:hover {
+    background: #1d8ccd;
+    color: white;
+}
+
+.divborder:hover .line1 .chitamount {
+    color: white;
+}
+
+.divborder:hover {
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    box-shadow: 0 0 20px rgba(0, 0, 0, .2);
+}
+
+.divborder {
+    width: 40vh;
+    height: 35vh;
+    margin: 16px 16px;
+    box-shadow: 1px 1px 2px 1px #e3dfdf;
+    -webkit-transition: all .3s ease;
+    -moz-transition: all .3s ease;
+    -o-transition: all .3s ease;
+    -ms-transition: all .3s ease;
+    transition: all .3s ease;
+}
+
+.avaliablechits {
+    margin-top: 22px;
+    font-size: 25px;
+    border-bottom: 3px solid #e3dfdf;
+    margin-bottom: 16px;
+    color: #3e7dac;
+}
+
+.companies {
+        height: auto;
+    max-height: 41vh;
+    overflow: auto;
+}
+
+.line1 {
+    border-bottom: 1px solid #e3dfdf;
+    height: 5vh;
+    text-align: center;
+}
+
+.line3 {
+    border-top: 1px solid #e3dfdf;
+    height: 6vh;
+    margin-top: 3vh;
+}
+
+.line1 .chitamount {
+    color: #1d1d73;
+    margin-top: -0.6vh;
+    font-size: 26px;
+    font-weight: bold;
+}
+
+.chitlogo {
+    height: 21vh;
+    padding-top: 2.5vh;
+}
+#creatacc{
+    margin-top: 25px; 
+    margin-right: 190px;
+}
+.dobpp{
+    margin-left:-64px;
+          margin-top: -6px;
+}
+
+.chitlogo .imgdiv {
+    width: 14vh;
+    height: 14vh;
+    border-radius: 5px;
+    border: 1px solid #0a58a4;
+}
+
+.chitlogo .amount {
+    padding: 6px 0px;
+    margin-left: 0.5vh;
+    text-align: center;
+    width: 16vh;
+    box-shadow: 2px 0.5px 0.3px 1px #0a58a4;
+    border-left: 0px;
+    border-bottom-right-radius: 15px;
+    border-top-right-radius: 15px;
+}
+
+.more,
+.enquire {
+    text-align: center;
+    height: 6vh;
+    padding: 1.5vh;
+    font-size: 2vh;
+}
+
+.membertermscss,
+.foremantermscss {
+    color: #333;
+    font-size: 10px;
+    margin-top: 24px;
+    margin-left: 21px;
+    font-weight: 200;
+    text-align: -webkit-left;
+}
+
+.foremantermscss p {
+    margin: 0;
+}
+
+.termscss {
+    color: bisque;
+    font-size: 18px;
+    margin-left: 12px;
+}
+
+.newbody1 h4 {
+    font-size: 22px;
+    font-variant: small-caps;
+    font-weight: 600;
+}
+
+.newbody1 p {
+    text-align: initial;
+    margin-left: 15px;
+    font-size: 18px;
+}
+
+.alianstyle {
+    text-align: -webkit-auto;
+}
+
+@media only screen and (min-width:300px) and (max-width: 767px) {
+    header .gchit-main-navigation a:link,
+    header .gchit-main-navigation a {
+        color: #337ab7;
+    }
+    .dashboardbody-scrollmenu {
+        padding-top: 0vh;
+    }
+    .mah{
+        /*margin-left: 0px;*/
+    margin-top: 14px;
+    float: left;
+}
+    .companiesdiv {
+        display: none;
+        width: 66%;
+        margin-left: 34%;
+        z-index: 1;
+        position: fixed;
+        height: 89vh;
+        overflow: auto;
+        top: 19vh;
+       /* background: url(../images/dashback.jpg);*/
+        color: white;
+        font-size: medium;
+        font-weight: bold;
+    }
+    .divborder {
+        width: 89vw;
+        height: 35vh;
+        margin: 3vw 1vw;
+        box-shadow: 1px 1px 2px 1px #e3dfdf;
+        -webkit-transition: all .3s ease;
+        -moz-transition: all .3s ease;
+        -o-transition: all .3s ease;
+        -ms-transition: all .3s ease;
+        transition: all .3s ease;
+    }
+    .chit-results-main {
+        top: 10vh;
+    }
+    .closebtn3 {
+        position: fixed;
+        margin-left: 19vh;
+        font-size: 13px;
+        border: 2px solid black;
+        padding: 0px 5px;
+        border-radius: 50%;
+        color: black;
+        font-weight: bold;
+    }
+    #backwater {
+        width: 289px;
+        margin-left: 14px;
+    }
+    /*  .chit-more-amount {
+      margin-top: -10vh !important;
+  }
+*/.loginBG {
+
+    height: 89vh !important;
+   
+}
+.loginBG:before {
+    background-size: 119% !important;
+ 
+}
+.login-shadow{
+    background: #ffffff66 !important;
+}
+  .chit-result .chit-logo {
+        width: 90% !important;
+        margin-left: 15px !important;
+    }
+    header .gchit-main-navigation a {
+        text-decoration: none;
+        padding: 0 15px;
+        position: relative;
+        text-transform: capitalize;
+        font-weight: 700;
+        font-size: 13px;
+        transform: none !important;
+    }
+    .gchit-main-navigation a {
+        display: block;
+        text-decoration: none;
+        padding: 0px 15px;
+        position: relative;
+        text-transform: capitalize;
+        font-weight: 700;
+        font-size: 13px;
+        transform: none !important;
+    }
+    header .gchit-main-navigation li {
+        float: left;
+        position: relative;
+        line-height: 26px;
+    }
+   /* .viewpage {
+        padding-top: 6vh;
+    }*/
+    .dashboard-active {
+        padding-top: 6vh !important;
+    }
+    #gchit-site-branding span.head-gchits {
+        font-size: 19px;
+        margin: 0px 0px 0px -27px;
+        font-weight: bold;
+        text-shadow: 1px 1px 1px;
+    }
+    header #gchit-site-branding span.head-gchits {
+        font-size: 19px;
+        margin: 0px 0px 0px -27px;
+        font-weight: bold;
+        text-shadow: 1px 1px 1px;
+    }
+    header #gchit-site-branding {
+        padding: 0px 0px;
+    }
+    header#gchit-masthead {
+        top: 0px;
+        height: 72px;
+    }
+    header#gchit-masthead {
+        top: 0px;
+        height: 72px;
+        z-index: 999;
+    }
+    #gchit-site-branding img {
+        max-height: 83px;
+    }
+    header #gchit-site-branding img {
+        max-height: 69px;
+    }
+    .top-bar {
+        display: none;
+    }
+    #gchit-site-branding {
+        float: left;
+        width: 48%;
+        padding: 0px 0;
+    }
+    .gchit-toggle-nav {
+        display: block;
+        position: absolute;
+        top: 17px;
+        right: 20px;
+        height: 40px;
+        width: 40px;
+        cursor: pointer;
+    }
+    header .gchit-toggle-nav {
+        position: absolute;
+        top: 17px;
+        right: 20px;
+        height: 40px;
+        width: 40px;
+        cursor: pointer;
+    }
+    #gchit-site-navigation {
+        display: none;
+        position: absolute;
+        top: 100%;
+        background: #FFF;
+        left: 0;
+        right: 0;
+        float: none;
+        width: auto;
+        border-top: 2px solid #5bc2ce;
+        border-bottom: 1px solid #5bc2ce;
+    }
+    .gchit-main-navigation .gchit-menu {
+        float: left;
+        text-align: left;
+    }
+    .gchit-main-navigation li {
+        float: none !important;
+        position: relative;
+        /* border-bottom: 0.1px solid #f7f1f1; */
+        line-height: 26px;
+        margin: 4px 11px;
+        border-left: 2px solid #efe8e8;
+    }
+    .chit-result .chit-logo {
+        position: relative;
+        margin-bottom: 15px;
+        border: 1px solid #ccc;
+        height: 36vh;
+        box-shadow: 1px 2px 15px;
+        background-repeat: no-repeat!important;
+        background-size: 100%!important;
+        background-position: center center!important;
+        z-index: 1;
+        width: 100%;
+        margin: 0px;
+    }
+    .chit-more {
+        font-size: 3vw;
+    }
+    .chit-result .single-chit-result {
+        background-size: 100%!important;
+        position: relative;
+        z-index: 3;
+        height: 21vh;
+        text-align: center;
+        width: 21vh;
+        overflow: hidden;
+        border-radius: 50%;
+        margin: auto;
+        margin-bottom: 3vh;
+    }
+    .chit-more-name {
+        font-size: 4vw;
+        font-weight: bolder;
+    }
+    .chit-more-amount div {
+        color: #f5f5f5;
+        background: #047cb7;
+        padding: 1vh 0;
+        margin-top: 2vh;
+        box-shadow: 1px 1px 1px #047cb7;
+    }
+    .divborder {
+        width: 89vw;
+        height: 35vh;
+        margin: 3vw 1vw;
+        box-shadow: 1px 1px 2px 1px #e3dfdf;
+        -webkit-transition: all .3s ease;
+        -moz-transition: all .3s ease;
+        -o-transition: all .3s ease;
+        -ms-transition: all .3s ease;
+        transition: all .3s ease;
+    }
+    .chit-results-main {
+        padding-top: 0px;
+        margin-left: 0px;
+    }
+    .viewpage {
+        /*padding-top: 11vh !important;*/
+        margin-top: 11vh;
+        height: 89vh;
+        z-index: 99;
+    }
+
+    .close-btn-close {
+        display: block;
+    }
+    .homelangingpage {
+        margin-top: 0vh;
+    }
+    .filter-div {
+        display: block;
+        height: 9vh;
+        width: 100%;
+        position: fixed;
+        /* margin-bottom: 15px; */
+        padding: 4%;
+        text-align: center;
+        font-size: 5vw;
+        z-index: 1;
+        color: white;
+        top: 11vh;
+       /* background: url(../images/dashback.jpg);*/
+        box-shadow: 1px 1px #e3dfdf
+    }
+    .chit-results-main {
+        top: 10vh;
+    }
+    .closebtn3 {
+        position: fixed;
+        margin-left: 19vh;
+        font-size: 13px;
+        border: 2px solid black;
+        padding: 0px 5px;
+        border-radius: 50%;
+        color: black;
+        font-weight: bold;
+    }
+    .more,
+    .enquire {
+        text-align: center;
+        height: 6vh;
+        padding: 1.5vh;
+        font-size: 2vh;
+    }
+}
+
+@media only screen and (min-width:768px) and (max-width: 1024px) {
+    .modal-content {
+        overflow: hidden;
+    }
+    .chit-more-amount {
+        font-size: x-large;
+        background: #0068b3;
+        padding: 1vh 0vh;
+        color: #eaeaea;
+        margin-top: 4vh;
+    }
+    .chit-result .single-chit-result {
+        background-size: 100% !important;
+        position: relative;
+        z-index: 3;
+        height: 21vh;
+        text-align: center;
+        width: 21vh;
+        overflow: hidden;
+        border-radius: 50%;
+        margin: auto;
+        /* margin-left: 2.5vw; */
+        margin-bottom: 4vh;
+        /* margin-top: 4vh; */
+    }
+    .chit-more-name {
+        font-size: 4vw;
+        color: black;
+        font-weight: bolder;
+    }
+    .chit-result .chit-logo {
+        width: 100%;
+        position: relative;
+        margin-bottom: 15px;
+        margin-left: 0%;
+        border: 1px solid #ccc;
+        height: 45vh;
+        box-shadow: 1px 2px 15px;
+        background-repeat: no-repeat!important;
+        background-size: 100%!important;
+        background-position: center center!important;
+        z-index: 1;
+        margin-top: 50px;
+    }
+    .top-bar {
+        display: none;
+    }
+    .divborder {
+        width: 20.7vh !important;
+        height: 22.7vh !important;
+        float: left;
+        margin: 16px 16px;
+        box-shadow: 1px 1px 2px 1px #e3dfdf;
+        -webkit-transition: all .3s ease;
+        -moz-transition: all .3s ease;
+        -o-transition: all .3s ease;
+        -ms-transition: all .3s ease;
+        transition: all .3s ease;
+    }
+    .chitlogo .imgdiv {
+        width: 9vh;
+        height: 9vh;
+        border-radius: 5px;
+        border: 1px solid #e3dfdf;
+    }
+    #gchit-masthead {
+        border-bottom: 2px solid #e3dfdf;
+        position: fixed;
+        left: 0;
+        right: 0;
+        z-index: 999;
+        min-height: 8vh;
+        transition: all 0.6s ease-in-out;
+        -moz-transition: all 0.6s ease;
+        -webkit-transition: all 0.6s ease;
+        box-shadow: 0 2px 4px #086d96;
+    }
+    .dashboardbody-scrollmenu {
+        padding-top: 3vh;
+    }
+    .chit-results-main {
+        position: relative;
+        padding-top: 10vh;
+        margin-left: 0px;
+        background-size: 100%;
+    }
+    .filter-div {
+        display: block;
+    }
+    .companiesdiv {
+        display: none;
+        overflow: auto;
+        position: fixed;
+        height: 84vh;
+        width: 46%;
+        top: 16vh;
+        z-index: 9;
+        margin-left: 54%;
+        float: right;
+       /* background: url(../images/dashback.jpg);*/
+        color: white;
+        font-size: medium;
+        font-weight: bold;
+    }
+    .chitlogo .amount {
+        padding: 6px 0px;
+        margin-left: 0.5vh;
+        text-align: center;
+        margin-top: 0.5vh;
+        width: 8vh;
+        box-shadow: 2px 0.5px 0.3px 1px #eeeeee;
+        border-left: 0px;
+        border-bottom-right-radius: 15px;
+        border-top-right-radius: 15px;
+    }
+    .star {
+        width: 8vh;
+        margin-top: 18px;
+        color: blue;
+    }
+    .chitlogo {
+        height: 16vh;
+        padding-top: 1.5vh;
+    }
+    .line1 {
+        height: 3vh;
+    }
+    .line3 {
+        border-top: 1px solid #e3dfdf;
+        height: 4vh;
+        margin-top: 0vh;
+        /* font-size: xx-small; */
+    }
+    .more,
+    .enquire {
+        text-align: center;
+        height: 2vh;
+        padding: 1vh 0vh 3vh 0vh;
+        font-size: 2vw;
+    }
+    header #gchit-site-branding {
+        padding: 0px 33px;
+    }
+    header {
+        position: fixed;
+        left: 0;
+        top: 0;
+        right: 0;
+        z-index: 999;
+        height: 72px;
+        transition: all 0.6s ease-in-out;
+        -moz-transition: all 0.6s ease;
+        -webkit-transition: all 0.6s ease;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1) !important;
+    }
+    header #gchit-site-branding img {
+        max-height: 77px;
+    }
+    header .gchit-main-navigation a {
+        text-decoration: none;
+        padding: 0 15px;
+        position: relative;
+        text-transform: capitalize;
+        font-weight: 700;
+        font-size: 20px;
+        transform: scale(1.1);
+    }
+    header .gchit-main-navigation li {
+        float: left;
+        position: relative;
+        line-height: 45px;
+    }
+    .gchit-toggle-nav {
+        display: block;
+        position: absolute;
+        top: 17px;
+        right: 20px;
+        height: 40px;
+        width: 40px;
+        cursor: pointer;
+    }
+    #gchit-site-navigation {
+        display: none;
+        position: absolute;
+        top: 100%;
+        background: #FFF;
+        left: 0;
+        right: 0;
+        float: none;
+        width: auto;
+        border-top: 2px solid #5bc2ce;
+        border-bottom: 1px solid #5bc2ce;
+    }
+    .gchit-main-navigation a {
+        display: block;
+        text-decoration: none;
+        padding: 0px 15px;
+        position: relative;
+        text-transform: capitalize;
+        font-weight: 700;
+        font-size: 13px;
+        transform: none !important;
+    }
+    .gchit-main-navigation li {
+        float: none !important;
+        position: relative;
+        /* border-bottom: 0.1px solid #f7f1f1; */
+        line-height: 26px;
+        margin: 4px 11px;
+        border-left: 2px solid #efe8e8;
+    }
+    .gchit-main-navigation .gchit-menu {
+        float: left;
+        text-align: left;
+    }
+    .filter-div {
+        display: block;
+        height: 9vh;
+        width: 100%;
+        position: fixed;
+        /* margin-bottom: 15px; */
+        padding: 2%;
+        text-align: center;
+        font-size: 5vw;
+        z-index: 1;
+        color: white;
+        top: 7vh;
+        /*background: url(../images/dashback.jpg);*/
+        box-shadow: 1px 1px #e3dfdf;
+    }
+    .viewpage {
+        margin-top: 8vh;
+        height: 92vh;
+    }
+    .loginBG{
+        height: 92vh !important;
+    }
+    .loginBG:before{
+            background-size: 100% !important;
+    background-position: bottom !important;
+    }
+}
+
+.pop{
+    /*text-align: center;*/
+}
+
+.text-right{
+    text-align: center;
+}
+
+
+
+@media only screen and (min-width:360px) and (max-width: 640px) {
+.button{
+    margin-top: 11px;
+}
+
+#my_centered_buttons { display: flex; justify-content: center; }
+
+}

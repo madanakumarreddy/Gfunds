@@ -1,0 +1,152 @@
+<div class="modal-header modalhead" style="color: white;
+    background: #337ab7;margin-top: -24px;margin-left: -24px;margin-right: -24px;">
+  <div class="text-right" style="float: right;">
+    <span type="button" (click)="closepop()" style="font-size: 28px;cursor: pointer;
+    margin-right: 14px;font-weight: bold;">&times;</span>
+  </div>
+  <h3 class="modal-title" style="text-align: center;right:0px;">CREATE YOUR ACCOUNT&nbsp;</h3>
+</div>
+<div style="margin-top:10px;">
+  <form name="memberlandingform" class="labelstyle form-horizontal" #form1="ngForm">
+    <div class="text-right">
+      <div class="form-group">
+      <label for="fullname control-label" class="col-md-4 pop">Name<small>(as per aadhar card)</small></label>
+      <div class="col-md-7">
+        <input type="text" name="first_name" size="25" id="first_name" value="fullname" class="form-control"
+          (keypress)="keyPress($event)" placeholder="please type your name" [(ngModel)]="user.first_name" maxlength="28"
+          required style="text-transform: capitalize;" #nameaadhar="ngModel">
+      </div>
+      </div>
+
+    <!--   <div class="form-group text-right" style="margin-top: 60px;">
+        <label for="dob" class="col-md-4 pop">DOB<small>&nbsp;(yyyy-mm-dd)</small></label>
+        <div class="col-md-7">
+          <div class="col-md-12">
+            <input class="form-control" name="dob" matInput [matDatepicker]="userDOB" placeholder="yyyy-mm-dd" required
+              [(ngModel)]="user.date_of_birth" #dob="ngModel">
+          </div>
+          <div class="col-md-2" style="margin-left: -62px;">
+            <mat-datepicker-toggle matSuffix [for]="userDOB">
+            </mat-datepicker-toggle>
+            <mat-datepicker #userDOB></mat-datepicker>
+          </div>
+        </div>
+      </div> -->
+
+  <div class="form-group">
+        <label for="dob" class="col-md-4 pop">DOB<small>&nbsp;(yyyy-mm-dd)</small></label>
+        <div class="col-md-7">
+       <input class="form-control" name="dob" matInput [matDatepicker]="userDOB" placeholder="yyyy-mm-dd" required
+              [(ngModel)]="user.date_of_birth" #dob="ngModel">
+          
+          <div class="signdate">
+            <mat-datepicker-toggle matSuffix [for]="userDOB">
+            </mat-datepicker-toggle>
+            <mat-datepicker #userDOB></mat-datepicker>
+          </div>
+          </div>
+       
+      </div>
+
+
+
+      <div class="form-group text-right">
+        <label for="mobilenumber" class="col-xs-12 col-md-4 pop">Mobile</label>
+        <div class="col-xs-12 col-md-7">
+          <div class="input-group">
+
+            <input type="text" id="mobnum" #mobile_number="ngModel" pattern="[6-9]{1}[0-9]{9}" name="mobilenumber"
+              [(ngModel)]="user.username" (keypress)="keyPress2($event)" (keyup)="keyup()" placeholder="Enter your mobile number"
+              class="form-control" minlength="10" maxlength="10" style="    margin-left: 5px;  width: 100%;" required>
+
+            <span class="input-group-btn">
+
+              <button class="btn btn-default btn-success" type="button" (click)="generateotp(user)"
+                [disabled]="mobile_number.errors?.pattern" *ngIf="!box" style="width: 114%;margin-right: -20px;">
+                <div class="loader"></div>Send OTP
+              </button>
+            </span>
+            <span class="input-group-btn" ng-disabled="disableresend">
+              <button *ngIf="box" class="btn btn-default btn-primary" type="button" (click)="generateotp(user)">
+                <div class="loader" style="display: {{loaderss}}"></div>Resend
+              </button>
+            </span>
+            <span class="input-group-btn" *ngIf="false">
+              <button class="btn btn-default btn-success" type="button"><span class="glyphicon glyphicon-ok"></span>
+              </button>
+            </span>
+          </div>
+          <span *ngIf="mobile_number.errors?.pattern" style="color:red;float: left;margin-left: 15px;">please enter
+            valid mobile number</span>
+          <span *ngIf="exist && !mobile_number.errors?.pattern" style="color:red;float: left;">{{message}}</span>
+        </div>
+        <!-- <span *ngIf="mobile_number.errors?.pattern" style="color:red;float: left;">please enter valid mobile number</span> -->
+      </div>
+    </div>
+    <div class="form-group text-right" *ngIf="box">
+      <label for="OTP" class="col-md-4 pop">OTP</label>
+      <div class="col-md-7">
+        <input type="text" #otp="ngModel" class="form-control" name="OTP" [(ngModel)]="user.otp"
+          (change)="verifyotp(user.otp)" (keypress)="keyPress2($event)" placeholder="Enter your OTP" only-digits
+          minlength="6" maxlength="6" style="margin-left: 6px;" required>
+        <span *ngIf="(otp.value==otp1)" style="color:green;float: left;margin-left: 15px;">Verified <span
+            class="glyphicon glyphicon-ok"></span> </span>{{Verified}}
+        <span *ngIf="(otp.value==otp1)" style="color:red;float: left;">{{otperror}}</span>
+      </div>
+    </div>
+    <div class="form-group text-right">
+      <label for="password" class="col-md-4 pop">Password</label>
+      <div class="col-md-7">
+        <input type="password" #pass="ngModel" name="password" [(ngModel)]="user.password" class="form-control"
+          placeholder="Enter your password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}"
+          style="margin-left:6px;width:96%" required>
+
+        <span *ngIf="pass.errors?.pattern" style="color:red;float: left;">Valid password must contain at least one
+          number and one uppercase and lowercase letter, and at least 6 or more characters</span>
+      </div>
+    </div>
+    <div class="form-group foremantermscss">
+      <p>
+        <input type="checkbox" name="iagree1" #ag1="ngModel" [(ngModel)]="user.iagree1" required /> I have read and
+        agree to the <a href="">TERMS AND CONDITIONS</a></p>
+      <p>
+        <input type="checkbox" name="iagree2" #ag2="ngModel" [(ngModel)]="user.iagree2" required /> I agree to the terms
+        of use and consent to electronic disclosures and the <a href=""> PRIVACY POLICY</a></p>
+      <p>
+        <input type="checkbox" name="iagree3" #ag3="ngModel" [(ngModel)]="user.iagree3" required> I authorize
+        www.gowdanarfunds.com to make any enquiries with any finance company/bank/registered credit bureau regarding my
+        credit history with them.</p>
+    </div>
+
+
+    <div style="text-align: center;">
+      <button (click)="saveData(user,form1.invalid)" style="margin-left: 21px; margin-top: 11px;"
+        class="btn btn-success button" id="my_centered_buttons" [disabled]="!form1.form.valid">CREATE YOUR
+        ACCOUNT</button>
+    </div>
+
+  </form>
+
+  <div class="form-group">
+    <div ng-show="loaderss">
+      <div class="loader2"></div>
+    </div>
+  </div>
+  <span style="color:red;">{{error}}</span>
+</div>
+
+
+<style type="text/css">
+  
+  .signdate{
+    margin-top: -36px;
+    float: right;
+  }
+
+
+     @media only screen and (min-width:300px) and (max-width: 767px) {
+
+input::-webkit-input-placeholder {
+font-size: 12px;
+}
+</style>

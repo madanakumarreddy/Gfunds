@@ -1,0 +1,38 @@
+.cur {
+    cursor: pointer;
+}
+
+.highlightwithyellow {
+    background-color: #ffff6d;
+}
+
+.highlightwithlightgreen {
+    background-color: lightgreen;
+}
+
+.tableheader {
+    background: #344643;
+    color: white;
+}
+
+.todaysdue th,
+td {
+    text-align: center;
+}
+
+.popuptable td {
+    text-align: left;
+}
+
+.tablerow {
+    background-color: #ed6560!important;
+    cursor: pointer;
+}
+
+.lenderresp img.headinglend {
+    width: 5%;
+}
+
+.table-striped>tbody>tr:nth-of-type(odd) {
+    background-color: rgba(197, 190, 190, 0.26)!important;
+}

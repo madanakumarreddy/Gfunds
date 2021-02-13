@@ -1,0 +1,43 @@
+<div class="lenderresp">
+    <h1><img src="assets/img/Loan_History.png" class="headinglend">&nbsp; Payment Info</h1>
+        <div ng-show="todayduesloader">
+            <div class=loader1></div>
+        </div>
+    <div class="col-md-6 form-group">
+        <input type="text" class="form-control" ng-model="search" placeholder="Search">
+    </div>
+    <div class="table-responsive tabledashboard col-md-12">
+        <div class="Loan todaysdue icon ">
+            <table class="table table-bordered text-center">
+                <thead class="tableheader">
+                    <tr>
+                        <th>Serial No.</th>
+                        <th>
+                            <button style="color: teal" ng-click=" sortBy( 'id') " ng-class="{reverse: reverse} ">Loan ID</button>
+                        </th>
+                        <th>Member Name</th>
+                        <th>
+                            <button style="color: teal" ng-click="sortBy( 'payable_amount') " ng-class="{reverse: reverse} ">Payable Amount</button>
+                        </th>
+                        <th>Next Payable Date</th>
+                        <th>Loan Type</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-show="payments.length>0" ng-repeat="data in payments | filter: search" ng-click="todaydues_details(data)" class="cur {{highlight}}">
+                        <tr ng-show="payments.length>0" ng-repeat="data in payments | filter: search|orderBy:propertyName:reverse" ng-click="todaydues_details(data)" class="cur {{highlight}}">
+                            <td>{{$index+1}}</td>
+                            <td>{{data.id}}</td>
+                            <td>{{data.member__full_name}}</td>
+                            <td>{{data.total_return_amount}}</td>
+                            <td>{{data.payable_date}}</td>
+                            <td>{{data.loan_type}}</td>
+                        </tr>
+                        <tr ng-show="payments.length==0">
+                            <td class="text-center orangefont" colspan="6">No Dues Today</td>
+                        </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

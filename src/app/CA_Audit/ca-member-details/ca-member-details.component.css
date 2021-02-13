@@ -1,0 +1,88 @@
+.toppest1 {
+  text-align: center;
+  font-weight: bolder;
+  color: #0a58a4;
+  box-shadow: 16px -1px 60px 0px;
+  margin-top: 150px;
+}
+.tableText {
+  color: #242d2a !important;
+  box-shadow: 1px 1px 12px 0px #0A58A4;
+}
+table>thead:first-child>tr:first-child>th {
+  background: #0a58a4;
+  color: white;
+  font-size: 16px;
+  text-align: center;
+  font-weight: bold;
+}
+table>tbody>tr>td {
+  background: white;
+  color: black;
+  font-size: 14px;
+  text-align: center;
+  /* font-weight: bold; */
+}
+.as {
+  width: 260px;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  background-color: white;
+  background-position: 10px 10px;
+  background-repeat: no-repeat;
+  padding: 12px 20px 12px 40px;
+  -webkit-transition: width 0.4s ease-in-out;
+  transition: width 0.4s ease-in-out;
+  box-shadow: 1px 3px 1px;
+  margin-top: 70px;
+  margin-left: 70%;
+}
+
+/* #as:focus {
+  width: 20%;
+} */
+
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+.toppest1{
+  margin-left: -1px;
+}
+}
+
+@media only screen and (min-width: 1024px) and (max-width: 1366px) {
+.toppest1{
+  margin-left: 70px;
+}
+.frm
+{
+  margin-left: 20%;
+}
+}
+
+@media only screen and (min-width: 320px) and (max-width: 568px) {
+.toppest1{
+  margin-left: -3px;
+}
+.frm
+{
+  margin-left: 20%;
+}
+}
+
+@media only screen and (min-width: 360px) and (max-width: 640px) {
+.toppest1{
+  margin-left: -1   px;
+}
+
+.body{
+  overflow-x: hidden;
+  position: fixed;
+}
+.frm
+{
+  /* margin-left: 20%; */
+  margin-left: 61px;
+
+}
+}

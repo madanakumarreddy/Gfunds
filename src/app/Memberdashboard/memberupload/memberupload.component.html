@@ -1,0 +1,262 @@
+<div class="col-sm-12 col-xs-12 col-md-12 startdiv">
+  <div *ngIf="memberdetails == 'Self Employed' || memberdetails == 'Farmer'">
+    <div class="col-md-5 col-xs-12 col-sm-12 uploadmemtop" id="uplod">
+      <div class="row">
+        <div class="foremanregistrationUploaddocs documents">
+          <h1 class="abc">Upload Documents</h1>
+          <table class="table-responsive">
+            <table class="table membr table-responsive" id="foremargin">
+              <tr>
+                <th>Present Address Proof</th>
+                <td class="col-xs-6 col-sm-6">
+                  <form name="certificatioform" ng-submit="uploadaddress(present_address_proof)">
+                    <div ng-show="presentaddressproofloading">
+                      <div class="loader"></div>
+                    </div>
+                    <input type="file" class="filety" (change)="allFilesUploadFun($event,'PresentAddressProof')">
+                   
+                    <p class="txtsize">*Please upload JPG or PNG files only</p>
+                    <small style="color: green"> <b>{{msg}}</b></small>
+                    <div>
+                      <div class="col-xs-12 col-md-12 text-left" style="margin-bottom: 4%;">
+                      </div>
+                    </div>
+                  </form>
+                </td>
+              </tr>
+              <tr>
+                <th>Bank Statement</th>
+                <td>
+                  <form name="bankstatementform" ng-submit="memberuploadbankstatement(bank_statement)">
+                    <input type="file" class="filety"  (change)="allFilesUploadFun($event,'BankStatement')">                   
+                    <p class="txtsize">*Please upload JPG or PNG or PDF files only</p>
+                    <small style="color: green"> <b>{{msg1}}</b></small>
+                    <div>
+                      <div class="col-xs-12 col-md-12 text-left" style="margin-bottom: 4%;">
+                      </div>
+                    </div>
+                  </form>
+                </td>
+              </tr>
+              <tr>
+                <th>Aadhar card</th>
+                <td>
+                  <form name="aadharcard" ng-submit="uploadningaadhar(aadharimage.aadhaar_card_image)">
+                    <input type="file" class="filety"  (change)="allFilesUploadFun($event,'Aadharcard')">
+                    
+                    <p class="txtsize">*Please upload JPG or PNG files only</p>
+                    <small style="color: green"> <b>{{msg2}}</b></small>
+                    <div>
+                      <div class="col-xs-12 col-md-12 text-left" style="margin-bottom: 4%;">
+                      </div>
+                    </div>
+                  </form>
+                </td>
+              </tr>
+              <tr>
+                <th>Pan Card</th>
+                <td>
+                  <form name="pancard" ng-submit="uploadingpan(panimage.pan_card_image)">
+                    <input type="file" class="filety"  (change)="allFilesUploadFun($event,'PanCard')">
+                    
+                    <p class="txtsize">*Please upload JPG or PNG files only</p>
+                    <small style="color: green"> <b>{{msg3}}</b></small>
+                    <div>
+                      <div class="col-xs-12 col-md-12 text-left" style="margin-bottom: 4%;">
+                      </div>
+                    </div>
+                  </form>
+                </td>
+              </tr>
+            </table>
+             <div class="t text-center">
+          <button  class="btn btn-primary" (click)="uploadAllFiles()" [disabled] = "!uploadDisable">Upload</button>
+        </div>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div *ngIf="memberdetails == 'Salaried'" >
+  <div class="col-md-7 col-xs-12 col-sm-12 uploadmemtop" id="uplod" style="margin-top: -512px;">
+    <div class="popupUploaddocs">
+      <div class="row foremanregistrationUploaddocs">
+        <table class="table-responsive updoc">
+          <!-- <div class="text-right" style="float: right;">
+            <span type="button" ng-click="redirectToHome()" style="font-size: 28px; cursor: pointer; margin-right: 14px; font-weight: bold;">&times;</span>
+          </div> -->
+          <h1 class="abc">Upload Documents</h1>
+          <table class=" table table-bordered table membr" id="foremargin">
+            <tr>
+              <th>Pay Slip 1</th>
+              <td>
+                <form name="payslip1form" >
+                  <div ng-show="salaryslip1loading">
+                    <div class="loader"></div>
+                  </div>
+                  <input type="file" class="filety"  (change)="allFilesUploadFun($event,'PaySlip1')">
+                  
+                  <p style="color: red;font-size: 12px;">{{error}}</p>
+                  <p class="txtsize">*Please upload JPG or PNG or PDF files only</p>
+                  <small style="color: green"> <b>{{msg4}}</b></small>
+                  <div>
+                    <div class="col-xs-12 col-md-12 text-left" style="margin-bottom: 4%;">
+                    </div>
+                  </div>
+                </form>
+              </td>
+            </tr>
+            <tr>
+              <th>Pay Slip 2</th>
+              <td>
+                <form name="payslip2form" ng-submit="uploadsecondpayslip(pay_slip2)">
+                  <div ng-show="salaryslip2loading">
+                    <div class="loader"></div>
+                  </div>
+                  <input type="file" class="filety"  (change)="allFilesUploadFun($event,'PaySlip2')">
+                  
+                  <p style="color: red;font-size: 12px;">{{error}}</p>
+                  <p class="txtsize">*Please upload JPG or PNG or PDF files only</p>
+                  <small style="color: green"> <b>{{msg5}}</b></small>
+                  <div>
+                    <div class="col-xs-12 col-md-12 text-left" style="margin-bottom: 4%;">
+                    </div>
+                  </div>
+                </form>
+              </td>
+            </tr>
+            <tr>
+              <th>Pay Slip 3</th>
+              <td>
+                <form name="payslip3form" ng-submit="uploadthirdpayslip(pay_slip3)">
+                  <div ng-show="salaryslip3loading">
+                    <div class="loader"></div>
+                  </div>
+                  <input type="file" class="filety"  (change)="allFilesUploadFun($event,'PaySlip3')">
+                  
+                  <p style="color: red;font-size: 12px;">{{error}}</p>
+                  <p class="txtsize">*Please upload JPG or PNG or PDF files only</p>
+                  <small style="color: green"> <b>{{msg6}}</b></small>
+                  <div>
+                    <div class="col-xs-12 col-md-12 text-left" style="margin-bottom: 4%;">
+                    </div>
+                  </div>
+                </form>
+              </td>
+            </tr>
+            <tr>
+              <th>Employee ID Card</th>
+              <td>
+                <form name="employeidcardform" ng-submit="uploademployeeid(employe_id_card)">
+                  <div ng-show="employeeidcardloading">
+                    <div class="loader"></div>
+                  </div>
+                  <input type="file" class="filety"  (change)="allFilesUploadFun($event,'EmployeeIDCard')">
+                  
+                  <p style="color: red;font-size: 12px;">{{error}}</p>
+                  <p class="txtsize">*Please upload JPG or PNG files only</p>
+                  <small style="color: green"> <b>{{msg7}}</b></small>
+                  <div>
+                    <div class="col-xs-12 col-md-12 text-left" style="margin-bottom: 4%;">
+                    </div>
+                  </div>
+                </form>
+              </td>
+            </tr>
+            <tr>
+              <th>Present Address Proof</th>
+              <td>
+                <form name="certificatioform" ng-submit="uploadaddress(present_address_proof)">
+                  <div ng-show="presentaddressproofloading">
+                    <div class="loader"></div>
+                  </div>
+                  <input type="file" class="filety"  (change)="allFilesUploadFun($event,'PresentAddressProof')">
+                  
+                  <p style="color: red;font-size: 12px;">{{error}}</p>
+                  <p class="txtsize">*Please upload JPG or PNG files only</p>
+                  <small style="color: green"> <b>{{msg}}</b></small>
+                  <div>
+                    <div class="col-xs-12 col-md-12 text-left" style="margin-bottom: 4%;">
+                    </div>
+                  </div>
+                </form>
+              </td>
+            </tr>
+            <tr>
+              <th>Bank Statement</th>
+              <td>
+                <form name="bankstatementform" ng-submit="memberuploadbankstatement(bank_statement)">
+                  <input type="file" class="filety" (change)="allFilesUploadFun($event,'BankStatement')">
+                  
+                  <p style="color: red;font-size: 12px;">{{error}}</p>
+                  <p class="txtsize">*Please upload JPG or PNG or PDF files only</p>
+                  <small style="color: green"> <b>{{msg1}}</b></small>
+                  <div>
+                    <div class="col-xs-12 col-md-12 text-left" style="margin-bottom: 4%;">
+                    </div>
+                  </div>
+                </form>
+              </td>
+            </tr>
+            <tr>
+              <th>Aadhar card</th>
+              <td>
+                <form name="aadharcard" ng-submit="uploadningaadhar(aadharimage.aadhaar_card_image)">
+                  <input type="file" class="filety"  (change)="allFilesUploadFun($event,'Aadharcard')" id="file-upload">
+                  
+                  <p class="txtsize">*Please upload JPG or PNG files only</p>
+                  <small style="color: green"> <b>{{msg2}}</b></small>
+                  <div>
+                    <div class="col-xs-12 col-md-12 text-left" style="margin-bottom: 4%;">
+                    </div>
+                  </div>
+                </form>
+              </td>
+            </tr>
+            <tr>
+              <th>Pan Card</th>
+              <td>
+                <form name="pancard" ng-submit="uploadingpan(panimage.pan_card_image)">
+                  <input type="file" class="filety"  (change)="allFilesUploadFun($event,'PanCard')">
+                  
+                  <p class="txtsize">*Please upload JPG or PNG files only</p>
+                  <small style="color: green"> <b>{{msg3}}</b></small>
+                  <div>
+                    <div class="col-xs-12 col-md-12 text-left" style="margin-bottom: 4%;">
+                    </div>
+                  </div>
+                </form>
+              </td>
+            </tr>
+          </table>
+          <div>
+          <div class="t text-center">
+          <button  class="btn btn-primary" (click)="uploadAllFiles()" [disabled] = "!uploadDisable">Upload</button>
+        </div>
+        </div>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+<div id="PopRes1" #PopRes1 class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header" style="color: white;text-align: center;
+      background: #337ab7;">
+      <h3 class="modal-title">Upload Documents</h3>
+      </div>
+      <div class="modal-body" style="text-align: center;">
+        <p>{{mesdisplay }}<p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal" (click)="success()">Ok</button>
+      </div>
+    </div>
+  </div>
+</div>

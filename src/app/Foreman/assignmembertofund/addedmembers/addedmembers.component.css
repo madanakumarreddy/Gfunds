@@ -1,0 +1,55 @@
+.modal-backdrop {
+  z-index: 999 !important;
+}
+.modal-title{
+  color: white;
+}
+.modal {
+  z-index: 10000 !important;
+}
+
+.md-dialog-container {
+  z-index: 1500;
+}
+
+.inclass {
+  margin-left: 93px;
+  width: 253px;
+}
+
+.star1 {
+  background-color: rgb(63, 81, 181);
+  color: white;
+  width: 130px;
+  height: 37px;
+  border-radius: 8px;
+}
+
+.addmem {
+ margin-top: 30px;
+}
+
+.tableview {
+  /*margin-left: -38px;*/
+}
+  .toppest1 {
+    text-align: center;
+    text-align: center;
+    font-weight: bolder;
+    color: #0a58a4;
+    box-shadow: 16px -1px 60px 0px;
+
+}
+.inputwidth{
+  width:30vh;
+  background-color: #1d8ccd;
+}
+
+@media only screen and (min-width:320px) and (max-width: 767px) {
+  .addback {
+    margin-left: -12px;
+  }
+  .addauction {
+    margin-right: -12px;
+  }
+}

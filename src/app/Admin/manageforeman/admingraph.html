@@ -1,0 +1,130 @@
+
+  <div class="runninggraph" style="margin-top: 80px;">
+    <div class=" col-sm-12 col-md-12 col-xs-12 col-lg-12 clss">
+        <div class=" col-sm-4 col-md-4 col-xs-4 col-lg-4 text-center bttn">
+          <div class="row">
+            <button class="btn btn-primary" id="padback" (click)="gotopage123()">&nbsp;&nbsp;Back&nbsp;&nbsp;</button>
+          </div>
+        </div>
+        
+        <div class=" col-sm-offset-4 col-md-offset-4 col-xs-offset-4 col-lg-offset-4 text-center bttn">
+
+            <button class="btn btn-primary auctionz check">Next Payable Amount
+              <br> 
+              <span *ngIf = "nextpay">{{nextpay | currency:"₹"}}</span>
+              <span *ngIf = "!nextpay">{{ 0 }}</span>
+            </button>
+        </div>
+       
+    </div>
+    <div class=" col-sm-12  col-md-12 col-xs-12 col-lg-12 grpgname">
+      <h4 class="sacchoice">Next Auction Date & Time : {{timeaction| date:'EEEE, MMMM d, y, h:mm:ss a'}}</h4>
+    </div>
+
+    <div class="col-md-12 col-xs-12 col-sm-12 col-lg-12 grpgname1">
+      <h2 class="text-center namefund">{{graph_chitnumber | uppercase}}</h2>
+    </div>
+      <div id="chartContainer"  (click)="onChartClick(graphobject)" class="col-md-12">
+      </div>
+   </div>
+<div class="modal fade" #finalchit id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="!submitted">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 class="modal-title text-center" id="exampleModalLabel" style="background-color: #0a58a4;color: white;">Auction Details</h3>
+      </div>  
+       <div class="modal-body" style="text-align: center;">
+      <table class="table">
+         <thead>
+      <tr>
+        <th>Auction</th>
+        <th>Member Alloted To</th>
+        <th>Member Bid Amount</th>
+        <th>Member Prize Money</th>
+         <th>Foreman Commission</th>
+          <th>Next Payable Amount</th>
+           <th>Dividend Value</th>
+      </tr>
+    </thead>
+    <tbody  *ngFor="let obj of graphobject">
+        <tr>
+           <td> {{obj.auctioncount}}</td>
+           <td> {{obj.member}}</td>
+           <td> {{obj.bidamount}}</td>
+           <td> {{obj.prizeMoney}}</td>
+           <td> {{obj.forecommision}}</td>
+           <td> {{obj.nextpay}}</td>
+           <td> {{obj.divvalue}}</td>
+        </tr>
+      </tbody>
+      </table>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary center-block" data-dismiss="modal">Ok</button>
+      
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+   
+
+
+
+
+
+
+  
+
+ 
+
+    
+<style type="text/css">
+  .grpgname{
+    margin-bottom: 10px;
+    margin-top:20px;
+  }
+  .grpgname1{
+    margin-bottom: 10px;
+  }
+  .graphcan{
+    height: 488px;
+    width: 920px;
+    display: block;
+  }
+  .tab{
+    margin-left: 230px; 
+    margin-top:20px
+  }
+  .bttn{
+    margin-bottom: 10px;
+  }
+  .grpgname2{
+    margin-bottom: 0%;  
+  }
+
+  @media only screen and (min-width: 360px) and (max-width: 640px){
+    .graphcan{
+      height: 400px;
+      width: 370px;
+      display: block;
+    }
+    .tab{
+      margin-left: 0px; 
+      margin-top:20px
+    }
+    .grpgname2{
+      margin-bottom: 45%;
+    }
+    .check{
+      font-size: 12px;
+    }
+  }
+</style>

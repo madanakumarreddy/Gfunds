@@ -1,0 +1,97 @@
+ <div>
+  <h2 class="text-center  toppest1 col-md-offset-1 col-md-10">
+   Added Members</h2></div>
+<br>
+<br>
+<div class="col-md-offset-1 col-md-10 addedleft">
+<div class="col-xs-12 col-sm-12 col-md-12  addmem">
+  <button class="btn btn-primary pull-left" (click)="addedmemback()">Back</button>
+  <div style="float: right;margin-bottom: 10px;">
+   <button type="button" class="btn btn-primary">
+    <label>Set Auction Date
+      <input placeholder="{{somePlaceholder}}" [(ngModel)]="dateTime" [owlDateTimeTrigger]="dt" type="checkbox" (ngModelChange)="setAuction($event)"  [owlDateTime]="dt" [disabled]="!(disabledauction=='TRUE')" >
+      <owl-date-time #dt></owl-date-time>
+    </label>
+    </button> 
+  </div>
+  <!-- Auction</button> -->
+</div>
+<div class="col-xs-12 col-sm-12 col-md-12 table-responsive tableview">
+  <table class="table  table-bordered">
+    <thead>
+      <tr>
+        <th style="text-align: center;">Sl No</th>
+        <th style="text-align: center;">Member Name</th>
+        <th style="text-align: center;">Mobile Number</th>
+        <th style="text-align: center;">chitcount</th>
+        <th style="text-align: center;">Transcation Id</th>
+        <th style="text-align: center;">Reject Member</th>
+      </tr>
+    </thead>
+    <tbody class="tableText" *ngIf="membersadded">
+      <tr *ngFor="let added of membersadded;let i=index" style="text-align: center;">
+        <td>{{i+1}}</td>
+        <td>{{added.membername}}</td>
+        <td>{{added.number}}</td>
+        <td>{{added.count}}</td>
+        <td>
+          <!-- <button class="btn btn-default" *ngIf="((added.transverify=='novalue')&&(added.tarnsactionid!='No Transaction ID'))" (click)="verifytransaction(added)">{{added.tarnsactionid}}firstka</button>
+ -->
+            <!-- <button class="btn btn-default" *ngIf="((added.transverify=='novalue')&&(added.tarnsactionid!='No Transaction ID'))" (click)="verifytransaction(added)">{{added.tarnsactionid}}second verif</button> -->
+          <button class="btn btn-success" *ngIf='((added.tarnsactionid!="No Transaction ID")&&(added.transverify==true))' (click)="verifytransaction(added)">{{added.tarnsactionid}}</button>
+          <button class="btn btn-danger" *ngIf='((added.tarnsactionid!="No Transaction ID")&&(added.transverify=="novalue"))' (click)="verifytransaction(added)">{{added.tarnsactionid}}</button>
+          <button class="btn btn-danger" *ngIf='((added.tarnsactionid!="No Transaction ID")&&(added.transverify==false))' (click)="verifytransaction(added)">{{added.tarnsactionid}}</button>
+          <button class="btn btn-default" (click)="entertransaction(added)" *ngIf='added.tarnsactionid=="No Transaction ID"'>{{added.tarnsactionid}}</button>
+        </td>
+        <td>
+          <button class="btn btn-danger" (click)="rejectmember(added,'REJECT')">Reject</button>
+        </td>
+      </tr>
+      <tr *ngIf="membersadded.length==0">
+        <td colspan="4" style="text-align: center;">
+          <h1>No Members Added</h1></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+</div>
+<div class="modal fade" #verifytrans id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="!submitted">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header" style="background-color: #337ab7;">
+        <h3 class="modal-title" id="exampleModalLabel" style="text-align: center">Transaction Status
+        <button type="button" class="close" style="color: white" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        </h3>
+      </div>
+      <div class="modal-body text-center">
+        <button class="btn btn-success" data-dismiss="modal" (click)="approvetans('VERIFIED')">Approve</button>
+        <button class="btn btn-danger" style="margin-left: 12px" (click)="approvetans('UNVERFIED')" data-dismiss="modal">DisApprove</button>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade" #verifytrans1 id="exampleModal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="!submitted">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header" style="  background-color: #337ab7;
+      ">
+        <h3 class="modal-title" id="exampleModalLabel" style="text-align: center;color: white">Enter Transaction Id
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        </h3>
+      </div>
+      <div class="form-inline" style="text-align: center;margin-top: 15px;">
+        <div class="form-group">
+          <label for="email">Transaction ID:</label>
+          <input type="text" class="form-control" placeholder="Enter Transaction ID" [(ngModel)]="transdata.newid">
+        </div>
+      </div>
+      <div class="modal-body text-center">
+        <button class="btn btn-success" data-dismiss="modal" (click)="savetrans(transdata)">Submit</button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,237 @@
+.headcs {
+  background-color: #337ab7;
+  text-align: center;
+  padding: 33px;
+  margin-block-start: -39px;
+  margin-block-end: -13px;
+  margin-left: -40px;
+  margin-right: -40px;
+  border-bottom: 1px solid #e5e5e5;
+  color: white;
+  padding-bottom: 23px;
+  margin-left: 0px;
+  margin-right: 0px;
+  text-align: left;
+}
+
+bdycs {
+  margin-block-start: 16px;
+}
+
+.chit-result .chit-logo:before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  left: 0;
+  top: 0;
+  z-index: 0;
+  opacity: .9;
+}
+
+.chit-result .chit-logo {
+  width: 25%;
+  position: relative;
+  margin-bottom: 15px;
+  margin-left: 3%;
+  border: 1px solid #ccc;
+  height: 31vh;
+  box-shadow: 1px 2px 15px;
+  background-repeat: no-repeat!important;
+  background-size: 100%!important;
+  background-position: center center!important;
+  z-index: 1;
+  margin-top: 50px;
+}
+
+.chit-result .single-chit-result {
+  background-size: 100%!important;
+  position: relative;
+  z-index: 3;
+  height: 14vh;
+  text-align: center;
+  width: 14vh;
+  overflow: hidden;
+  margin: auto;
+}
+
+.toppest1 {
+  text-align: center;
+  text-align: center;
+  font-weight: bolder;
+  color: #0a58a4;
+  box-shadow: 16px -1px 60px 0px;
+  /* margin-top: 125px; */
+  /* margin-left: 100px; */
+}
+
+.formenchoice {
+  text-align: center;
+  text-align: center;
+  font-weight: bolder;
+  color: #0a58a4;
+  box-shadow: 16px -1px 60px 0px;
+  margin-top: 65px;
+  margin-left: 100px;
+}
+
+.entiy {
+  margin-left: 39px;
+  margin-top: 73px;
+  font-size: large;
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+  .toppest1 {
+    margin-left: -1px;
+    ;
+  }
+}
+
+@media only screen and (min-width: 1024px) and (max-width: 1366px) {
+  .toppest1 {
+    margin-left: 56px;
+  }
+}
+
+@media only screen and (min-width: 375px) and (max-width: 812px) {
+  .toppest1 {
+    margin-left: -3px;
+  }
+}
+
+@media only screen and (min-width: 320px) and (max-width: 568px) {
+  .toppest1 {
+    margin-bottom: 1px;
+    margin-left: -1px;
+  }
+}
+
+.formenchoice {
+  padding: 5px;
+  margin-bottom: -1em;
+  text-align: center;
+  font-weight: bolder;
+  color: #0a58a4;
+  box-shadow: 3px -1px 12px 0px;
+}
+
+.runningleft {
+  margin-left: 45px;
+}
+
+.divborder {
+  margin-top: 71px;
+  width: 40vh!important;
+  height: 37vh!important;
+  margin-left: 90px;
+  box-shadow: 1px 1px 2px 1px #1d7aab;
+  -webkit-transition: all .3s ease;
+  -moz-transition: all .3s ease;
+  -o-transition: all .3s ease;
+  -ms-transition: all .3s ease;
+  transition: all .3s ease;
+}
+
+.divborder:hover {
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+  -moz-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  box-shadow: 0 0 20px rgba(0, 0, 0, .2);
+}
+
+.line3 {
+  background: #1d8ccd;
+  color: white;
+  margin-top: 52px;
+  height: 36px;
+}
+
+.line3 {
+  background: #1d8ccd;
+  color: white;
+  margin-top: 30px;
+  height: 36px;
+  width: 256px;
+  margin-left: -1px;
+  margin-top: 105px;
+  width: 40vh!important;
+  box-shadow: 1px 1px 2px 1px #e3dfdf;
+  -webkit-transition: all .3s ease;
+  -moz-transition: all .3s ease;
+  -o-transition: all .3s ease;
+  -ms-transition: all .3s ease;
+  transition: all .3s ease;
+  border-left: 1px solid #1d8ccd;
+  border-right: 1px solid #1d8ccd;
+}
+
+.chitlogo {
+  height: 21vh;
+  padding-top: 2.5vh;
+}
+
+.img1 {
+  height: 15vh;
+  width: 15vh;
+  margin-left: 5em;
+  border-radius: 18px;
+}
+
+.chitlogo .imgdiv {
+  width: 14vh;
+  height: 14vh;
+  border-radius: 5px;
+  border: 1px solid #0a58a4;
+}
+
+.ima {
+  width: 96px;
+  height: 97px;
+  margin-left: -16px;
+}
+
+.line3 {
+  margin-top: 57px;
+}
+
+.chitlogo .amount {
+  padding: 15px 0px;
+  margin-left: 17px;
+  text-align: center;
+  margin-top: 0.5vh;
+  font-size: 21px;
+  width: 15vh;
+  box-shadow: 2px 0.5px 0.3px 1px rgb(165, 169, 191);
+  border-left: 0px;
+  border-bottom-right-radius: 15px;
+  border-top-right-radius: 15px;
+}
+
+.buttontext1 {
+  color: #1d8ccd;
+  font-size: 2vh;
+  text-align: center;
+}
+
+.line1 {
+  height: 36px;
+  border-bottom: 1px solid grey;
+  background: #1d8ccd;
+  color: white;
+}
+
+@media only screen and (min-width: 320px) and (max-width: 568px) {
+  .divborder {
+    margin-left: 62px;
+    margin-top: 52px;
+  }
+  .closenorecord {
+    margin-top: 50px;
+  }
+  .view {
+    margin-top: -22px;
+  }
+}

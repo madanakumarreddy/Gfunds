@@ -1,0 +1,34 @@
+<div>
+  <h2 class="text-center  toppest1 col-md-offset-1 col-md-10">
+    Home</h2></div>
+<div class="col-md-offset-1 col-md-10 tableres">
+  <div class="table-responsive">
+    <table class="table table-bordered tableText">
+      <thead class="backcolor">
+        <th class="mainHead text-center">Fund Id</th>
+        <th class="mainHead text-center">Fund Amount</th>
+        <th class="mainHead text-center">Start Date</th>
+        <th class="mainHead text-center">Next Auction Date</th>
+        <th class="mainHead text-center">Auction Completed</th>
+        <th class="mainHead text-center">Current auction prize</th>
+        <th class="mainHead text-center">Auction Time</th>
+      </thead>
+      <tbody class="tableText1">
+        <tr *ngFor="let data of runningData">
+          <td class="textPointer" (click) = "getMemberDetails(data.chit_id)">{{data.chit_name | uppercase }}</td>
+          <td>{{data.amount}}</td>
+          <td>{{data.start_date}}</td>
+          <td>{{data.next_auction_date|date:'EEEE, MMMM d, y, h:mm:ss a'}}</td>
+          <td class="textPointer" (click)="transactionids(data.chit_id)">{{data.auction_count}}</td>
+          <td>{{data.amount}}</td>
+          <td>
+            <button class="btn btn-primary">{{data.next_auction_date| date : 'h:mm:ss a'}} - {{data.hour_difference| date : 'h:mm:ss a'}}</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <h3 *ngIf="!runningData" style=" text-align: center;color: red;">No Running Funds Found</h3>
+  </div>
+</div>
+
+

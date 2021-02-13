@@ -1,0 +1,72 @@
+<div class="col-xs-12 col-sm-12 col-md-12" *ngIf="!onlytrans">
+    <h1 class="text-center formenchoice toppest1" id="Gra">Member Counts</h1>
+    <br>
+    <div class="text-center ">
+        <button class="btn btn-primary" style="margin-top: 75px;" (click)="memtransback()">Back</button>
+    </div>
+    <br>  
+    <div class="col-md-6 col-xs-12 col-sm-12 divborder1" id="tra" *ngFor = "let data of trans">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 text-center line2" style=" color: #1d8ccd;">
+                {{data.member_count}}
+            </div>
+           
+           
+            
+            <div  class="col-xs-12 col-sm-12 col-md-12 line4">
+                <div class="row ">
+                    <div class="col-xs-12 col-sm-12 col-md-12 moree buttontext" style="text-align: center; " 
+                    (click)="getmembertrans(data.chit,data.member_count,status = '')">
+                        VIEW TRANSACTIONS </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="col-md-10" *ngIf="!trans" style="text-align: center;color: red">
+    <h2>No Transactions Found</h2>
+</div>
+
+
+
+
+
+<div class="col-xs-12 col-sm-12 col-md-12" *ngIf="onlytrans">
+    <h1 class="text-center formenchoice toppest1" id="Gra">MemberTransaction</h1>
+    <br>
+    <div class="text-center ">
+        <button class="btn btn-primary" style="margin-top: 75px;" (click)="backtomember()">Back</button>
+    </div>
+    <br>
+    <div class="col-md-10 tablemar ">
+        <div class="table-responsive">
+            <table class="table  table-bordered tableText">
+                <thead>
+                    <tr>
+                        <th>Auction Number</th>
+                        <th>Member Count</th>
+                        <th>Transaction Id</th>
+                        <th>Transaction Date</th>
+                        <th>Account Number</th>
+                        <th>Paid Amount</th>
+                    </tr>
+                </thead>
+                <tbody >
+                    <tr *ngFor="let data of transshow">
+                        <td id='A'>{{data.auction}}</td>
+                        <td>{{data.mem_count}}</td>
+                        <td>{{data.transaction_id}}</td>
+                        <td>{{data.trans_date | slice:0:10}}</td>
+                        <td>{{data.account_number}}</td>
+                        <td>{{data.paid_amount}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+  
+  
+</div>
+<div class="col-md-10" *ngIf="!transshow && !trans" style="text-align: center;color: red">
+    <h2>No Transactions Found</h2>
+</div>

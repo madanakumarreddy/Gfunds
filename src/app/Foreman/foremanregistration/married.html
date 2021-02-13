@@ -1,0 +1,80 @@
+
+<!-- <div class="modal-header text-center"  style="background-color:DodgerBlue">
+    <button type="button" style="top:0%" class="close" aria-label="Close" (click)="onNoClick()">
+        <span aria-hidden="true">&times;</span>
+      </button> -->
+      <div class="modal-header modalhead">
+  <div class="text-right" style="float: right;">
+    <span type="button" (click)="onNoClick()" style="font-size: 28px;cursor: pointer;
+    margin-right: 14px;font-weight: bold;">&times;</span>
+  </div>
+      <h3 class="modal-title spouse">Spouse Information</h3>
+</div>
+<div class="modal-body">
+    <form class="spouse" name="spouseinformationform" >
+        <div class="form-group">
+            <input type="text" class="form-control" [(ngModel)]="user.spouse_name" placeholder="Enter Your Spouse Name" name="spouse_name" only-alphabets dont-begin-with-zero="a-zA-Z 0-9-&/,()-" no-repeat ng-trim="false" check-validation="charField" (keypress) = "keyPress1($event)">
+        </div>
+        <div class="form-group">
+            <input type="text" class="form-control" [(ngModel)]="user.spouse_number" placeholder="Enter Your Spouse Mobile Number" name="spouse_number" minlength="10" maxlength="10" ng-trim="false" dont-begin-with-zero="mobilenumber" check-validation="mobilenumber" (keypress) = "keyPress($event)">
+        </div>
+
+        <div class="form-group">
+                <label for="dateOfMarriage" class="datmarg" style="text-align: center;">Your Date Of Marriage </label><br>
+                
+            <div class="col-md-6">
+            <input class="form-control" name="dob" matInput [matDatepicker]="userDOB" placeholder="yyyy-mm-dd" required
+              [(ngModel)]="user.dat_of_marriage" #dob="ngModel">
+            </div>
+          <div class="col-md-2 date" >
+            <mat-datepicker-toggle matSuffix [for]="userDOB">
+            </mat-datepicker-toggle>
+            <mat-datepicker #userDOB></mat-datepicker>
+          </div>
+      </div><br><br>
+
+        <div class="form-group frmdiv">
+            <input type="radio" name="spouseprofession" id="house-maker" [(ngModel)]="user.spouse_work" value="House Maker" required>House Maker &nbsp; &nbsp;
+            <input type="radio" name="spouseprofession" id="selfemployed" [(ngModel)]="user.spouse_work" value="Self Employed" required>Self Employed &nbsp; &nbsp; 
+            <input type="radio" name="spouseprofession" id="Salaried" [(ngModel)]="user.spouse_work" value="Salaried" required>Salaried
+        </div>
+        <div class="modal-footer footdiv">
+            <button class="btn btn-primary " [mat-dialog-close] = "user">Save</button>
+            <button class="btn btn-warning" (click)="onNoClick()">Cancel
+
+              </button>
+        </div>
+    </form>
+</div>
+
+
+<style type="text/css">
+.date{
+    margin-left: -62px;
+  }
+  .modalhead{
+    color: white;
+    background: #337ab7;
+    margin-top: -24px;
+    margin-left: -24px;
+    margin-right: -24px;
+  }
+  .datmarg{
+    text-align: center;
+  }
+
+
+  .date{
+    
+    margin-left: 135px;
+    margin-top: -37px;
+    margin-bottom: -48px;
+  }
+  .frmdiv{
+  margin-left: 30px;
+}
+.footdiv{
+ text-align: center;
+}
+}
+</style>

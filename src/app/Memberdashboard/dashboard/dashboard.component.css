@@ -1,0 +1,330 @@
+
+
+    .parent2 {
+    display: block;
+    width: 57px;
+    height: 51px;
+   background-color: #006aa2;
+    border-radius: 50%;
+    z-index: 20;
+  
+}
+.mask1 {
+    margin-left:-15px;
+    /*right: 0px;*/
+    width: 74px;
+    height: 60px;
+    background: darkSlateGray;
+    border-radius: 50%;
+    position: absolute;
+    z-index: 21;
+    color: white;
+    text-align: center;
+    /* line-height: 120px; */
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.test1 {
+    width:54px;
+    height: 45px;
+    background-color: #006aa2;
+    border-radius: 50%;
+    position: absolute;
+    /*color: white;*/
+    text-align: center;
+    line-height: 62px;
+    padding-top: 6px;
+    /*top: 25%;
+    left: 25%;*/
+    margin-top: 20%;
+    /*margin-left: 18px;*/
+    z-index: 19;
+    transition: all 500ms cubic-bezier(0.680, -0.550, 0.265, 1.550);
+    position: absolute;
+}
+
+.test2 {
+    width: 54px;
+    height: 45px;
+    background-color: #006aa2;
+    border-radius: 50%;
+    position: absolute;
+    color: white;
+    text-align: center;
+    line-height: 62px;
+    /*padding-top: 6px;*/
+    top: 25%;
+    /*left: 45%;*/
+    z-index: 19;
+    transition: all 500ms cubic-bezier(0.680, -0.550, 0.265, 1.550) .2s;
+}
+
+.test3 {
+    width: 65px;
+    height: 40%;
+    background-color: #006aa2;
+    border-radius: 50%;
+    position: absolute;
+    color: white;
+    text-align: center;
+    line-height: 62px;
+    padding-top: 6px;
+    top: 25%;
+    /*left: 25%;*/
+    transition: all 500ms cubic-bezier(0.680, -0.550, 0.265, 1.550) .4s;
+}
+
+.test4 {
+    width: 54px;
+    height: 45px;
+    background-color: #006aa2;
+    border-radius: 50%;
+    position: absolute;
+    /*color: white;*/
+    text-align: center;
+    line-height: 62px;
+    padding-top: 6px;
+    /*top: 25%;
+    left: 25%;*/
+    margin-top: 20%;
+    /*margin-left: 18px;*/
+    transition: all 500ms cubic-bezier(0.680, -0.550, 0.265, 1.550) .2s;
+}
+
+.test5 {
+    width: 54px;
+    height: 45px;
+    background-color: #006aa2;
+    border-radius: 50%;
+    position: absolute;
+    /*color: white;*/
+    text-align: center;
+    line-height: 62px;
+    padding-top: 6px;
+    /*top: 25%;
+    left: 25%;*/
+    margin-top: 20%;
+    /*margin-left: 18px;*/
+    transition: all 500ms cubic-bezier(0.680, -0.550, 0.265, 1.550) .3s;
+}
+.parent2 {
+    display: block;
+    width: 74px;
+    height: 60px;
+   background-color: #006aa2;
+    border-radius: 50%;
+    z-index: 20;
+}
+.test1 {
+    width: 65px;
+    height: 56px;
+    background-color: #006aa2;
+    border-radius: 50%;
+    position: absolute;
+    /*color: white;*/
+    text-align: center;
+    line-height: 62px;
+    padding-top: 6px;
+    /*top: 25%;
+    left: 25%;*/
+    margin-top: 20%;
+    /*margin-left: 18px;*/
+    z-index: 19;
+    transition: all 500ms cubic-bezier(0.680, -0.550, 0.265, 1.550);
+    position: absolute;
+}
+
+.test2 {
+    width: 65px;
+    height: 90%;
+    background-color: #006aa2;
+    border-radius: 50%;
+    position: absolute;
+    color: white;
+    text-align: center;
+    line-height: 62px;
+    /*padding-top: 6px;*/
+    top: 25%;
+    /*left: 45%;*/
+    z-index: 19;
+    transition: all 500ms cubic-bezier(0.680, -0.550, 0.265, 1.550) .2s;
+}
+
+.test3 {
+    width: 65px;
+    height: 90%;
+    background-color: #006aa2;
+    border-radius: 50%;
+    position: absolute;
+    color: white;
+    text-align: center;
+    line-height: 62px;
+    padding-top: 6px;
+    top: 25%;
+    /*left: 25%;*/
+    transition: all 500ms cubic-bezier(0.680, -0.550, 0.265, 1.550) .4s;
+}
+
+.test4 {
+    width: 65px;
+    height: 56px;
+    background-color: #006aa2;
+    border-radius: 50%;
+    position: absolute;
+    /*color: white;*/
+    text-align: center;
+    line-height: 62px;
+    padding-top: 6px;
+    /*top: 25%;
+    left: 25%;*/
+    margin-top: 20%;
+    /*margin-left: 18px;*/
+    transition: all 500ms cubic-bezier(0.680, -0.550, 0.265, 1.550) .2s;
+}
+
+.test5 {
+    width: 65px;
+    height: 56px;
+    background-color: #006aa2;
+    border-radius: 50%;
+    position: absolute;
+    /*color: white;*/
+    text-align: center;
+    line-height: 62px;
+    padding-top: 6px;
+    /*top: 25%;
+    left: 25%;*/
+    margin-top: 20%;
+    /*margin-left: 18px;*/
+    transition: all 500ms cubic-bezier(0.680, -0.550, 0.265, 1.550) .3s;
+}
+
+.test1,
+.test2,
+.test3,
+.test4,
+.test5 {
+    transform: translate(-15px, -12px);
+}
+
+.mask2 {
+    margin-left:-15px;
+    /*right: 0px;*/
+    width: 74px;
+    height: 60px;
+    background: darkSlateGray;
+    border-radius: 50%;
+    position: absolute;
+    z-index: 21;
+    color: white;
+    text-align: center;
+    /* line-height: 120px; */
+    cursor: pointer;
+    overflow: hidden;
+}
+
+ .memberhead {
+        position: fixed;
+        left: 0;
+        top: 0;
+        right: 0;
+        z-index: 999;
+        /*height: 270px;*/
+        /*height: 129px;*/
+        transition: all 0.6s ease-in-out;
+        -moz-transition: all 0.6s ease;
+        -webkit-transition: all 0.6s ease;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1) !important;
+        background-color: #fff; 
+    }
+    header {
+        position: fixed;
+        left: 0;
+        top: 0;
+        right: 0;
+        z-index: 999;
+        /*height: 256px;*/
+        transition: all 0.6s ease-in-out;
+        -moz-transition: all 0.6s ease;
+        -webkit-transition: all 0.6s ease;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1) !important;
+    }
+    .imgs{
+        /*padding-top: 10px;*/
+         width: 220px;
+    }
+    .header-top{
+        margin-top: 25px;
+    }
+    .gridtabs{
+        text-align: center;
+        z-index: 9;
+        padding: 20px;
+    }
+    
+    /*mobile view*/
+    @media only screen and (min-width: 360px) and (max-width: 640px){
+        .imgs{
+        padding-top: 10px;
+         width: 110px;
+    }
+    ::ng-deep.cdk-overlay-pane{
+        max-width: 92vw !important;
+      }
+   .btn{
+        /*margin-right: 109px;*/
+    }
+    .imgs{
+        padding-top: 0px;
+         width: 150px;
+    }
+    .parent1{
+        margin-top: -49px;
+        margin-left: 69px;
+    }
+}
+
+/* ===> HEADER MOBILE CSS <=== */
+.parent1{
+    width: 74px;
+    margin-top: 20px;
+    margin-left: 40px;
+    /*height: 74px;*/
+}
+
+@media only screen and (min-width: 360px) and (max-width: 640px){
+    .test1, .test2, .test3, .test4, .test5, .parent1{
+        width: 45px;
+        height: 45px;
+    }
+    .parent1{
+        margin-top: -46px;
+        margin-left: 69px;
+    }
+    .mask1{
+        width: 53px;
+        height: 50px;
+        margin-top: -3px;
+        margin-left: -17px;
+    }
+}
+@media screen and (device-aspect-ratio: 40/71) {
+    .imgs{
+        width: 160px;
+    }
+    .parent1{
+        margin-top: -48px;
+        margin-left: 60px;
+    }
+    .test1, .test2, .test3, .test4, .test5, .mask1, .parent1{
+        width: 45px;
+        height: 45px;
+    }
+    .navbar-toggle{
+        margin-top: 15px !important;
+    }
+    .widthcs{
+      width: 50% !important;
+    }
+}
